@@ -11,36 +11,54 @@
 
 
 
-    <div dir="ltr" class="position-relative shadow-sm"
-         style="width: 100%; height: auto; display: block; padding-bottom: 130px">
-        <div class="stripes-container">
-            <div class="stripe"></div>
-            <div class="stripe"></div>
-            <div class="stripe"></div>
-            <div class="stripe"></div>
-            <div class="stripe"></div>
+{{--    <div dir="ltr" class="position-relative shadow-sm"--}}
+{{--         style="width: 100%; height: auto; display: block; padding-bottom: 130px">--}}
+{{--        <div class="stripes-container">--}}
+{{--            <div class="stripe"></div>--}}
+{{--            <div class="stripe"></div>--}}
+{{--            <div class="stripe"></div>--}}
+{{--            <div class="stripe"></div>--}}
+{{--            <div class="stripe"></div>--}}
+{{--        </div>--}}
+
+
+{{--        <h1 class="text-center pt-5" style="text-shadow: 0 0 2px">--}}
+{{--            <strong>--}}
+{{--                Create Your Own Business--}}
+{{--            </strong>--}}
+{{--        </h1>--}}
+{{--        <h3 class="text-center pb-4" style="text-shadow: 0 0 2px; color: #0a9234">--}}
+{{--            <i>--}}
+{{--                <strong>--}}
+{{--                    Special Offer for Summer--}}
+{{--                </strong>--}}
+{{--            </i>--}}
+{{--        </h3>--}}
+
+
+{{--        <img src="/media/test-folder/banner.png" width="60%" class="d-block mx-auto">--}}
+
+
+{{--    </div>--}}
+
+
+<div dir="ltr" class="shadow-sm container-fluid" style="padding-top: 60px; padding-bottom: 100px;background-color: #fff;">
+    <div class="row mx-0">
+        <div class="col-12 order-1 order-lg-0 col-lg-5" style=" padding-top: 60px; padding-left: 60px; ">
+            <h3 class="mb-5 text-center text-lg-left"
+                style="font-family: Rambla; font-weight: bold; text-shadow: 0 0 1px; color: #222222; font-size: 40px">
+                CREATE YOUR OWN BUSINESS
+            </h3>
+            <h3 class="mb-3 text-center text-lg-left"
+                style="font-family: Rambla; font-weight: bold; text-shadow: 0 0 1px; color: #1b1667; font-size: 25px">
+                Special Offer For Summer
+            </h3>
         </div>
-
-
-        <h1 class="text-center pt-5" style="text-shadow: 0 0 2px">
-            <strong>
-                Create Your Own Business
-            </strong>
-        </h1>
-        <h3 class="text-center pb-4" style="text-shadow: 0 0 2px; color: #0a9234">
-            <i>
-                <strong>
-                    Special Offer for Summer
-                </strong>
-            </i>
-        </h3>
-
-
-        <img src="/media/test-folder/banner.png" width="60%" class="d-block mx-auto">
-
-
+        <div class="col-12 order-0 order-lg-1 col-lg-7">
+            <img src="/media/test-folder/banner.png" width="100%">
+        </div>
     </div>
-
+</div>
 
 
 

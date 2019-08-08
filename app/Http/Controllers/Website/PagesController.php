@@ -64,4 +64,28 @@ class PagesController extends Controller
         return view('website.pages.contactus',array('header'=>$header));
     }
 
+    function aboutafrang(){
+        $setting=$this->getsetting();
+        $header=(object) array();
+        $header->title=$setting->websitename;
+        $header->keywords=$setting->keywords;
+        $header->description=$setting->description;
+        $header->image='/media/Layout/'.$setting->logo;
+
+
+        return view('website.pages.aboutafrang',array('header'=>$header));
+    }
+
+    function portfolio(){
+        $setting=$this->getsetting();
+        $header=(object) array();
+        $header->title=$setting->websitename;
+        $header->keywords=$setting->keywords;
+        $header->description=$setting->description;
+        $header->image='/media/Layout/'.$setting->logo;
+
+
+        return view('website.pages.portfolio',array('header'=>$header));
+    }
+
 }

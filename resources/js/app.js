@@ -12,6 +12,16 @@ var Lang = require('vuejs-localization');
 window.Swal=require('sweetalert2');
 Lang.requireAll(require.context('./lang', true, /\.js$/));
 Vue.component('firstpage', require('./components/web/pages/firstpage').default);
+
+
+
+
+Vue.component('our-portfolio', require('./components/web/pages/OurPortfolio.vue').default);
+
+
+
+
+
 Vue.component('login', require('./components/web/modules/login').default);
 Vue.component('error', require('./components/plugin/error.vue').default);
 Vue.component('search', require('./components/web/tools/searchbox.vue').default);

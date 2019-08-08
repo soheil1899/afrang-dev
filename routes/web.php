@@ -18,7 +18,9 @@ Auth::routes();
 Route::prefix('/')->namespace('Website')->group(function () {
     Route::get('/','PagesController@index')->name('indexpage');
     Route::get('/ourteam','PagesController@programmerteam')->name('programmer.team');
+    Route::get('/aboutafrang','PagesController@aboutafrang')->name('about.afrang');
     Route::get('/contactus','PagesController@contactus')->name('contact.us');
+    Route::get('/portfolio','PagesController@portfolio')->name('portfolio');
 
 });
 Route::prefix('userpanel')->middleware('UserCheck')->group(function () {
