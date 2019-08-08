@@ -1,0 +1,46 @@
+
+// Fonts
+
+
+// Variables
+@import 'variables';
+@import "fonts";
+// Bootstrap
+@import '~bootstrap/scss/bootstrap';
+html *{ font-family: IRANSans;}
+
+html{
+    background-image: url($loginbackground);
+    width: 100%;
+    min-height: 100%;
+    background-size: cover;
+}
+.loginbxo{
+    background-color: white;
+    margin-top: 10%;
+    width: 80%;
+    margin-right: auto;
+    margin-left: auto;
+    height: 70%;
+    border-radius: 20px;
+
+}
+body{
+    background-color: transparent;
+}
+.sidelogin{
+    background-image: url($sideloginpage);
+    background-size: cover;
+
+    min-height: 50%;
+    border-radius: 20px 0px 20px 0px;
+}
+.sidelogin2{
+    background-image: url($loginbackground2);
+    background-size: cover;
+    min-height: 50%;
+    border-radius: 20px 0px 20px 0px;
+}
+.padding{
+    padding: 10%;
+}

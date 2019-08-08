@@ -1,0 +1,15 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<project version="4">
+  <component name="WebServers">
+    <option name="servers">
+      <webServer id="430e31f6-f9cb-4cdb-8bee-69c2fd58a86a" name="Ali" url="http://89.32.249.174">
+        <fileTransfer host="89.32.249.174" port="22" rootFolder="/home/momenni/domains/momennia.ir/public_html" accessType="SFTP">
+          <advancedOptions>
+            <advancedOptions dataProtectionLevel="Private" passiveMode="true" shareSSLContext="true" />
+          </advancedOptions>
+          <option name="port" value="22" />
+        </fileTransfer>
+      </webServer>
+    </option>
+  </component>
+</project>

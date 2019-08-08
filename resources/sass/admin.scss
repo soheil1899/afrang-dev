@@ -1,0 +1,311 @@
+
+// Fonts
+
+// Variables
+@import 'variables';
+@import "fonts";
+// Bootstrap
+@import '~bootstrap/scss/bootstrap';
+@import 'addcss/basic';
+@import 'addcss/dropzone';
+@import "~vue-multiselect/dist/vue-multiselect.min";
+//Vue Js
+@import "/store_asset/css/sb-admin-2.min.css";
+@import "/store_asset/css/fontawesome-free/css/all.min.css";
+
+html{
+    /* Permalink - use to edit and share this gradient: http://colorzilla.com/gradient-editor/#ffffff+0,e5e5e5+100;White+3D */
+    background: rgb(255,255,255); /* Old browsers */
+    background: -moz-linear-gradient(top, rgba(255,255,255,1) 0%, rgba(229,229,229,1) 100%); /* FF3.6-15 */
+    background: -webkit-linear-gradient(top, rgba(255,255,255,1) 0%,rgba(229,229,229,1) 100%); /* Chrome10-25,Safari5.1-6 */
+    background: linear-gradient(to bottom, rgba(255,255,255,1) 0%,rgba(229,229,229,1) 100%); /* W3C, IE10+, FF16+, Chrome26+, Opera12+, Safari7+ */
+    filter: progid:DXImageTransform.Microsoft.gradient( startColorstr='#ffffff', endColorstr='#e5e5e5',GradientType=0 ); /* IE6-9 */
+    height: 100%;
+}
+body{
+    font-family: IRANSans !important;
+}
+.headeradmin{
+    background: #fff;
+    height: 120px;
+    padding: 1.5rem 0;
+    box-shadow: 0 1px 15px rgba(0,0,0,.04),0 1px 6px rgba(0,0,0,.04);
+
+}
+.mynav img{
+    color: #8f8f8f;
+    width: 20px;
+
+}
+.mynav{
+    cursor: pointer;
+}
+.tiss-2x{
+    font-size:  1em;
+}
+.search{
+    margin-left: 5%;
+}
+.searchtop input{ background-color: #f8f8f8; border-radius: 25px; box-shadow: none; border: none; padding: 5px;
+    margin-right: 20px;
+}
+.tisslogo{
+    background-image: url($tisslogo);
+    width: 100%;
+    overflow: hidden;;
+    height:70px;
+    background-position: center;
+    background-repeat: no-repeat;
+    background-size: contain;
+}
+.padding-top{
+    padding-top: 20px;
+}
+.sliderbar{
+    right: 1px;
+    height: 100%;
+    background: #fff;
+    z-index: 3;
+    position: absolute;
+    padding-top: 2px;
+}
+.scorll{
+    font-size: .8rem;
+    font-weight: 400;
+    color: #212121;
+    height: 100%;
+    border-left: 1px solid #f3f3f3;
+    width: 100px;
+    padding-left: 0px;
+    padding-top: 10px;
+
+}
+.iconmenu{
+    font-size: 45px;
+    margin-top: 20px;
+}
+.scorll li{
+
+}
+.scorll li:hover{
+    background-color: #f8f8f8;
+    cursor: pointer;
+    border-right:solid 3px orange;
+}
+.scorll li a:hover{
+   color: #155d87;
+}
+.scorll li a{
+    text-decoration:none;
+    color:#333;
+}
+.mymenus{
+    right: 101px;
+    width: 310px;
+    direction: rtl;
+    text-align: right;
+    -webkit-box-shadow: -4px 2px 5px 0px rgba(214,214,214,0.53);
+    -moz-box-shadow: -4px 2px 5px 0px rgba(214,214,214,0.53);
+    box-shadow: -4px 2px 5px 0px rgba(214,214,214,0.53);
+    z-index: 2;
+    padding-left: 40px;
+    padding-top: 20px;
+
+}
+.mymenunav *{
+    font-size: 12px;
+}
+.mymenunav li{
+    list-style: none !important;
+    font-size: 12px;
+    direction: rtl;
+
+}
+.mymenunav li a{
+    color:#333;
+}
+.mymenunav li a:hover{
+    color:orange;
+    text-decoration: none;
+}
+.copyright{
+    text-align: center;
+    position: fixed;
+    bottom: 0px;
+    z-index: 5000;
+    color: #fff;
+    width: 100%;
+    background-color: #333333;
+}
+.copyright *{
+    color: #fff;
+}
+.font-4x{
+    font-size: 4em;
+}
+.font-2x{
+    font-size: 2em;
+}
+.font-3x{
+    font-size: 3em;
+}
+.font-15x{
+    font-size: 1.5em;
+}
+.font-05x{
+    font-size: 1.2em;
+}
+.margintop{
+    margin-top: 20px;
+}
+.tiss-cursor{
+    cursor: pointer;
+}
+.tiss-hover:hover{
+    color:red;
+}
+.tiss-hover-green:hover{
+    color:red;
+}
+.mini-input{
+    width: 100px;
+}
+.margin{
+    padding: 5px;
+}
+.modal-mask {
+    position: fixed;
+    z-index: 9998;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background-color: rgba(0, 0, 0, .5);
+    display: table;
+    transition: opacity .3s ease;
+}
+
+.modal-wrapper {
+    display: table-cell;
+    vertical-align: middle;
+}
+
+.modal-container {
+    width: 50%;
+    margin: 0px auto;
+    padding: 20px 30px;
+    background-color: #fff;
+    border-radius: 2px;
+    box-shadow: 0 2px 8px rgba(0, 0, 0, .33);
+    transition: all .3s ease;
+    font-family: Helvetica, Arial, sans-serif;
+}
+
+.modal-header h3 {
+    margin-top: 0;
+    color: #42b983;
+}
+
+.modal-body {
+    margin: 20px 0;
+}
+
+.modal-default-button {
+    float: right;
+}
+
+/*
+ * The following styles are auto-applied to elements with
+ * transition="modal" when their visibility is toggled
+ * by Vue.js.
+ *
+ * You can easily play with the modal transition by editing
+ * these styles.
+ */
+
+.modal-enter {
+    opacity: 0;
+}
+
+.modal-leave-active {
+    opacity: 0;
+}
+
+.modal-enter .modal-container,
+.modal-leave-active .modal-container {
+    -webkit-transform: scale(1.1);
+    transform: scale(1.1);
+}
+.listfiles li{ list-style: none;
+  height: 150px; width: 150px;
+    text-align: center;
+}
+.listfiles{
+  width: 100%; height:200px; overflow-y: auto;
+}
+.imguploader{
+  width: 100%; height: 50px;
+}
+.listarticlemodules li{ list-style: none; float: right; font-size: 24px; border: solid 1px #666; border-radius: 5px; padding: 5px; margin-right: 1%;   }
+.listarticlemodules li:hover{
+
+}
+.margintop{ margin-top: 40px;}
+.modal-container{
+    overflow-x: auto;
+    height: 100%;
+    overflow-y: auto;
+}
+.components * {
+    direction: rtl;
+    text-align: right;
+}
+.components{
+    -webkit-box-shadow: -4px 2px 5px 0px rgba(214,214,214,0.53);
+    -moz-box-shadow: -4px 2px 5px 0px rgba(214,214,214,0.53);
+    box-shadow: -4px 2px 5px 0px rgba(214,214,214,0.53);
+    text-align: center;
+}
+.components li ul {
+    position: absolute;
+    z-index: 5000;
+    width: 250px;
+    right:40px;
+    margin-top: -100px;
+    background-color: #333;
+    padding: 15px;
+    border-radius: 5px;
+}
+.mynav2{
+    text-align: center;
+    height: 100px;
+    width: 100px;
+    border-bottom: 1px solid #f3f3f3;
+    list-style: none;
+    padding-top: 25px;
+    padding-left: 0px;
+    text-align: center;
+}
+.mynav2 a div{
+    text-align: center;
+}
+.mynav2 a{
+    color:gray;
+    text-decoration: none;
+}
+.myid{
+    padding-right: 80px;
+}
+.myicondashboard{
+    color: #0426ab;
+    font-size: 19px;
+    margin-top: -1px;
+}
+.v-sidebar-menu{
+    z-index: 10000 !important;
+}
+ .st01{fill:#FFFFFF;}
+.mousehover:hover{
+    color:green;
+    cursor: pointer;
+}
