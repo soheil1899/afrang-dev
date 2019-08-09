@@ -11,7 +11,6 @@
 @import url('https://maxcdn.bootstrapcdn.com/font-awesome/4.7.0/css/font-awesome.min.css');
 
 
-
 .team-details{
   padding-bottom: 80px; padding-top: 80px; background-color: #f1f3f5;
 }
@@ -111,7 +110,21 @@
     border-left: 1px solid transparent;
   }
 }
-
+@media (max-width: 575.98px) {
+  .contactus-item{
+    margin-bottom: 830px;
+  }
+}
+@media (min-width: 576px) {
+  .contactus-item{
+    margin-bottom: 830px;
+  }
+}
+@media (min-width: 768px) {
+  .contactus-item{
+    margin-bottom: 750px;
+  }
+}
 @media (min-width: 992px) {
   header .nav-link:hover {
     border-bottom: 1px solid #ff6972;
@@ -119,7 +132,11 @@
   header .nav-link {
     border-bottom: 1px solid transparent;
   }
+  .contactus-item{
+    margin-bottom: 400px;
+  }
 }
+
 
 .stripes-container {
   position: absolute;

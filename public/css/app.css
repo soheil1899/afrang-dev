@@ -25028,6 +25028,24 @@ a.text-dark:focus {
   }
 }
 
+@media (max-width: 575.98px) {
+  .contactus-item {
+    margin-bottom: 830px;
+  }
+}
+
+@media (min-width: 576px) {
+  .contactus-item {
+    margin-bottom: 830px;
+  }
+}
+
+@media (min-width: 768px) {
+  .contactus-item {
+    margin-bottom: 750px;
+  }
+}
+
 @media (min-width: 992px) {
   header .nav-link:hover {
     border-bottom: 1px solid #ff6972;
@@ -25035,6 +25053,10 @@ a.text-dark:focus {
 
   header .nav-link {
     border-bottom: 1px solid transparent;
+  }
+
+  .contactus-item {
+    margin-bottom: 400px;
   }
 }
 

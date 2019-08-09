@@ -1964,6 +1964,101 @@ __webpack_require__.r(__webpack_exports__);
 //
 //
 //
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
 /* harmony default export */ __webpack_exports__["default"] = ({
   name: "OurPortfolio"
 });
@@ -6800,7 +6895,7 @@ exports = module.exports = __webpack_require__(/*! ../../../../../node_modules/c
 
 
 // module
-exports.push([module.i, "\n.sampleweb .position-absolute[data-v-2a6b4ce6] {\n    height: auto;\n    width: 100%;\n    top: 0;\n    right: -100px;\n    background-color: #cccccc;\n}\n.sampleweb-image[data-v-2a6b4ce6] {\n    background-color: rgba(0, 0, 0, 0.3);\n}\n.sampleweb-image img[data-v-2a6b4ce6] {\n    box-shadow: 0 0 10px 4px #ccc;\n    opacity: 0.8;\n}\n.light-row[data-v-2a6b4ce6] {\n    height: 250px;\n}\n.circle-light[data-v-2a6b4ce6] {\n    height: -webkit-fit-content;\n    height: -moz-fit-content;\n    height: fit-content;\n}\n.circle-light:hover .light-cable[data-v-2a6b4ce6] {\n    height: 95px;\n}\n.light-cable[data-v-2a6b4ce6] {\n    width: 2px;\n    height: 80px;\n    background-color: #cfd6c0;\n    transition: height 500ms;\n}\n.light-bubble[data-v-2a6b4ce6] {\n    border-radius: 50%;\n    background-image: radial-gradient(circle, #f8ffff, #d8d3d5);\n    width: -webkit-fit-content;\n    width: -moz-fit-content;\n    width: fit-content;\n    box-shadow: 0 0 10px 5px #d1d5d5;\n}\n.active[data-v-2a6b4ce6] {\n    background-image: radial-gradient(circle, #f4fff3, #fdfdbe) !important;\n    box-shadow: 0 0 10px 5px #fdf29d !important;\n}\n\n", ""]);
+exports.push([module.i, "\n.sampleweb:hover .sampleweb-image[data-v-2a6b4ce6] {\n    background-color: rgba(0, 0, 0, 0);\n}\n.sampleweb:hover .sampleweb-image img[data-v-2a6b4ce6] {\n    opacity: 1;\n}\n@media (min-width: 992px) {\n.sampleweb:hover .webtext[data-v-2a6b4ce6] {\n        margin: 0 -30px;\n}\n.webtext[data-v-2a6b4ce6] {\n        width: 160%;\n        background-color: #fff;\n        z-index: 2;\n        box-shadow: 0 0 10px 4px #ccc;\n        margin: 0 70px;\n        transition: margin 3.5s;\n}\n}\n.webtext-title[data-v-2a6b4ce6] {\n    font-family: Rambla;\n    font-weight: bold;\n    text-shadow: 0 0 1px;\n    color: #ef586a;\n    font-size: 25px;\n}\n.sampleweb-image[data-v-2a6b4ce6] {\n    background-color: rgba(0, 0, 0, 0.3);\n    width: 100%;\n    transition: background-color 1.5s;\n}\n.sampleweb-image img[data-v-2a6b4ce6] {\n    box-shadow: 0 0 10px 4px #ccc;\n    opacity: 0.8;\n    transition: opacity 1.5s;\n}\n.light-row[data-v-2a6b4ce6] {\n    height: 250px;\n}\n.circle-light[data-v-2a6b4ce6] {\n    height: -webkit-fit-content;\n    height: -moz-fit-content;\n    height: fit-content;\n}\n.circle-light.active .light-title h5[data-v-2a6b4ce6] {\n    color: #d8bf16 !important;\n}\n.circle-light.active .light-bubble[data-v-2a6b4ce6] {\n    background-image: radial-gradient(circle, #f4fff3, #fdfdbe) !important;\n    box-shadow: 0 0 10px 5px #fdf29d !important;\n}\n.circle-light > div:hover .light-cable[data-v-2a6b4ce6] {\n    height: 95px;\n}\n.circle-light:hover .light-title[data-v-2a6b4ce6] {\n    opacity: 1;\n}\n.light-title[data-v-2a6b4ce6] {\n    opacity: 0;\n    transition: opacity 500ms;\n}\n.light-title h5[data-v-2a6b4ce6] {\n    font-family: Rambla;\n    font-weight: bold;\n    color: #444;\n}\n.light-cable[data-v-2a6b4ce6] {\n    width: 2px;\n    height: 80px;\n    background-color: #cfd6c0;\n    transition: height 500ms;\n}\n.light-bubble[data-v-2a6b4ce6] {\n    border-radius: 50%;\n    background-image: radial-gradient(circle, #f8ffff, #d8d3d5);\n    width: -webkit-fit-content;\n    width: -moz-fit-content;\n    width: fit-content;\n    box-shadow: 0 0 10px 5px #d1d5d5;\n}\n\n\n", ""]);
 
 // exports
 
@@ -41194,38 +41289,115 @@ var staticRenderFns = [
     var _c = _vm._self._c || _h
     return _c("div", { staticClass: "container", attrs: { dir: "ltr" } }, [
       _c("div", { staticClass: "light-row row justify-content-center" }, [
-        _c("div", { staticClass: "col-3 pointer circle-light" }, [
-          _c("div", { staticClass: "light-cable d-block mx-auto" }),
-          _vm._v(" "),
-          _c("div", { staticClass: "light-bubble p-4 mx-auto" }, [
-            _c("img", {
-              attrs: { src: "/media/test-folder/protal.png", width: "50px" }
-            })
-          ])
+        _c("div", { staticClass: "col-4 col-md-3 circle-light" }, [
+          _c(
+            "div",
+            {
+              staticClass: "pointer mx-auto",
+              staticStyle: { width: "fit-content" }
+            },
+            [
+              _c("div", { staticClass: "light-cable d-block mx-auto" }),
+              _vm._v(" "),
+              _c("div", { staticClass: "light-bubble p-4 mx-auto" }, [
+                _c("img", {
+                  attrs: { src: "/media/test-folder/protal.png", width: "50px" }
+                })
+              ]),
+              _vm._v(" "),
+              _c("div", { staticClass: "text-center light-title mt-2" }, [
+                _c(
+                  "h5",
+                  {
+                    staticStyle: {
+                      "font-family": "Rambla",
+                      "font-weight": "bold",
+                      color: "#444"
+                    }
+                  },
+                  [
+                    _vm._v(
+                      "\n                        Portal\n                    "
+                    )
+                  ]
+                )
+              ])
+            ]
+          )
         ]),
         _vm._v(" "),
-        _c("div", { staticClass: "col-3 pointer circle-light" }, [
-          _c("div", { staticClass: "light-cable d-block mx-auto" }),
-          _vm._v(" "),
-          _c("div", { staticClass: "light-bubble p-4 mx-auto" }, [
-            _c("img", {
-              attrs: { src: "/media/test-folder/webdevelop.png", width: "50px" }
-            })
-          ])
+        _c("div", { staticClass: "col-4 col-md-3 circle-light" }, [
+          _c(
+            "div",
+            {
+              staticClass: "pointer mx-auto",
+              staticStyle: { width: "fit-content" }
+            },
+            [
+              _c("div", { staticClass: "light-cable d-block mx-auto" }),
+              _vm._v(" "),
+              _c("div", { staticClass: "light-bubble p-4" }, [
+                _c("img", {
+                  attrs: {
+                    src: "/media/test-folder/webdevelop.png",
+                    width: "50px"
+                  }
+                })
+              ]),
+              _vm._v(" "),
+              _c("div", { staticClass: "text-center light-title mt-2" }, [
+                _c(
+                  "h5",
+                  {
+                    staticStyle: {
+                      "font-family": "Rambla",
+                      "font-weight": "bold",
+                      color: "#444"
+                    }
+                  },
+                  [
+                    _vm._v(
+                      "\n                        Website\n                    "
+                    )
+                  ]
+                )
+              ])
+            ]
+          )
         ]),
         _vm._v(" "),
-        _c("div", { staticClass: "col-3 pointer circle-light" }, [
-          _c("div", { staticClass: "light-cable d-block mx-auto" }),
-          _vm._v(" "),
-          _c("div", { staticClass: "light-bubble active p-4 mx-auto" }, [
-            _c("img", {
-              attrs: { src: "/media/test-folder/mobileapp.png", width: "50px" }
-            })
-          ])
+        _c("div", { staticClass: "col-4 col-md-3 active circle-light" }, [
+          _c(
+            "div",
+            {
+              staticClass: "pointer mx-auto",
+              staticStyle: { width: "fit-content" }
+            },
+            [
+              _c("div", { staticClass: "light-cable d-block mx-auto" }),
+              _vm._v(" "),
+              _c("div", { staticClass: "light-bubble p-4" }, [
+                _c("img", {
+                  attrs: {
+                    src: "/media/test-folder/mobileapp.png",
+                    width: "50px"
+                  }
+                })
+              ]),
+              _vm._v(" "),
+              _c("div", { staticClass: "text-center light-title mt-2" }, [
+                _c("h5", [
+                  _vm._v(
+                    "\n                        Mobile App\n                    "
+                  )
+                ])
+              ])
+            ]
+          )
         ])
       ]),
       _vm._v(" "),
-      _c("div", [
+      _c("div", { staticClass: "px-3" }, [
         _c(
           "h3",
           {
@@ -41250,31 +41422,138 @@ var staticRenderFns = [
         ])
       ]),
       _vm._v(" "),
-      _c("div", { staticClass: "row sampleweb my-5 py-5" }, [
-        _c("div", { staticClass: "col-3 position-relative pt-5" }, [
-          _c("div", { staticClass: "col-5 position-absolute p-4" }, [
-            _c(
-              "h3",
-              {
-                staticClass: "mb-3",
-                staticStyle: {
-                  "font-family": "Rambla",
-                  "font-weight": "bold",
-                  "text-shadow": "0 0 1px",
-                  color: "#222222",
-                  "font-size": "25px"
+      _c("div", { staticClass: "row sampleweb my-0 my-lg-5 py-5" }, [
+        _c(
+          "div",
+          { staticClass: "col-12 col-lg-9 p-lg-0 px-4 order-0 order-lg-1" },
+          [
+            _c("div", { staticClass: "sampleweb-image" }, [
+              _c("img", {
+                attrs: {
+                  src: "/media/test-folder/sampleweb.jpg",
+                  width: "100%"
                 }
-              },
-              [_vm._v("\n                    Foodme App\n                ")]
-            )
+              })
+            ])
+          ]
+        ),
+        _vm._v(" "),
+        _c(
+          "div",
+          {
+            staticClass:
+              "col-12 col-lg-3 order-1 order-lg-0 position-relative pt-5 pb-0 py-lg-5",
+            attrs: { dir: "ltr" }
+          },
+          [
+            _c("div", { staticClass: "p-lg-5 px-4 webtext" }, [
+              _c("h3", { staticClass: "mb-3 webtext-title" }, [
+                _vm._v("\n                    Foodme App\n                ")
+              ]),
+              _vm._v(" "),
+              _c("div", [
+                _c("p", { staticClass: "team-desc" }, [
+                  _vm._v(
+                    "\n                        Lorem ipsum dolor sit amet, consectetur adipisicing elit. Ab cumque dolores ea, et\n                        laboriosam non quia? Ad earum facilis illo optio, quis quo sapiente sint. A accusantium\n                        aliquam expedita in.\n                    "
+                  )
+                ]),
+                _vm._v(" "),
+                _c("p", { staticClass: "team-desc" }, [
+                  _vm._v(
+                    "\n                        Lorem ipsum dolor sit amet, consectetur adipisicing elit. Ad earum facilis illo optio, quis\n                        quo sapiente sint. A accusantium\n                        aliquam expedita in.\n                    "
+                  )
+                ])
+              ])
+            ])
+          ]
+        )
+      ]),
+      _vm._v(" "),
+      _c("div", { staticClass: "row sampleweb my-0 my-lg-5 py-5" }, [
+        _c("div", { staticClass: "col-12 col-lg-9 p-lg-0 px-4 order-0" }, [
+          _c("div", { staticClass: "sampleweb-image" }, [
+            _c("img", {
+              attrs: { src: "/media/test-folder/sampleweb2.png", width: "100%" }
+            })
           ])
         ]),
         _vm._v(" "),
-        _c("div", { staticClass: "col-9 p-0 sampleweb-image" }, [
-          _c("img", {
-            attrs: { src: "/media/test-folder/sampleweb.jpg", width: "100%" }
-          })
-        ])
+        _c(
+          "div",
+          {
+            staticClass:
+              "col-12 col-lg-3 order-1 position-relative pt-5 pb-0 py-lg-5",
+            attrs: { dir: "rtl" }
+          },
+          [
+            _c("div", { staticClass: "p-lg-5 px-4 webtext" }, [
+              _c("h3", { staticClass: "mb-3 webtext-title" }, [
+                _vm._v("\n                    Shaypoor App\n                ")
+              ]),
+              _vm._v(" "),
+              _c("div", [
+                _c("p", { staticClass: "team-desc" }, [
+                  _vm._v(
+                    "\n                        Lorem ipsum dolor sit amet, consectetur adipisicing elit. Ab cumque dolores ea, et\n                        laboriosam non quia? Ad earum facilis illo optio, quis quo sapiente sint. A accusantium\n                        aliquam expedita in.\n                    "
+                  )
+                ]),
+                _vm._v(" "),
+                _c("p", { staticClass: "team-desc" }, [
+                  _vm._v(
+                    "\n                        Lorem ipsum dolor sit amet, consectetur adipisicing elit. Ad earum facilis illo optio, quis\n                        quo sapiente sint. A accusantium\n                        aliquam expedita in.\n                    "
+                  )
+                ])
+              ])
+            ])
+          ]
+        )
+      ]),
+      _vm._v(" "),
+      _c("div", { staticClass: "row sampleweb my-0 my-lg-5 py-5" }, [
+        _c(
+          "div",
+          { staticClass: "col-12 col-lg-9 p-lg-0 px-4 order-0 order-lg-1" },
+          [
+            _c("div", { staticClass: "sampleweb-image" }, [
+              _c("img", {
+                attrs: {
+                  src: "/media/test-folder/sampleweb3.png",
+                  width: "100%"
+                }
+              })
+            ])
+          ]
+        ),
+        _vm._v(" "),
+        _c(
+          "div",
+          {
+            staticClass:
+              "col-12 col-lg-3 order-1 order-lg-0 position-relative pt-5 pb-0 py-lg-5",
+            attrs: { dir: "ltr" }
+          },
+          [
+            _c("div", { staticClass: "p-lg-5 px-4 webtext" }, [
+              _c("h3", { staticClass: "mb-3 webtext-title" }, [
+                _vm._v("\n                    Digikala App\n                ")
+              ]),
+              _vm._v(" "),
+              _c("div", [
+                _c("p", { staticClass: "team-desc" }, [
+                  _vm._v(
+                    "\n                        Lorem ipsum dolor sit amet, consectetur adipisicing elit. Ab cumque dolores ea, et\n                        laboriosam non quia? Ad earum facilis illo optio, quis quo sapiente sint. A accusantium\n                        aliquam expedita in.\n                    "
+                  )
+                ]),
+                _vm._v(" "),
+                _c("p", { staticClass: "team-desc" }, [
+                  _vm._v(
+                    "\n                        Lorem ipsum dolor sit amet, consectetur adipisicing elit. Ad earum facilis illo optio, quis\n                        quo sapiente sint. A accusantium\n                        aliquam expedita in.\n                    "
+                  )
+                ])
+              ])
+            ])
+          ]
+        )
       ])
     ])
   }

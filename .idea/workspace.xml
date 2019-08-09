@@ -2,20 +2,11 @@
 <project version="4">
   <component name="ChangeListManager">
     <list default="true" id="05be8892-b055-4ae8-8c13-c00743953418" name="Default Changelist" comment="">
-      <change afterPath="$PROJECT_DIR$/.idea/vcs.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/app/Http/Controllers/Website/PagesController.php" beforeDir="false" afterPath="$PROJECT_DIR$/app/Http/Controllers/Website/PagesController.php" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/public/js/app.js" beforeDir="false" afterPath="$PROJECT_DIR$/public/js/app.js" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/public/media/test-folder/banner.png" beforeDir="false" afterPath="$PROJECT_DIR$/public/media/test-folder/banner.png" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/resources/js/app.js" beforeDir="false" afterPath="$PROJECT_DIR$/resources/js/app.js" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/resources/views/website/layouts/header.blade.php" beforeDir="false" afterPath="$PROJECT_DIR$/resources/views/website/layouts/header.blade.php" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/resources/js/components/web/pages/OurPortfolio.vue" beforeDir="false" afterPath="$PROJECT_DIR$/resources/js/components/web/pages/OurPortfolio.vue" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/resources/sass/app.scss" beforeDir="false" afterPath="$PROJECT_DIR$/resources/sass/app.scss" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/resources/views/website/layouts/footer.blade.php" beforeDir="false" afterPath="$PROJECT_DIR$/resources/views/website/layouts/footer.blade.php" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/resources/views/website/pages/contactus.blade.php" beforeDir="false" afterPath="$PROJECT_DIR$/resources/views/website/pages/contactus.blade.php" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/resources/views/website/pages/firstpage.blade.php" beforeDir="false" afterPath="$PROJECT_DIR$/resources/views/website/pages/firstpage.blade.php" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/routes/web.php" beforeDir="false" afterPath="$PROJECT_DIR$/routes/web.php" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/storage/framework/sessions/O8wTWcey5haxMacOPIII3jSARtDbglemQ0IhAv8H" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/storage/framework/sessions/S669S5xEJ5iS85PNdztNSgENhspzW985VFMXSFTK" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/storage/framework/sessions/soVXQVThQQtv9pcfpkeEZ5A2FDpyaITuP4zy6I1Q" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/storage/framework/views/8d9b311d3d8145136fad72aec4451ebe0a58c562.php" beforeDir="false" afterPath="$PROJECT_DIR$/storage/framework/views/8d9b311d3d8145136fad72aec4451ebe0a58c562.php" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/storage/framework/views/cb7d455023c17638d529cdccaafb76e4a06e2bc4.php" beforeDir="false" afterPath="$PROJECT_DIR$/storage/framework/views/cb7d455023c17638d529cdccaafb76e4a06e2bc4.php" afterDir="false" />
     </list>
     <ignored path="$PROJECT_DIR$/node_modules/" />
     <option name="EXCLUDED_CONVERTED_TO_IGNORED" value="true" />
@@ -62,8 +53,23 @@
       <file pinned="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/resources/sass/app.scss">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="399">
-              <caret line="21" column="2" selection-start-line="21" selection-start-column="2" selection-end-line="21" selection-end-column="20" />
+            <state relative-caret-position="318">
+              <caret line="115" column="3" selection-start-line="115" selection-start-column="3" selection-end-line="115" selection-end-column="3" />
+            </state>
+          </provider>
+        </entry>
+      </file>
+      <file pinned="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/resources/views/website/pages/contactus.blade.php">
+          <provider selected="true" editor-type-id="text-editor">
+            <state relative-caret-position="133">
+              <caret line="72" column="70" selection-start-line="72" selection-start-column="70" selection-end-line="72" selection-end-column="70" />
+              <folding>
+                <element signature="e#387#482#0#HTML" expanded="true" />
+                <element signature="e#536#593#0#HTML" expanded="true" />
+                <element signature="e#1016#2774#0#HTML" />
+                <element signature="e#3226#3268#0#HTML" expanded="true" />
+              </folding>
             </state>
           </provider>
         </entry>
@@ -95,33 +101,46 @@
           </provider>
         </entry>
       </file>
-      <file pinned="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/resources/js/firstpage.js">
-          <provider selected="true" editor-type-id="text-editor" />
-        </entry>
-      </file>
-      <file pinned="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/resources/js/customer.js">
-          <provider selected="true" editor-type-id="text-editor" />
-        </entry>
-      </file>
-      <file pinned="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/resources/js/app.js">
+      <file pinned="false" current-in-tab="true">
+        <entry file="file://$PROJECT_DIR$/resources/js/components/web/pages/OurPortfolio.vue">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="342">
-              <caret line="18" column="75" selection-start-line="18" selection-start-column="63" selection-end-line="18" selection-end-column="75" />
+            <state relative-caret-position="247">
+              <caret line="55" column="24" selection-start-line="55" selection-start-column="24" selection-end-line="55" selection-end-column="24" />
+              <folding>
+                <element signature="n#style#0;n#div#0;n#div#0;n#div#0;n#div#0;n#template#0;n#!!top" expanded="true" />
+                <element signature="n#style#0;n#h5#0;n#div#2;n#div#0;n#div#0;n#div#0;n#template#0;n#!!top" expanded="true" />
+                <element signature="n#style#0;n#div#0;n#div#1;n#div#0;n#div#0;n#template#0;n#!!top" expanded="true" />
+                <element signature="n#style#0;n#h5#0;n#div#2;n#div#1;n#div#0;n#div#0;n#template#0;n#!!top" expanded="true" />
+                <element signature="n#style#0;n#div#0;n#div#2;n#div#0;n#div#0;n#template#0;n#!!top" expanded="true" />
+                <element signature="n#style#0;n#h3#0;n#div#1;n#div#0;n#template#0;n#!!top" expanded="true" />
+                <element signature="n#div#2;n#div#0;n#template#0;n#!!top" />
+                <element signature="n#div#3;n#div#0;n#template#0;n#!!top" />
+                <element signature="n#div#4;n#div#0;n#template#0;n#!!top" />
+                <element signature="n#div#1;n#div#4;n#div#0;n#template#0;n#!!top" />
+              </folding>
             </state>
           </provider>
         </entry>
       </file>
-      <file pinned="false" current-in-tab="true">
-        <entry file="file://$PROJECT_DIR$/resources/js/components/web/pages/OurPortfolio.vue">
+      <file pinned="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/resources/views/website/pages/firstpage.blade.php">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="285">
-              <caret line="105" column="33" selection-start-line="105" selection-start-column="33" selection-end-line="105" selection-end-column="33" />
+            <state relative-caret-position="-152">
+              <caret line="429" column="47" selection-start-line="429" selection-start-column="47" selection-end-line="429" selection-end-column="47" />
               <folding>
-                <element signature="n#div#1;n#div#0;n#template#0;n#!!top" />
-                <element signature="n#style#0;n#h3#0;n#div#0;n#div#0;n#div#2;n#div#0;n#template#0;n#!!top" expanded="true" />
+                <element signature="e#1869#1970#0#HTML" expanded="true" />
+                <element signature="e#2214#2240#0#HTML" expanded="true" />
+                <element signature="e#4691#13458#0#HTML" />
+                <element signature="e#14210#14236#0#HTML" expanded="true" />
+                <element signature="e#15602#15628#0#HTML" expanded="true" />
+                <element signature="e#16244#16270#0#HTML" expanded="true" />
+                <element signature="e#16860#16886#0#HTML" expanded="true" />
+                <element signature="e#17462#17488#0#HTML" expanded="true" />
+                <element signature="e#17871#17945#0#HTML" expanded="true" />
+                <element signature="e#18035#18117#0#HTML" expanded="true" />
+                <element signature="e#18163#18204#0#HTML" expanded="true" />
+                <element signature="e#18473#18499#0#HTML" expanded="true" />
+                <element signature="e#18617#18645#0#HTML" expanded="true" />
               </folding>
             </state>
           </provider>
@@ -144,6 +163,9 @@
       <find>3px</find>
       <find>pt-1</find>
       <find>px-1</find>
+      <find>md</find>
+      <find>mr-3</find>
+      <find>sm</find>
     </findStrings>
     <replaceStrings>
       <replace>nav-link pl-3 pl-lg-0</replace>
@@ -152,6 +174,8 @@
       <replace>2px</replace>
       <replace>lg</replace>
       <replace>px-2</replace>
+      <replace>mx-auto</replace>
+      <replace>md</replace>
     </replaceStrings>
   </component>
   <component name="Git.Settings">
@@ -169,19 +193,19 @@
         <option value="$PROJECT_DIR$/package.json" />
         <option value="$PROJECT_DIR$/resources/sass/firstpage.scss" />
         <option value="$PROJECT_DIR$/resources/sass/fonts.scss" />
-        <option value="$PROJECT_DIR$/resources/views/website/layouts/footer.blade.php" />
         <option value="$PROJECT_DIR$/resources/views/website/layouts/main.blade.php" />
         <option value="$PROJECT_DIR$/resources/views/website/pages/programmerteam.blade.php" />
-        <option value="$PROJECT_DIR$/resources/sass/app.scss" />
-        <option value="$PROJECT_DIR$/resources/views/website/pages/contactus.blade.php" />
         <option value="$PROJECT_DIR$/resources/views/website/pages/samplework.blade.php" />
         <option value="$PROJECT_DIR$/resources/views/website/layouts/header.blade.php" />
         <option value="$PROJECT_DIR$/routes/web.php" />
         <option value="$PROJECT_DIR$/app/Http/Controllers/Website/PagesController.php" />
         <option value="$PROJECT_DIR$/resources/views/website/pages/aboutafrang.blade.php" />
-        <option value="$PROJECT_DIR$/resources/views/website/pages/firstpage.blade.php" />
         <option value="$PROJECT_DIR$/resources/views/website/pages/portfolio.blade.php" />
         <option value="$PROJECT_DIR$/resources/js/app.js" />
+        <option value="$PROJECT_DIR$/resources/views/website/pages/firstpage.blade.php" />
+        <option value="$PROJECT_DIR$/resources/views/website/layouts/footer.blade.php" />
+        <option value="$PROJECT_DIR$/resources/sass/app.scss" />
+        <option value="$PROJECT_DIR$/resources/views/website/pages/contactus.blade.php" />
         <option value="$PROJECT_DIR$/resources/js/components/web/pages/OurPortfolio.vue" />
       </list>
     </option>
@@ -300,7 +324,6 @@
       <foldersAlwaysOnTop value="true" />
     </navigator>
     <panes>
-      <pane id="Scope" />
       <pane id="ProjectPane">
         <subPane>
           <expand>
@@ -431,6 +454,7 @@
           <select />
         </subPane>
       </pane>
+      <pane id="Scope" />
     </panes>
   </component>
   <component name="PropertiesComponent">
@@ -442,7 +466,7 @@
     <property name="WebServerToolWindowPanel.toolwindow.show.date" value="false" />
     <property name="WebServerToolWindowPanel.toolwindow.show.permissions" value="false" />
     <property name="WebServerToolWindowPanel.toolwindow.show.size" value="false" />
-    <property name="last_opened_file_path" value="$PROJECT_DIR$/../somo" />
+    <property name="last_opened_file_path" value="$PROJECT_DIR$" />
     <property name="nodejs_interpreter_path.stuck_in_default_project" value="undefined stuck path" />
     <property name="nodejs_npm_path_reset_for_default_project" value="true" />
     <property name="nodejs_package_manager_path" value="npm" />
@@ -493,16 +517,17 @@
       <workItem from="1565201367017" duration="319000" />
       <workItem from="1565249534343" duration="15302000" />
       <workItem from="1565282061541" duration="568000" />
+      <workItem from="1565329563515" duration="11916000" />
     </task>
     <servers />
   </component>
   <component name="TimeTrackingManager">
-    <option name="totallyTimeSpent" value="80014000" />
+    <option name="totallyTimeSpent" value="91930000" />
   </component>
   <component name="ToolWindowManager">
     <frame x="-8" y="-8" width="1382" height="744" extended-state="6" />
     <layout>
-      <window_info active="true" content_ui="combo" id="Project" order="0" visible="true" weight="0.22692889" />
+      <window_info content_ui="combo" id="Project" order="0" visible="true" weight="0.22995462" />
       <window_info id="Structure" order="1" side_tool="true" weight="0.25" />
       <window_info id="npm" order="2" side_tool="true" />
       <window_info id="Favorites" order="3" side_tool="true" />
@@ -517,7 +542,7 @@
       <window_info anchor="bottom" id="Version Control" order="8" />
       <window_info anchor="bottom" id="Database Changes" order="9" />
       <window_info anchor="bottom" id="Event Log" order="10" side_tool="true" />
-      <window_info anchor="bottom" id="Terminal" order="11" weight="0.37213114" />
+      <window_info anchor="bottom" id="Terminal" order="11" weight="0.37171054" />
       <window_info anchor="right" id="Commander" internal_type="SLIDING" order="0" type="SLIDING" weight="0.4" />
       <window_info anchor="right" id="Ant Build" order="1" weight="0.25" />
       <window_info anchor="right" content_ui="combo" id="Hierarchy" order="2" weight="0.25" />
@@ -631,13 +656,6 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/resources/views/website/layouts/footer.blade.php">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="2432">
-          <caret line="128" column="22" selection-start-line="86" selection-start-column="15" selection-end-line="128" selection-end-column="22" />
-        </state>
-      </provider>
-    </entry>
     <entry file="file://$PROJECT_DIR$/readme.md">
       <provider selected="true" editor-type-id="split-provider[text-editor;markdown-preview-editor]">
         <state split_layout="SPLIT">
@@ -645,13 +663,6 @@
             <caret line="71" column="10" lean-forward="true" selection-start-line="71" selection-start-column="10" selection-end-line="71" selection-end-column="10" />
           </first_editor>
           <second_editor />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/resources/views/website/pages/contactus.blade.php">
-      <provider selected="true" editor-type-id="text-editor">
-        <state>
-          <caret column="32" lean-forward="true" selection-start-column="32" selection-end-column="32" />
         </state>
       </provider>
     </entry>
@@ -679,36 +690,10 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/resources/views/website/pages/firstpage.blade.php">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="404">
-          <caret line="58" column="14" lean-forward="true" selection-start-line="58" selection-start-column="14" selection-end-line="58" selection-end-column="14" />
-          <folding>
-            <element signature="e#1360#1433#0#HTML" expanded="true" />
-            <element signature="e#1498#1546#0#HTML" expanded="true" />
-            <element signature="e#1593#1694#0#HTML" expanded="true" />
-            <element signature="e#1800#1901#0#HTML" expanded="true" />
-            <element signature="e#1168#1244#0#HTML" expanded="true" />
-            <element signature="e#1163#3573#0#HTML" />
-            <element signature="e#3614#12381#0#HTML" />
-            <element signature="e#12420#13564#0#HTML" />
-            <element signature="e#13600#16753#0#HTML" />
-            <element signature="e#16789#17353#0#HTML" />
-          </folding>
-        </state>
-      </provider>
-    </entry>
     <entry file="file://$PROJECT_DIR$/resources/views/website/layouts/header.blade.php">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="76">
           <caret line="25" column="77" selection-start-line="25" selection-start-column="68" selection-end-line="25" selection-end-column="77" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/resources/sass/app.scss">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="399">
-          <caret line="21" column="2" selection-start-line="21" selection-start-column="2" selection-end-line="21" selection-end-column="20" />
         </state>
       </provider>
     </entry>
@@ -726,13 +711,6 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/resources/views/website/pages/portfolio.blade.php">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="437">
-          <caret line="23" column="22" selection-start-line="17" selection-start-column="16" selection-end-line="23" selection-end-column="22" />
-        </state>
-      </provider>
-    </entry>
     <entry file="file://$PROJECT_DIR$/resources/js/firstpage.js">
       <provider selected="true" editor-type-id="text-editor" />
     </entry>
@@ -746,13 +724,80 @@
         </state>
       </provider>
     </entry>
+    <entry file="file://$PROJECT_DIR$/resources/views/website/pages/firstpage.blade.php">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="-152">
+          <caret line="429" column="47" selection-start-line="429" selection-start-column="47" selection-end-line="429" selection-end-column="47" />
+          <folding>
+            <element signature="e#1869#1970#0#HTML" expanded="true" />
+            <element signature="e#2214#2240#0#HTML" expanded="true" />
+            <element signature="e#4691#13458#0#HTML" />
+            <element signature="e#14210#14236#0#HTML" expanded="true" />
+            <element signature="e#15602#15628#0#HTML" expanded="true" />
+            <element signature="e#16244#16270#0#HTML" expanded="true" />
+            <element signature="e#16860#16886#0#HTML" expanded="true" />
+            <element signature="e#17462#17488#0#HTML" expanded="true" />
+            <element signature="e#17871#17945#0#HTML" expanded="true" />
+            <element signature="e#18035#18117#0#HTML" expanded="true" />
+            <element signature="e#18163#18204#0#HTML" expanded="true" />
+            <element signature="e#18473#18499#0#HTML" expanded="true" />
+            <element signature="e#18617#18645#0#HTML" expanded="true" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/resources/views/website/layouts/footer.blade.php">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="303">
+          <caret line="135" column="12" lean-forward="true" selection-start-line="135" selection-start-column="12" selection-end-line="135" selection-end-column="12" />
+          <folding>
+            <element signature="n#style#0;n#div#1;n#!!top" expanded="true" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/resources/sass/app.scss">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="318">
+          <caret line="115" column="3" selection-start-line="115" selection-start-column="3" selection-end-line="115" selection-end-column="3" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/resources/views/website/pages/contactus.blade.php">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="133">
+          <caret line="72" column="70" selection-start-line="72" selection-start-column="70" selection-end-line="72" selection-end-column="70" />
+          <folding>
+            <element signature="e#387#482#0#HTML" expanded="true" />
+            <element signature="e#536#593#0#HTML" expanded="true" />
+            <element signature="e#1016#2774#0#HTML" />
+            <element signature="e#3226#3268#0#HTML" expanded="true" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/resources/views/website/pages/portfolio.blade.php">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="437">
+          <caret line="23" column="22" selection-start-line="17" selection-start-column="16" selection-end-line="23" selection-end-column="22" />
+        </state>
+      </provider>
+    </entry>
     <entry file="file://$PROJECT_DIR$/resources/js/components/web/pages/OurPortfolio.vue">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="285">
-          <caret line="105" column="33" selection-start-line="105" selection-start-column="33" selection-end-line="105" selection-end-column="33" />
+        <state relative-caret-position="247">
+          <caret line="55" column="24" selection-start-line="55" selection-start-column="24" selection-end-line="55" selection-end-column="24" />
           <folding>
-            <element signature="n#div#1;n#div#0;n#template#0;n#!!top" />
-            <element signature="n#style#0;n#h3#0;n#div#0;n#div#0;n#div#2;n#div#0;n#template#0;n#!!top" expanded="true" />
+            <element signature="n#style#0;n#div#0;n#div#0;n#div#0;n#div#0;n#template#0;n#!!top" expanded="true" />
+            <element signature="n#style#0;n#h5#0;n#div#2;n#div#0;n#div#0;n#div#0;n#template#0;n#!!top" expanded="true" />
+            <element signature="n#style#0;n#div#0;n#div#1;n#div#0;n#div#0;n#template#0;n#!!top" expanded="true" />
+            <element signature="n#style#0;n#h5#0;n#div#2;n#div#1;n#div#0;n#div#0;n#template#0;n#!!top" expanded="true" />
+            <element signature="n#style#0;n#div#0;n#div#2;n#div#0;n#div#0;n#template#0;n#!!top" expanded="true" />
+            <element signature="n#style#0;n#h3#0;n#div#1;n#div#0;n#template#0;n#!!top" expanded="true" />
+            <element signature="n#div#2;n#div#0;n#template#0;n#!!top" />
+            <element signature="n#div#3;n#div#0;n#template#0;n#!!top" />
+            <element signature="n#div#4;n#div#0;n#template#0;n#!!top" />
+            <element signature="n#div#1;n#div#4;n#div#0;n#template#0;n#!!top" />
           </folding>
         </state>
       </provider>

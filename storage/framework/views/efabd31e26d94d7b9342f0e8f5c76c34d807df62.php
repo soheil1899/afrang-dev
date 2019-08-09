@@ -10,8 +10,8 @@
     <div dir="ltr" class="shadow-sm container-fluid py-5" style="background-color: #fff;">
         <div class="row mx-0">
             <div class="col-12 order-1 order-lg-0 col-lg-5" style=" padding-top: 60px; padding-left: 60px; ">
-                <h3 class="mb-3 pl-2"
-                    style="border-left:4px solid #e84a60; font-family: Rambla; font-weight: bold; text-shadow: 0 0 1px; color: #222222; font-size: 40px">
+                <h3 class="mb-3"
+                    style="font-family: Rambla; font-weight: bold; text-shadow: 0 0 1px; color: #222222; font-size: 40px">
                     About Afrang
                 </h3>
                 <div>

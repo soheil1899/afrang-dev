@@ -10,54 +10,62 @@
 
 
 
+    
+    
+    
+    
+    
+    
+    
+    
+    
 
 
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
 
 
+    
 
 
+    
 
 
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-<div dir="ltr" class="shadow-sm container-fluid" style="padding-top: 60px; padding-bottom: 100px;background-color: #fff;">
-    <div class="row mx-0">
-        <div class="col-12 order-1 order-lg-0 col-lg-5" style=" padding-top: 60px; padding-left: 60px; ">
-            <h3 class="mb-5 text-center text-lg-left"
-                style="font-family: Rambla; font-weight: bold; text-shadow: 0 0 1px; color: #222222; font-size: 40px">
-                CREATE YOUR OWN BUSINESS
-            </h3>
-            <h3 class="mb-3 text-center text-lg-left"
-                style="font-family: Rambla; font-weight: bold; text-shadow: 0 0 1px; color: #1b1667; font-size: 25px">
-                Special Offer For Summer
-            </h3>
-        </div>
-        <div class="col-12 order-0 order-lg-1 col-lg-7">
-            <img src="/media/test-folder/banner.png" width="100%">
+    <div dir="ltr" class="shadow-sm container-fluid"
+         style="padding-top: 60px; padding-bottom: 100px;background-color: #fff;">
+        <div class="row mx-0">
+            <div class="col-12 order-1 order-lg-0 col-lg-5" style=" padding-top: 60px; padding-left: 60px; ">
+                <h3 class="mb-5 text-center text-lg-left"
+                    style="font-family: Rambla; font-weight: bold; text-shadow: 0 0 1px; color: #222222; font-size: 40px">
+                    CREATE YOUR OWN BUSINESS
+                </h3>
+                <h3 class="mb-3 text-center text-lg-left"
+                    style="font-family: Rambla; font-weight: bold; text-shadow: 0 0 1px; color: #1b75bb; font-size: 25px">
+                    Special Offer For Summer
+                </h3>
+                <a class="text-center text-lg-left d-block">
+                    <button style="font-family: ACME;" type="button"
+                            class="btn btn-lg btn-outline-primary">
+                        <i class="far fa-hand-point-right"></i>
+                        Order Now
+                    </button>
+                </a>
+            </div>
+            <div class="col-12 order-0 order-lg-1 col-lg-7">
+                <img src="/media/test-folder/banner.png" width="100%">
+            </div>
         </div>
     </div>
-</div>
 
 
 
@@ -65,7 +73,7 @@
     <div style="padding-top: 150px; padding-bottom: 150px; background-color: #f1f3f5" class="shadow-sm" dir="ltr">
         <div class="container">
             <div class="row">
-                <div class="col-12 col-md-4 px-5 text-center">
+                <div class="col-12 mb-5 mb-lg-0 col-md-4 px-5 text-center">
                     <div class="pb-4 row m-0 d-block text-center">
                         <img style="opacity: 0.9" src="/media/test-folder/website.png" width="70%">
                     </div>
@@ -79,7 +87,7 @@
                         </p>
                     </div>
                 </div>
-                <div class="col-12 col-md-4 px-5 text-center">
+                <div class="col-12 col-md-4 mb-5 mb-lg-0 px-5 text-center">
                     <div class="row pb-4 m-0 d-block text-center">
                         <img style="opacity: 0.9" src="/media/test-folder/application.png" width="70%">
                     </div>
@@ -342,7 +350,9 @@
     
     <div style="padding-top: 150px; padding-bottom: 150px;background-color: #f1f3f5" class="shadow-sm" dir="ltr">
         <div class="container text-center">
-            <img src="/media/test-folder/sitelogo.png" class="mb-5">
+            <div style="width: fit-content" class="mx-auto px-3">
+                <img src="/media/test-folder/sitelogo.png" class="mb-5" width="100%">
+            </div>
             <div class="px-5">
                 <p style="font-size: 15px">
                     Lorem ipsum dolor sit amet, ei dicant commune eos, probo noluisse molestiae vel ei. Ius praesent
@@ -367,11 +377,13 @@
     
     <div style="padding-bottom: 150px; padding-top: 150px;" class="shadow-sm" dir="ltr">
         <div class="container">
-            <div class="row m-0">
+            <div class="row m-0 justify-content-around">
 
 
                 <div class="team-info col-6 col-lg-3 p-3 text-center">
-                    <img class="pointer team-img mb-4" src="/media/test-folder/bill.jpg">
+                    <div class="mx-auto" style="width: fit-content">
+                        <img class="pointer team-img mb-4" src="/media/test-folder/bill.jpg" width="100%">
+                    </div>
                     <h5><strong>Bill Gates</strong></h5>
                     <small>Back-End Developer</small>
                     <div class="py-2">
@@ -381,7 +393,9 @@
 
                 </div>
                 <div class="team-info col-6 col-lg-3 p-3 text-center">
-                    <img class="pointer team-img mb-4" src="/media/test-folder/mark.jpg">
+                    <div class="mx-auto" style="width: fit-content">
+                        <img class="pointer team-img mb-4" src="/media/test-folder/mark.jpg" width="100%">
+                    </div>
                     <h5><strong>Mark Zuckerberg</strong></h5>
                     <small>Front-End Developer</small>
                     <div class="py-2">
@@ -390,7 +404,9 @@
                     </div>
                 </div>
                 <div class="team-info col-6 col-lg-3 p-3 text-center">
-                    <img class="pointer team-img mb-4" src="/media/test-folder/evan.jpg">
+                    <div class="mx-auto" style="width: fit-content">
+                        <img class="pointer team-img mb-4" src="/media/test-folder/evan.jpg" width="100%">
+                    </div>
                     <h5><strong>Evan You</strong></h5>
                     <small>GUI Designer</small>
                     <div class="py-2">
@@ -399,7 +415,9 @@
                     </div>
                 </div>
                 <div class="team-info col-6 col-lg-3 p-3 text-center">
-                    <img class="pointer team-img mb-4" src="/media/test-folder/jobs.jpg">
+                    <div class="mx-auto" style="width: fit-content">
+                        <img class="pointer team-img mb-4" src="/media/test-folder/jobs.jpg" width="100%">
+                    </div>
                     <h5><strong>Steve Jobs</strong></h5>
                     <small>SEO Specialist</small>
                     <div class="py-2">
@@ -407,7 +425,8 @@
                         <i class="fab fa-instagram fa-2x pointer"></i>
                     </div>
                 </div>
-                <p class="text-justify" style="font-size: 15px">
+                <div class="px-4">
+                <p class="team-desc text-center">
                     Lorem ipsum dolor sit amet, ei dicant commune eos, probo noluisse molestiae vel ei. Ius praesent
                     theophrastus eu. Ea his labores placerat fabellas, nulla primis at his, veri impetus mentitum ea
                     duo. At
@@ -422,7 +441,7 @@
                     legimus.
                 </p>
 
-
+                </div>
             </div>
 
 
@@ -434,10 +453,12 @@
     <div style="padding-bottom: 80px; padding-top: 80px; background-color: #f1f3f5" class="shadow-sm" dir="ltr">
         <div class="container text-center">
             <h1 style="text-shadow: 0 0 2px;font-family: ACME;font-weight: bold; font-size: 35pt;">SPECIAL OFFER FOR <b
-                        style="font-family: ACME; color: #f95b5b">IRANIAN</b> CUSTOMER</h1>
-            <a class="pointer btn btn-lg btn-primary mt-5 px-5" style="color: #fff">
-                <i class="fas fa-check"></i>
-                ORDER NOW
+                        style="font-family: ACME; color: #33be54">IRANIAN</b> CUSTOMER</h1>
+            <a class="mt-5 d-block mx-auto" style="width: fit-content">
+                <button type="button" class="btn btn-lg btn-outline-success px-5" style="font-family: Rambla;">
+                    <i class="fas fa-check"></i>
+                    ORDER NOW
+                </button>
             </a>
 
         </div>

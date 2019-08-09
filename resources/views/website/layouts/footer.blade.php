@@ -14,13 +14,13 @@
                 </p>
             </div>
             <div class="col-12 col-md-5 col-lg-3 px-4">
-                <h4 class="mb-4" style="color: #f5f5f5; font-family: Rambla">
+                <h4 class="mb-4 mt-5 mt-lg-0" style="color: #f5f5f5; font-family: Rambla">
                     Keep Connected
                 </h4>
 
                 <div class="row m-0">
                     <div class="col-3 p-0">
-                        <div class="py-2 text-center mb-2 mr-3 pointer" style="border-radius: 50%; background-color: #56ADF0; width: 35px; height: 35px">
+                        <div class="py-2 text-center mb-2 mx-auto pointer" style="border-radius: 50%; background-color: #56ADF0; width: 35px; height: 35px">
                             <i class="fab fa-twitter fa-lg" style="color: #fff"></i>
                         </div>
                     </div>
@@ -31,7 +31,7 @@
                 </div>
                 <div class="row m-0">
                     <div class="col-3 p-0">
-                        <div class="py-2 text-center mb-2 mr-3 pointer" style="border-radius: 50%; background-color: #EB375F; width: 35px; height: 35px">
+                        <div class="py-2 text-center mb-2 mx-auto pointer" style="border-radius: 50%; background-color: #EB375F; width: 35px; height: 35px">
                             <i class="fab fa-instagram fa-lg" style="color: #fff"></i>
                         </div>
                     </div>
@@ -42,7 +42,7 @@
                 </div>
                 <div class="row m-0">
                     <div class="col-3 p-0">
-                        <div class="py-2 text-center mb-2 mr-3 pointer" style="border-radius: 50%; background-color: #3C5995; width: 35px; height: 35px">
+                        <div class="py-2 text-center mb-2 mx-auto pointer" style="border-radius: 50%; background-color: #3C5995; width: 35px; height: 35px">
                             <i class="fab fa-facebook-f fa-lg" style="color: #fff"></i>
                         </div>
                     </div>
@@ -53,7 +53,7 @@
                 </div>
                 <div class="row m-0">
                     <div class="col-3 p-0">
-                        <div class="py-2 text-center mb-2 mr-3 pointer" style="border-radius: 50%; background-color: #D94B3E; width: 35px; height: 35px">
+                        <div class="py-2 text-center mb-2 mx-auto pointer" style="border-radius: 50%; background-color: #D94B3E; width: 35px; height: 35px">
                             <i class="fab fa-google-plus-g fa-lg" style="color: #fff"></i>
                         </div>
                     </div>
@@ -65,7 +65,7 @@
 
                 <div class="row m-0">
                     <div class="col-3 p-0">
-                        <div class="py-2 text-center mb-2 mr-3 pointer" style="border-radius: 50%; background-color: #00B6EC; width: 35px; height: 35px">
+                        <div class="py-2 text-center mb-2 mx-auto pointer" style="border-radius: 50%; background-color: #00B6EC; width: 35px; height: 35px">
                             <i class="fab fa-telegram-plane fa-lg" style="color: #fff"></i>
                         </div>
                     </div>
@@ -75,12 +75,12 @@
 
                 </div>
 
-                {{--                    <div class="py-2 text-center mb-2 mr-3 pointer" style="border-radius: 50%; background-color: #0A63BD; width: 35px; height: 35px">--}}
+                {{--                    <div class="py-2 text-center mb-2 mx-auto pointer" style="border-radius: 50%; background-color: #0A63BD; width: 35px; height: 35px">--}}
                 {{--                        <i class="fab fa-linkedin-in fa-lg" style="color: #fff"></i>--}}
                 {{--                    </div>--}}
             </div>
             <div class="col-12 col-md-7 col-lg-4 px-4">
-                <h4 class="mb-4" style="color: #f5f5f5; font-family: Rambla">
+                <h4 class="mb-4 mt-5 mt-lg-0" style="color: #f5f5f5; font-family: Rambla">
                     Contact Information
                 </h4>
 

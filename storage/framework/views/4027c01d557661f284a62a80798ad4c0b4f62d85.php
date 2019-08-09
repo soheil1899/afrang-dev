@@ -18,12 +18,12 @@
     </div>
 
 
-    <div class="position-relative container" style="height: 400px">
+    <div class="position-relative container contactus-item">
         <div class="row position-absolute" style=" top: -200px; width: 100%">
             <div dir="ltr" class="row col-10 mx-auto p-0"
                  style="overflow: hidden; height: fit-content; box-shadow: 0 2px 10px 2px #ddd; border-radius: 7px">
 
-                <div class="col-12 col-sm-7 p-5" style="background-color: #fff; color: #333">
+                <div class="col-12 order-lg-0 order-1 col-lg-7 p-5" style="background-color: #fff; color: #333">
                     <h5 class="mb-5 mt-3" style="font-family: Rambla">
                         Send us a Message
                     </h5>
@@ -62,7 +62,7 @@
                 </div>
 
 
-                <div class="col-12 col-sm-5 p-5" style="background-image: linear-gradient(#383d80, #030847); color: #fff">
+                <div class="col-12 col-lg-5 order-lg-1 order-0 p-5" style="background-image: linear-gradient(#383d80, #030847); color: #fff">
                     <h5 class="mb-5 mt-3" style="font-family: Rambla">
                         Contact Information
                     </h5>
