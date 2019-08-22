@@ -89,6 +89,7 @@ class MenuController
         $save->parent = $request->parent;
         $save->url = $request->url;
         $save->subname = $request->subname;
+        $save->save();
 
         Storage::disk('media')->makeDirectory('other/menu/' . $save->id);
         if ($request->image != 'undefined') {

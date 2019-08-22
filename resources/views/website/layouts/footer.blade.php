@@ -5,13 +5,11 @@
         <div class="row m-0">
             <div class="col-12 col-lg-5 px-4">
                 <h4 class="mb-4" style="color: #f5f5f5; font-family: Rambla">
-                    More About Afrang
+                    About Afrang
                 </h4>
-                <p style="color: #ddd;">
-                    Lorem ipsum dolor sit amet, consectetur adipisicing elit. Accusamus doloribus magnam praesentium
-                    rerum tempora ullam. Atque cumque dolorum mollitia nesciunt nihil obcaecati possimus quia
-                    repudiandae suscipit voluptas. Rem, vero voluptatum?
-                </p>
+                <articleshow :id="14" :flag="'footer'"></articleshow>
+
+
             </div>
             <div class="col-12 col-md-5 col-lg-3 px-4">
                 <h4 class="mb-4 mt-5 mt-lg-0" style="color: #f5f5f5; font-family: Rambla">
@@ -90,7 +88,7 @@
                     </div>
                     <div class="col-10 px-0 pt-1">
                         <label style="color: #ddd; font-family: Arial">
-                            Iran Tehran Valiasr Alley No.14
+                            {{ \App\setting::first()->address }}
                         </label>
                     </div>
                 </div>
@@ -101,7 +99,7 @@
                     </div>
                     <div class="col-10 px-0 pt-1">
                         <label style="color: #ddd; font-family: Arial">
-                            021-32552698-9
+                            {{ \App\setting::first()->phone }}
                         </label>
                     </div>
                 </div>
@@ -112,7 +110,7 @@
                     </div>
                     <div class="col-10 px-0 pt-1">
                         <label style="color: #ddd; font-family: Arial">
-                            09123456789 - 09358005862
+                            {{ \App\setting::first()->otherphone }}
                         </label>
                     </div>
                 </div>
@@ -123,7 +121,7 @@
                     </div>
                     <div class="col-10 px-0 pt-1">
                         <label style="color: #ddd; font-family: Arial">
-                            Info@afrang.com
+                            {{ \App\setting::first()->email }}
                         </label>
                     </div>
                 </div>
@@ -136,7 +134,7 @@
 <div style="background-color: #243233" class="py-3" dir="ltr">
     <div class="row mx-5">
         <div class="col-12 col-lg-6">
-            <p class="m-0" style="color: #ddd; font-family: Arial">&copy; 2019 Afrang-Group. All rights reserved.</p>
+            <p class="m-0" style="color: #ddd; font-family: Arial">&copy; 2019 {{ \App\setting::first()->websitename }}. All rights reserved.</p>
         </div>
         <div class="col-12 col-lg-6 text-right" style="color: #ddd">
             <a class="mr-2"> Afrang Information </a>

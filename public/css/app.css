@@ -1,4 +1,4 @@
-@import url(https://maxcdn.bootstrapcdn.com/font-awesome/4.7.0/css/font-awesome.min.css);@charset "UTF-8";
+@import url(https://fonts.googleapis.com/css?family=Raleway&display=swap);@import url(https://maxcdn.bootstrapcdn.com/font-awesome/4.7.0/css/font-awesome.min.css);@charset "UTF-8";
 
 /*!
  * Font Awesome Free 5.10.1 by @fontawesome - https://fontawesome.com
@@ -24978,30 +24978,6 @@ a.text-dark:focus {
           filter: grayscale(0);
 }
 
-.team-info i:hover {
-  opacity: 1 !important;
-}
-
-.team-info:nth-child(1):hover i {
-  color: #2b9bb1;
-  opacity: 0.7;
-}
-
-.team-info:nth-child(2):hover i {
-  color: #4aaf73;
-  opacity: 0.7;
-}
-
-.team-info:nth-child(3):hover i {
-  color: #f547d4;
-  opacity: 0.7;
-}
-
-.team-info:nth-child(4):hover i {
-  color: #f5a91f;
-  opacity: 0.7;
-}
-
 .work-option {
   background-color: #dfe1ff;
 }
@@ -25032,17 +25008,29 @@ a.text-dark:focus {
   .contactus-item {
     margin-bottom: 830px;
   }
+
+  .orderus-item {
+    margin-bottom: 420px;
+  }
 }
 
 @media (min-width: 576px) {
   .contactus-item {
     margin-bottom: 830px;
   }
+
+  .orderus-item {
+    margin-bottom: 400px;
+  }
 }
 
 @media (min-width: 768px) {
   .contactus-item {
     margin-bottom: 750px;
+  }
+
+  .orderus-item {
+    margin-bottom: 460px;
   }
 }
 
@@ -25058,48 +25046,10 @@ a.text-dark:focus {
   .contactus-item {
     margin-bottom: 400px;
   }
-}
 
-.stripes-container {
-  position: absolute;
-  top: 156px;
-  min-height: 50%;
-  width: 100%;
-  display: grid;
-  grid-template-columns: repeat(5, 4%);
-  grid-template-rows: repeat(5, 10%);
-  -webkit-transform: skewY(-12deg);
-          transform: skewY(-12deg);
-}
-
-.stripe:nth-child(1) {
-  background-color: #e6ebf1;
-  grid-row: 5/auto;
-  grid-column: 1/3;
-}
-
-.stripe:nth-child(2) {
-  background-color: #43458b;
-  grid-row: 6/auto;
-  grid-column: 1/7;
-}
-
-.stripe:nth-child(3) {
-  background-color: #6772e5;
-  grid-row: 7/auto;
-  grid-column: 24/26;
-}
-
-.stripe:nth-child(4) {
-  background-color: #e6ebf1;
-  grid-row: 8/auto;
-  grid-column: 21/26;
-}
-
-.stripe:nth-child(5) {
-  box-shadow: #e6ebf1 0px 0px 0px 1.5px inset;
-  grid-row: 9/auto;
-  grid-column: 21/25;
+  .orderus-item {
+    margin-bottom: 400px;
+  }
 }
 
 .websitename {
@@ -25111,7 +25061,7 @@ a.text-dark:focus {
 }
 
 html * {
-  font-family: IRANSans;
+  font-family: Raleway;
 }
 
 .width100 {

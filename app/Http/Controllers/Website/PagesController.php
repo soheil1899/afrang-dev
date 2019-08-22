@@ -37,6 +37,7 @@ class PagesController extends Controller
         $header->image='/media/Layout/'.$setting->logo;
 
 
+
         return view('website.pages.firstpage',array('header'=>$header));
     }
 
@@ -64,6 +65,27 @@ class PagesController extends Controller
         return view('website.pages.contactus',array('header'=>$header));
     }
 
+    function orderonline(){
+        $setting=$this->getsetting();
+        $header=(object) array();
+        $header->title=$setting->websitename;
+        $header->keywords=$setting->keywords;
+        $header->description=$setting->description;
+        $header->image='/media/Layout/'.$setting->logo;
+
+
+
+        return view('website.pages.orderonline',array('header'=>$header));
+    }
+
+    function getcountry(){
+
+        $country = file_get_contents("country.json");
+        $country = json_decode($country, true);
+
+        return $country;
+    }
+
     function aboutafrang(){
         $setting=$this->getsetting();
         $header=(object) array();
@@ -76,7 +98,7 @@ class PagesController extends Controller
         return view('website.pages.aboutafrang',array('header'=>$header));
     }
 
-    function portfolio(){
+    function webportfolio(){
         $setting=$this->getsetting();
         $header=(object) array();
         $header->title=$setting->websitename;
@@ -85,7 +107,29 @@ class PagesController extends Controller
         $header->image='/media/Layout/'.$setting->logo;
 
 
-        return view('website.pages.portfolio',array('header'=>$header));
+        return view('website.pages.webportfolio',array('header'=>$header));
+    }
+    function mobileportfolio(){
+        $setting=$this->getsetting();
+        $header=(object) array();
+        $header->title=$setting->websitename;
+        $header->keywords=$setting->keywords;
+        $header->description=$setting->description;
+        $header->image='/media/Layout/'.$setting->logo;
+
+
+        return view('website.pages.mobileportfolio',array('header'=>$header));
+    }
+    function portalportfolio(){
+        $setting=$this->getsetting();
+        $header=(object) array();
+        $header->title=$setting->websitename;
+        $header->keywords=$setting->keywords;
+        $header->description=$setting->description;
+        $header->image='/media/Layout/'.$setting->logo;
+
+
+        return view('website.pages.portalportfolio',array('header'=>$header));
     }
 
 }

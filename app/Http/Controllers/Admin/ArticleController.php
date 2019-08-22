@@ -13,6 +13,7 @@ use App\articlegroup;
 use App\articles;
 use App\file_list;
 use App\Http\Controllers\Controller;
+use function foo\func;
 use Illuminate\Http\Request;
 use Illuminate\Support\Facades\Storage;
 use Illuminate\Validation\Rule;
@@ -182,6 +183,16 @@ class ArticleController extends Controller
 
         return articles::where('id',$request->id)->with('toGroup')->with('toContent')->first();
     }
+
+
+    function LoadPortfolio(Request $request){
+        return articlegroup::where('id', $request->groupid)->with('toArticle.toContent')->first();
+    }
+
+
+
+
+
     function LoadModule(Request $request){
         return article_module::all();
     }
@@ -295,6 +306,10 @@ class ArticleController extends Controller
 
             }
         }
+
       //  dd($request->all());
+    }
+    function UpdateCol(Request $request){
+        article_content::where('id',$request->id)->update(['col' => $request->col]);
     }
 }

@@ -2668,6 +2668,7 @@ __webpack_require__.r(__webpack_exports__);
 //
 //
 //
+//
 /* harmony default export */ __webpack_exports__["default"] = ({
   props: ['id'],
   data: function data() {
@@ -3218,6 +3219,14 @@ __webpack_require__.r(__webpack_exports__);
 //
 //
 //
+//
+//
+//
+//
+//
+//
+//
+//
 window.axios = __webpack_require__(/*! axios */ "./node_modules/axios/index.js");
  // var Editor = require('@tinymce/tinymce-vue').default;
 
@@ -3225,6 +3234,12 @@ window.axios = __webpack_require__(/*! axios */ "./node_modules/axios/index.js")
   props: ['id', 'token'],
   data: function data() {
     return {
+      styleobject: {
+        1: 'col-sm-12',
+        2: 'col-sm-6',
+        3: 'col-sm-4',
+        4: 'col-sm-3'
+      },
       name: null,
       url: null,
       listgroup: [],
@@ -3284,6 +3299,16 @@ window.axios = __webpack_require__(/*! axios */ "./node_modules/axios/index.js")
       };
       var that = this;
       axios.post('/admin/Article/ChangeOrderSection', data).then(function (response) {
+        that.loadartilce();
+      });
+    },
+    changecol: function changecol(id, col) {
+      var that = this;
+      var data = {
+        id: id,
+        col: col
+      };
+      axios.post('/admin/Article/UpdateCol', data).then(function (response) {
         that.loadartilce();
       });
     },
@@ -49770,45 +49795,109 @@ var render = function() {
                 _vm._v(" "),
                 _c("div", { staticClass: "clearfix" }),
                 _vm._v(" "),
-                _c(
-                  "div",
-                  { staticClass: "row margintop" },
-                  [
-                    _c("div", { staticClass: "col-sm-12" }, [
-                      _vm.showModal
-                        ? _c(
-                            "div",
-                            {
-                              staticClass: "editorboxs",
-                              on: {
-                                close: function($event) {
-                                  _vm.showModal = false
-                                }
+                _c("div", { staticClass: "row margintop" }, [
+                  _c("div", { staticClass: "col-sm-12" }, [
+                    _vm.showModal
+                      ? _c(
+                          "div",
+                          {
+                            staticClass: "editorboxs",
+                            on: {
+                              close: function($event) {
+                                _vm.showModal = false
                               }
-                            },
-                            [
-                              _c(
-                                "h3",
-                                { attrs: { slot: "header" }, slot: "header" },
-                                [_vm._v(_vm._s(_vm.titlemodal) + " ")]
-                              ),
-                              _vm._v(" "),
-                              _c(
-                                "div",
-                                { attrs: { slot: "body" }, slot: "body" },
-                                [
-                                  _vm.mode == "addmaster"
-                                    ? _c("div", [
-                                        _c("img", {
-                                          staticStyle: { width: "100%" },
-                                          attrs: { src: _vm.masterpicture }
+                            }
+                          },
+                          [
+                            _c(
+                              "h3",
+                              { attrs: { slot: "header" }, slot: "header" },
+                              [_vm._v(_vm._s(_vm.titlemodal) + " ")]
+                            ),
+                            _vm._v(" "),
+                            _c(
+                              "div",
+                              { attrs: { slot: "body" }, slot: "body" },
+                              [
+                                _vm.mode == "addmaster"
+                                  ? _c("div", [
+                                      _c("img", {
+                                        staticStyle: { width: "100%" },
+                                        attrs: { src: _vm.masterpicture }
+                                      })
+                                    ])
+                                  : _vm._e(),
+                                _vm._v(" "),
+                                _vm.mode == "Title"
+                                  ? _c("div", [
+                                      _c("input", {
+                                        directives: [
+                                          {
+                                            name: "model",
+                                            rawName: "v-model",
+                                            value: _vm.values,
+                                            expression: "values"
+                                          }
+                                        ],
+                                        staticClass: "form-control ",
+                                        domProps: { value: _vm.values },
+                                        on: {
+                                          input: function($event) {
+                                            if ($event.target.composing) {
+                                              return
+                                            }
+                                            _vm.values = $event.target.value
+                                          }
+                                        }
+                                      })
+                                    ])
+                                  : _vm._e(),
+                                _vm._v(" "),
+                                _vm.mode == "Paragraph"
+                                  ? _c(
+                                      "div",
+                                      [
+                                        _c("editor", {
+                                          ref: "editor",
+                                          attrs: {
+                                            "api-key":
+                                              "qc1sdre33bdx4lkj24aw4ffoeyx1rvbohr9ow2hzhjgfu2mi",
+                                            init: {
+                                              plugins: "wordcount",
+                                              height: 800
+                                            }
+                                          },
+                                          model: {
+                                            value: _vm.editordata,
+                                            callback: function($$v) {
+                                              _vm.editordata = $$v
+                                            },
+                                            expression: "editordata"
+                                          }
                                         })
-                                      ])
-                                    : _vm._e(),
-                                  _vm._v(" "),
-                                  _vm.mode == "Title"
-                                    ? _c("div", [
-                                        _c("input", {
+                                      ],
+                                      1
+                                    )
+                                  : _vm._e(),
+                                _vm._v(
+                                  "\n                                " +
+                                    _vm._s(_vm.mode) +
+                                    "\n                                "
+                                ),
+                                _vm.mode == "Images"
+                                  ? _c("div", [
+                                      _c("img", {
+                                        staticStyle: { width: "100%" },
+                                        attrs: { src: _vm.Images }
+                                      })
+                                    ])
+                                  : _vm._e(),
+                                _vm._v(" "),
+                                _vm.mode == "Gallery"
+                                  ? _c("div", [
+                                      _c(
+                                        "select",
+                                        {
                                           directives: [
                                             {
                                               name: "model",
@@ -49817,187 +49906,119 @@ var render = function() {
                                               expression: "values"
                                             }
                                           ],
-                                          staticClass: "form-control ",
-                                          domProps: { value: _vm.values },
+                                          staticClass: "form-control",
                                           on: {
-                                            input: function($event) {
-                                              if ($event.target.composing) {
-                                                return
-                                              }
-                                              _vm.values = $event.target.value
+                                            change: function($event) {
+                                              var $$selectedVal = Array.prototype.filter
+                                                .call(
+                                                  $event.target.options,
+                                                  function(o) {
+                                                    return o.selected
+                                                  }
+                                                )
+                                                .map(function(o) {
+                                                  var val =
+                                                    "_value" in o
+                                                      ? o._value
+                                                      : o.value
+                                                  return val
+                                                })
+                                              _vm.values = $event.target
+                                                .multiple
+                                                ? $$selectedVal
+                                                : $$selectedVal[0]
                                             }
                                           }
-                                        })
-                                      ])
-                                    : _vm._e(),
-                                  _vm._v(" "),
-                                  _vm.mode == "Paragraph"
-                                    ? _c(
-                                        "div",
-                                        [
-                                          _c("editor", {
-                                            ref: "editor",
-                                            attrs: {
-                                              "api-key":
-                                                "qc1sdre33bdx4lkj24aw4ffoeyx1rvbohr9ow2hzhjgfu2mi",
-                                              init: {
-                                                plugins: "wordcount",
-                                                directionality: "rtl",
-                                                height: 800
-                                              }
-                                            },
-                                            model: {
-                                              value: _vm.editordata,
-                                              callback: function($$v) {
-                                                _vm.editordata = $$v
-                                              },
-                                              expression: "editordata"
-                                            }
-                                          })
-                                        ],
-                                        1
+                                        },
+                                        _vm._l(_vm.gallerylist, function(item) {
+                                          return _c(
+                                            "option",
+                                            { domProps: { value: item.id } },
+                                            [_vm._v(_vm._s(item.name))]
+                                          )
+                                        }),
+                                        0
                                       )
-                                    : _vm._e(),
-                                  _vm._v(
-                                    "\n                                " +
-                                      _vm._s(_vm.mode) +
-                                      "\n                                "
-                                  ),
-                                  _vm.mode == "Images"
-                                    ? _c("div", [
-                                        _c("img", {
-                                          staticStyle: { width: "100%" },
-                                          attrs: { src: _vm.Images }
+                                    ])
+                                  : _vm._e(),
+                                _vm._v(" "),
+                                _c(
+                                  "div",
+                                  {
+                                    attrs: { slot: "filemanager" },
+                                    slot: "filemanager"
+                                  },
+                                  [
+                                    _c(
+                                      "div",
+                                      [
+                                        _c("filemanager", {
+                                          attrs: {
+                                            insertitemParent: _vm.insertitem,
+                                            id: _vm.id,
+                                            token: _vm.token,
+                                            method: "article"
+                                          }
                                         })
-                                      ])
-                                    : _vm._e(),
-                                  _vm._v(" "),
-                                  _vm.mode == "Gallery"
-                                    ? _c("div", [
-                                        _c(
-                                          "select",
-                                          {
-                                            directives: [
-                                              {
-                                                name: "model",
-                                                rawName: "v-model",
-                                                value: _vm.values,
-                                                expression: "values"
-                                              }
-                                            ],
-                                            staticClass: "form-control",
-                                            on: {
-                                              change: function($event) {
-                                                var $$selectedVal = Array.prototype.filter
-                                                  .call(
-                                                    $event.target.options,
-                                                    function(o) {
-                                                      return o.selected
-                                                    }
-                                                  )
-                                                  .map(function(o) {
-                                                    var val =
-                                                      "_value" in o
-                                                        ? o._value
-                                                        : o.value
-                                                    return val
-                                                  })
-                                                _vm.values = $event.target
-                                                  .multiple
-                                                  ? $$selectedVal
-                                                  : $$selectedVal[0]
-                                              }
-                                            }
-                                          },
-                                          _vm._l(_vm.gallerylist, function(
-                                            item
-                                          ) {
-                                            return _c(
-                                              "option",
-                                              { domProps: { value: item.id } },
-                                              [_vm._v(_vm._s(item.name))]
-                                            )
-                                          }),
-                                          0
-                                        )
-                                      ])
-                                    : _vm._e(),
-                                  _vm._v(" "),
-                                  _c(
-                                    "div",
-                                    {
-                                      attrs: { slot: "filemanager" },
-                                      slot: "filemanager"
-                                    },
-                                    [
-                                      _c(
-                                        "div",
-                                        [
-                                          _c("filemanager", {
-                                            attrs: {
-                                              insertitemParent: _vm.insertitem,
-                                              id: _vm.id,
-                                              token: _vm.token,
-                                              method: "article"
-                                            }
-                                          })
-                                        ],
-                                        1
-                                      )
-                                    ]
-                                  )
-                                ]
-                              ),
-                              _vm._v(" "),
-                              _c(
-                                "div",
-                                { attrs: { slot: "footer" }, slot: "footer" },
-                                [
-                                  _c(
-                                    "a",
-                                    {
-                                      staticClass:
-                                        "  btn btn-danger text-white ",
-                                      on: {
-                                        click: function($event) {
-                                          _vm.showModal = false
-                                        }
+                                      ],
+                                      1
+                                    )
+                                  ]
+                                )
+                              ]
+                            ),
+                            _vm._v(" "),
+                            _c(
+                              "div",
+                              { attrs: { slot: "footer" }, slot: "footer" },
+                              [
+                                _c(
+                                  "a",
+                                  {
+                                    staticClass: "  btn btn-danger text-white ",
+                                    on: {
+                                      click: function($event) {
+                                        _vm.showModal = false
                                       }
-                                    },
-                                    [
-                                      _vm._v(
-                                        "\n                                    " +
-                                          _vm._s(_vm.$lang.admin.Close) +
-                                          "\n                                "
-                                      )
-                                    ]
-                                  ),
-                                  _vm._v(" "),
-                                  _c(
-                                    "a",
-                                    {
-                                      staticClass: "  btn btn-primary",
-                                      on: { click: _vm.addtoarticle }
-                                    },
-                                    [
-                                      _vm._v(
-                                        "\n                                    " +
-                                          _vm._s(_vm.$lang.admin.Add) +
-                                          "\n                                "
-                                      )
-                                    ]
-                                  )
-                                ]
-                              )
-                            ]
-                          )
-                        : _vm._e()
-                    ]),
-                    _vm._v(" "),
+                                    }
+                                  },
+                                  [
+                                    _vm._v(
+                                      "\n                                    " +
+                                        _vm._s(_vm.$lang.admin.Close) +
+                                        "\n                                "
+                                    )
+                                  ]
+                                ),
+                                _vm._v(" "),
+                                _c(
+                                  "a",
+                                  {
+                                    staticClass: "  btn btn-primary",
+                                    on: { click: _vm.addtoarticle }
+                                  },
+                                  [
+                                    _vm._v(
+                                      "\n                                    " +
+                                        _vm._s(_vm.$lang.admin.Add) +
+                                        "\n                                "
+                                    )
+                                  ]
+                                )
+                              ]
+                            )
+                          ]
+                        )
+                      : _vm._e()
+                  ]),
+                  _vm._v(" "),
+                  _c(
+                    "div",
+                    { staticClass: " row" },
                     _vm._l(_vm.ListContent, function(item) {
                       return _c(
                         "div",
-                        { staticClass: "col-sm-12" },
+                        { class: _vm.styleobject[item.col] },
                         [
                           _c("aritclesection", { attrs: { id: item.id } }, [
                             _c(
@@ -50044,7 +50065,71 @@ var render = function() {
                                       }
                                     }
                                   })
-                                ])
+                                ]),
+                                _vm._v(" "),
+                                _c(
+                                  "select",
+                                  {
+                                    directives: [
+                                      {
+                                        name: "model",
+                                        rawName: "v-model",
+                                        value: item.col,
+                                        expression: "item.col"
+                                      }
+                                    ],
+                                    on: {
+                                      change: [
+                                        function($event) {
+                                          var $$selectedVal = Array.prototype.filter
+                                            .call(
+                                              $event.target.options,
+                                              function(o) {
+                                                return o.selected
+                                              }
+                                            )
+                                            .map(function(o) {
+                                              var val =
+                                                "_value" in o
+                                                  ? o._value
+                                                  : o.value
+                                              return val
+                                            })
+                                          _vm.$set(
+                                            item,
+                                            "col",
+                                            $event.target.multiple
+                                              ? $$selectedVal
+                                              : $$selectedVal[0]
+                                          )
+                                        },
+                                        function($event) {
+                                          return _vm.changecol(
+                                            item.id,
+                                            item.col
+                                          )
+                                        }
+                                      ]
+                                    }
+                                  },
+                                  [
+                                    _c("option", { attrs: { value: "1" } }, [
+                                      _vm._v("1")
+                                    ]),
+                                    _vm._v(" "),
+                                    _c("option", { attrs: { value: "2" } }, [
+                                      _vm._v("2")
+                                    ]),
+                                    _vm._v(" "),
+                                    _c("option", { attrs: { value: "3" } }, [
+                                      _vm._v("3")
+                                    ]),
+                                    _vm._v(" "),
+                                    _c("option", { attrs: { value: "4" } }, [
+                                      _vm._v("4")
+                                    ])
+                                  ]
+                                )
                               ]
                             ),
                             _vm._v(" "),
@@ -50098,10 +50183,10 @@ var render = function() {
                         ],
                         1
                       )
-                    })
-                  ],
-                  2
-                )
+                    }),
+                    0
+                  )
+                ])
               ])
             ]),
             _vm._v(" "),

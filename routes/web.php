@@ -15,12 +15,26 @@ Route::get('/','Auth\OtherUserController@logout')->name('logout');
 
 Auth::routes();
 
+Route::post('/getlang','Controller@getlang')->name('getlang');
+Route::post('Loadfirstpage', 'Controller@Loadfirstpage')->name('Loadfirstpage');
+Route::post('LoadArticle','Admin\ArticleController@LoadArticleData')->name('LoadArticle');
+Route::post('LoadPortfolio','Admin\ArticleController@LoadPortfolio')->name('LoadPortfolio');
+Route::post('getcountry','Website\PagesController@getcountry')->name('getcountry');
+
+
 Route::prefix('/')->namespace('Website')->group(function () {
+
+
+
     Route::get('/','PagesController@index')->name('indexpage');
     Route::get('/ourteam','PagesController@programmerteam')->name('programmer.team');
-    Route::get('/aboutafrang','PagesController@aboutafrang')->name('about.afrang');
+    Route::get('/about','PagesController@aboutafrang')->name('about.afrang');
     Route::get('/contactus','PagesController@contactus')->name('contact.us');
-    Route::get('/portfolio','PagesController@portfolio')->name('portfolio');
+    Route::get('/webportfolio','PagesController@webportfolio')->name('webportfolio');
+    Route::get('/mobileportfolio','PagesController@mobileportfolio')->name('mobileportfolio');
+    Route::get('/portalportfolio','PagesController@portalportfolio')->name('portalportfolio');
+    Route::get('/orderonline','PagesController@orderonline')->name('orderonline');
+
 
 });
 Route::prefix('userpanel')->middleware('UserCheck')->group(function () {
@@ -58,6 +72,7 @@ Route::prefix('admin')->middleware('AdminCheck')->group(function () {
     Route::post('/Article/EditSection','Admin\ArticleController@EditSection')->name('EditSection');
     Route::post('/Article/RemoveArticle','Admin\ArticleController@RemoveArticle')->name('RemoveArticle');
     Route::post('/Article/ChangeOrderSection','Admin\ArticleController@ChangeOrderSection')->name('ChangeOrderSection');
+    Route::post('/Article/UpdateCol','Admin\ArticleController@UpdateCol')->name('UpdateCol');
     Route::post('/smsdetail','SendSms@Getinfo')->name('GetinfoSMS');
 
     // User

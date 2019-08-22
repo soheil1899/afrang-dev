@@ -1,44 +1,222 @@
 <template>
 
     <div>
-
-        <div v-for="item in article.to_content">
-                <div v-if="item.methods=='Paragraph'">
-                   <p v-html="item.Text"></p>
+        <div v-if="flag=='firstpagework'">
+            <div class="pb-4 row m-0 d-block text-center">
+                <img :src="imageurl" width="70%">
+            </div>
+            <div class="row m-0 d-block text-center">
+                <h4><strong>
+                    {{article.name}}
+                </strong></h4>
+                <div v-html="paragraph">
                 </div>
-            <div v-if="item.methods=='Title'">
-                <h3>{{ item.title }}</h3>
             </div>
         </div>
 
+        <div style="padding-top: 150px; padding-bottom: 150px;background-color: #f1f3f5" class="shadow-sm" dir="ltr"
+             v-if="flag=='firstpageaboutus'">
+            <div class="container text-center">
+                <div style="width: fit-content" class="mx-auto px-3">
+                    <img :src="imageurl" class="mb-5" width="100%">
+                </div>
+                <div class="px-5" v-html="paragraph">
+
+                </div>
+            </div>
+        </div>
+
+        <div v-if="flag=='firstpageteampic'">
+            <div class="mx-auto" style="width: fit-content">
+                <img class="pointer team-img mb-4" :src="imageurl" width="100%">
+            </div>
+            <h5><strong>{{article.name}}</strong></h5>
+            <small v-html="paragraph"></small>
+        </div>
+
+        <div v-if="flag=='firstpageteamdes'">
+            <p class="team-desc text-center" v-html="paragraph">
+            </p>
+        </div>
+
+        <div v-if="flag=='footer'">
+            <p class="team-desc footerabout" v-html="paragraph">
+            </p>
+        </div>
+
+        <div v-if="flag=='afrangteamdes'">
+            <p class="team-desc" v-html="paragraph">
+            </p>
+        </div>
+
+        <div class="position-relative team-box" v-if="flag=='afrangteam'">
+            <div class="position-absolute team-image">
+                <div class="mx-auto">
+                    <img class="our-img pointer" :src="imageurl">
+                </div>
+            </div>
+            <h4><strong>{{article.name}}</strong></h4>
+            <small>{{title}}</small>
+            <div class="text-left px-4 py-3">
+                <p v-html="paragraph">
+                </p>
+            </div>
+            <div class="py-3 position-absolute team-footer">
+                <i class="far fa-envelope fa-2x pointer mx-1"></i>
+            </div>
+        </div>
+
+        <div class="row mx-0" v-if="flag=='aboutafrangtop'">
+            <div class="col-12 order-1 order-lg-0 col-lg-5" style=" padding-top: 60px; padding-left: 60px; ">
+                <h3 class="mb-3"
+                    style="font-family: Rambla; font-weight: bold; text-shadow: 0 0 1px; color: #222222; font-size: 40px">
+                    About Afrang
+                </h3>
+                <div>
+                    <p class="team-desc" v-html="paragraph">
+                    </p>
+                </div>
+            </div>
+            <div class="col-12 order-0 order-lg-1 col-lg-7">
+                <img :src="imageurl" width="100%">
+            </div>
+        </div>
+
+        <div style="padding-top: 150px; padding-bottom: 150px; background-color: #f1f3f5" class="shadow-sm" dir="ltr" v-if="flag=='aboutafrangbottom'">
+            <div class="container text-center">
+                <h3 class="mb-5"
+                    style="font-family: Rambla; font-weight: bold; text-shadow: 0 0 1px; color: #222222; font-size: 35px">
+                    WE PROMOTE YOUR BUSINESS
+                </h3>
+                <div class="row pt-4">
+                    <div class="col-12 col-lg-5">
+                        <img :src="imageurl" width="100%" style="box-shadow: 0 0 10px 2px #b2b457">
+                    </div>
+                    <div class="col-12 pt-5 pt-lg-0 col-lg-7 px-5 text-left">
+
+                        <div class="mb-5">
+                            <h5 class="mb-3 pb-1"
+                                style="font-family: Rambla; font-weight: bold; color: #222222; font-size: 20px; width: fit-content; border-bottom: 2px solid #5879ec">
+                                {{titlearray[0]}}
+                            </h5>
+                            <p class="team-desc" v-html="paragrapharray[0]">
+                            </p>
+                        </div>
+                        <div class="mb-5">
+                            <h5 class="mb-3 pb-1"
+                                style="font-family: Rambla; font-weight: bold; color: #222222; font-size: 20px; width: fit-content; border-bottom: 2px solid #028c32">
+                                {{titlearray[1]}}
+                            </h5>
+                            <p class="team-desc" v-html="paragrapharray[1]">
+                            </p>
+                        </div>
+                        <div class="mb-5">
+                            <h5 class="mb-3 pb-1"
+                                style="font-family: Rambla; font-weight: bold; color: #222222; font-size: 20px; width: fit-content; border-bottom: 2px solid #e84a60">
+                                {{titlearray[2]}}
+                            </h5>
+                            <p class="team-desc" v-html="paragrapharray[2]">
+                            </p>
+                        </div>
+
+
+                    </div>
+                </div>
+            </div>
+        </div>
+
+
+
+
+
+
+        <div class="row mx-0" v-if="flag=='portfoliotop'">
+            <div class="col-12 order-1 order-lg-0 col-lg-5" style=" padding-top: 60px; padding-left: 60px; ">
+                <h3 class="mb-3"
+                    style="font-family: Rambla; font-weight: bold; text-shadow: 0 0 1px; color: #222222; font-size: 40px">
+                    Our Portfolio
+                </h3>
+                <div>
+                    <p class="team-desc" v-html="paragraph">
+                    </p>
+                </div>
+            </div>
+            <div class="col-12 order-0 order-lg-1 col-lg-7">
+                <img :src="imageurl" width="100%">
+            </div>
+        </div>
+
+
+
+
+
+
+
+
+
+
+
+
     </div>
+
+
 </template>
 
 <script>
     export default {
-        props:['id'],
-        data(){
-            return{
-                article:[],
+        props: ['id', 'flag'],
+        data() {
+            return {
+                article: [],
+                imageurl: null,
+                paragraph: null,
+                paragrapharray: [],
+                titlearray: [],
+                title: null,
+                email: null,
 
             }
         },
-            methods:{
-            loadfunction:function () {
-                let that=this;
-                let data={
-                    id:this.id,
+        methods: {
+            loadfunction: function () {
+                let that = this;
+                let data = {
+                    id: this.id,
 
                 };
-                axios.post('/loadarticle',data)
+                axios.post('LoadArticle', data)
                     .then(function (response) {
-                        console.log(response.data.to_content);
-                        that.article=response.data;
+                        that.article = response.data;
+                        that.email = response.data.writter;
+                        for (var i = 0; i < response.data.to_content.length; i++) {
+                            if (response.data.to_content[i]['methods'] == 'Images') {
+                                that.imageurl = response.data.to_content[i]['title'];
+                            } else if (response.data.to_content[i]['methods'] == 'Paragraph') {
+                                that.paragraph = response.data.to_content[i]['Text'];
+                            } else if (response.data.to_content[i]['methods'] == 'Title') {
+                                that.title = response.data.to_content[i]['title'];
+                            }
+                        }
+
+                        if (that.id == 24){
+                            let counter_p = 0;
+                            let counter_t = 0;
+                            for (var i = 0; i < response.data.to_content.length; i++) {
+                                if (response.data.to_content[i]['methods'] == 'Paragraph') {
+                                    that.paragrapharray[counter_p] = response.data.to_content[i]['Text'];
+                                    counter_p++;
+                                } else if (response.data.to_content[i]['methods'] == 'Title') {
+                                    that.titlearray[counter_t] = response.data.to_content[i]['title'];
+                                    counter_t++;
+                                }
+                            }
+                        }
+
 
                     });
             }
         },
-        mounted:function () {
+        mounted: function () {
             this.loadfunction();
         }
     }
@@ -46,4 +224,11 @@
 
 <style scoped>
 
+
+    .firstpage-works img {
+        opacity: 0.9;
+    }
+    .footerabout{
+        color: #eee;
+    }
 </style>

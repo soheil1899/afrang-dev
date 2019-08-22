@@ -11,12 +11,26 @@ window.Vue = require('vue');
 var Lang = require('vuejs-localization');
 window.Swal=require('sweetalert2');
 Lang.requireAll(require.context('./lang', true, /\.js$/));
+
+
 Vue.component('firstpage', require('./components/web/pages/firstpage').default);
+Vue.component('section-works', require('./components/web/pages/Works').default);
+Vue.component('section-options', require('./components/web/pages/Options').default);
+
+
+Vue.component('mobileapp-portfolio', require('./components/web/pages/MobilePortfolio').default);
+Vue.component('web-portfolio', require('./components/web/pages/WebPortfolio').default);
+Vue.component('portal-portfolio', require('./components/web/pages/PortalPortfolio').default);
+Vue.component('programmerteam', require('./components/web/pages/ProgrammerTeam').default);
+Vue.component('aboutafrang', require('./components/web/pages/AboutAfrang').default);
+Vue.component('orderonline', require('./components/web/pages/OrderOnline').default);
+Vue.component('contactus', require('./components/web/pages/ContactUs').default);
 
 
 
 
-Vue.component('our-portfolio', require('./components/web/pages/OurPortfolio.vue').default);
+
+Vue.component('portfolioshow', require('./components/web/tools/portfolioshow').default);
 
 
 

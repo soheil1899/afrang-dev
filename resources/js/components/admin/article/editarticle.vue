@@ -113,7 +113,7 @@
 
                                     </div>
                                     <div v-if="mode == 'Paragraph'">
-                                        <editor   v-model="editordata"  ref="editor" api-key="qc1sdre33bdx4lkj24aw4ffoeyx1rvbohr9ow2hzhjgfu2mi" :init="{plugins: 'wordcount','directionality': 'rtl','height':800}"></editor>
+                                        <editor   v-model="editordata"  ref="editor" api-key="qc1sdre33bdx4lkj24aw4ffoeyx1rvbohr9ow2hzhjgfu2mi" :init="{plugins: 'wordcount','height':800}"></editor>
 
                                     </div>
                                     {{ mode }}
@@ -147,9 +147,10 @@
 
                         </div>
 
-                        <div class="col-sm-12" v-for="item in ListContent">
-                            <aritclesection :id="item.id">
-                                <div  slot="options">
+                        <div class=" row">
+                            <div  v-for="item in ListContent" v-bind:class="styleobject[item.col]">
+                            <aritclesection :id="item.id"  >
+                                <div   slot="options">
                                     <span v-on:click="editcontent(item.id)" class="iconsmind  tiss-cursor  iconsmind-Edit fontsize30" ></span>
 
                                     <span v-on:click="deletecontent(item.id)" class="iconsmind  tiss-cursor iconsmind-Recycling fontsize30" ></span>
@@ -158,6 +159,12 @@
                                         <span v-on:click="orderdchange('Down',item.id)" class="iconsmind  tiss-cursor iconsmind-Down fontsize20" ></span>
 
                                     </div>
+                                    <select v-model="item.col" v-on:change="changecol(item.id,item.col)">
+                                        <option value="1">1</option>
+                                        <option value="2">2</option>
+                                        <option value="3">3</option>
+                                        <option value="4">4</option>
+                                    </select>
                                 </div>
                                 <div v-if="item.methods=='Title'" slot="body">
                                     <h1> {{ item.title }}</h1>
@@ -179,6 +186,7 @@
                                 </div>
 
                             </aritclesection>
+                            </div>
 
                         </div>
                     </div>
@@ -209,6 +217,14 @@
         props:['id','token'],
         data(){
             return {
+                styleobject:{
+                    1:'col-sm-12',
+                    2:'col-sm-6',
+                    3:'col-sm-4',
+                    4:'col-sm-3',
+                }
+
+              ,
                 name: null,
                 url: null,
                 listgroup: [],
@@ -283,7 +299,18 @@
                     });
 
             },
+            changecol(id,col){
+                let that=this;
+                let data={
+                    id:id,
+                    col:col
+                }
+                axios.post('/admin/Article/UpdateCol',data)
+            .then(function (response) {
+                that.loadartilce();
+                });
 
+                    },
             loadcomponent:function(name){
 
                 this.editid=null;

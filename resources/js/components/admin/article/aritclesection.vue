@@ -2,6 +2,7 @@
     <div  >
         <div class="card">
             <div class="card-header">
+
                 <slot name="options"></slot>
             </div>
             <div class="card-body">

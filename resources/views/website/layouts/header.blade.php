@@ -1,6 +1,6 @@
 <header>
     <nav dir="ltr" class="px-5 py-3 shadow-sm navbar navbar-expand-lg navbar-light bg-light">
-        <a class="navbar-brand" href="/"><strong>AFRANG</strong></a>
+        <a class="navbar-brand" href="/"><strong>{{ \App\setting::first()->websitename }}</strong></a>
         <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarNavDropdown"
                 aria-controls="navbarNavDropdown" aria-expanded="false" aria-label="Toggle navigation">
             <span class="navbar-toggler-icon"></span>
@@ -23,7 +23,7 @@
                     </div>
                 </li>
                 <li class="nav-item px-2">
-                    <a class="nav-link pl-3 pl-lg-0" href="{{route('portfolio')}}">Our Portfolio</a>
+                    <a class="nav-link pl-3 pl-lg-0" href="{{route('webportfolio')}}">Our Portfolio</a>
                 </li>
 {{--                <li class="nav-item dropdown px-2">--}}
 {{--                    <a class="nav-link pl-3 pl-lg-0 dropdown-toggle" href="#" id="navbarDropdownMenuLink"--}}
@@ -43,7 +43,7 @@
                     <a class="nav-link pl-3 pl-lg-0" href="{{route('contact.us')}}">Contact Us</a>
                 </li>
                 <li class="nav-item px-2">
-                    <a class="nav-link pl-3 pl-lg-0" href="#">Online Order</a>
+                    <a class="nav-link pl-3 pl-lg-0" href="{{route('orderonline')}}">Online Order</a>
                 </li>
             </ul>
         </div>

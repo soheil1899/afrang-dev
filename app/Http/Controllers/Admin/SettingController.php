@@ -13,6 +13,8 @@ use Intervention\Image\ImageManager;
 class SettingController extends Controller
 {
     //
+
+
     function Settingpage()
     {
         return view('admin.runcompnent', array('name' => 'settingpage'))->with('title', trans('site.Setting'));
