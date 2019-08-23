@@ -1,8 +1,8 @@
 <template>
-    <div dir="ltr" style="padding-top: 150px; padding-bottom: 150px;" class="row shadow-sm px-5 mx-0">
+    <div dir="ltr" class="padding150 row shadow-sm px-5 mx-0">
 
         <div class="col-6 col-md-4 col-lg-2 text-center p-2">
-            <div style="height: 100%; border-radius: 5px" class="shadow-sm pointer work-option p-3">
+            <div class="shadow-sm pointer work-option p-3">
                 <i class="fas fa-shopping-cart fa-3x mb-4"></i>
                 <h5><strong>
                     Online Store
@@ -11,7 +11,7 @@
         </div>
 
         <div class="col-6 col-md-4 col-lg-2 text-center p-2">
-            <div style="height: 100%; border-radius: 5px" class="shadow-sm pointer work-option p-3">
+            <div class="shadow-sm pointer work-option p-3">
                 <i class="fas fa-satellite-dish fa-3x mb-4"></i>
                 <h5><strong>
                     News
@@ -20,7 +20,7 @@
         </div>
 
         <div class="col-6 col-md-4 col-lg-2 text-center p-2">
-            <div style="height: 100%; border-radius: 5px" class="shadow-sm pointer work-option p-3">
+            <div class="shadow-sm pointer work-option p-3">
                 <i class="fas fa-home fa-3x mb-4"></i>
                 <h5><strong>
                     Real Estate Advisor
@@ -29,7 +29,7 @@
         </div>
 
         <div class="col-6 col-md-4 col-lg-2 text-center p-2">
-            <div style="height: 100%; border-radius: 5px" class="shadow-sm pointer work-option p-3">
+            <div class="shadow-sm pointer work-option p-3">
                 <i class="fas fa-stethoscope fa-3x mb-4"></i>
                 <h5><strong>
                     Reservation of medical services
@@ -38,7 +38,7 @@
         </div>
 
         <div class="col-6 col-md-4 col-lg-2 text-center p-2">
-            <div style="height: 100%; border-radius: 5px" class="shadow-sm pointer work-option p-3">
+            <div class="shadow-sm pointer work-option p-3">
                 <i class="fas fa-hotel fa-3x mb-4"></i>
                 <h5><strong>
                     Hotel
@@ -47,7 +47,7 @@
         </div>
 
         <div class="col-6 col-md-4 col-lg-2 text-center p-2">
-            <div style="height: 100%; border-radius: 5px" class="shadow-sm pointer work-option p-3">
+            <div class="shadow-sm pointer work-option p-3">
                 <i class="fas fa-microscope fa-3x mb-4"></i>
                 <h5><strong>
                     Scientific & Educational
@@ -56,7 +56,7 @@
         </div>
 
         <div class="col-6 col-md-4 col-lg-2 text-center p-2">
-            <div style="height: 100%; border-radius: 5px" class="shadow-sm pointer work-option p-3">
+            <div class="shadow-sm pointer work-option p-3">
                 <i class="fas fa-ad fa-3x mb-4"></i>
                 <h5><strong>
                     Online Advertising
@@ -65,7 +65,7 @@
         </div>
 
         <div class="col-6 col-md-4 col-lg-2 text-center p-2">
-            <div style="height: 100%; border-radius: 5px" class="shadow-sm pointer work-option p-3">
+            <div class="shadow-sm pointer work-option p-3">
                 <i class="fas fa-plane fa-3x mb-4"></i>
                 <h5><strong>
                     Travel Agency
@@ -74,7 +74,7 @@
         </div>
 
         <div class="col-6 col-md-4 col-lg-2 text-center p-2">
-            <div style="height: 100%; border-radius: 5px" class="shadow-sm pointer work-option p-3">
+            <div class="shadow-sm pointer work-option p-3">
                 <i class="fas fa-chalkboard-teacher fa-3x mb-4"></i>
                 <h5><strong>
                     Educational Institution
@@ -83,7 +83,7 @@
         </div>
 
         <div class="col-6 col-md-4 col-lg-2 text-center p-2">
-            <div style="height: 100%; border-radius: 5px" class="shadow-sm pointer work-option p-3">
+            <div class="shadow-sm pointer work-option p-3">
                 <i class="fas fa-palette fa-3x mb-4"></i>
                 <h5><strong>
                     Decoration Company
@@ -92,7 +92,7 @@
         </div>
 
         <div class="col-6 col-md-4 col-lg-2 text-center p-2">
-            <div style="height: 100%; border-radius: 5px" class="shadow-sm pointer work-option p-3">
+            <div class="shadow-sm pointer work-option p-3">
                 <i class="fas fa-hospital fa-3x mb-4"></i>
                 <h5><strong>
                     Hospital
@@ -101,7 +101,7 @@
         </div>
 
         <div class="col-6 col-md-4 col-lg-2 text-center p-2">
-            <div style="height: 100%; border-radius: 5px" class="shadow-sm pointer work-option p-3">
+            <div class="shadow-sm pointer work-option p-3">
                 <i class="fas fa-utensils fa-3x mb-4"></i>
                 <h5><strong>
                     Online Food Ordering
@@ -110,7 +110,7 @@
         </div>
 
         <div class="col-6 col-md-4 col-lg-2 text-center p-2">
-            <div style="height: 100%; border-radius: 5px" class="shadow-sm pointer work-option p-3">
+            <div class="shadow-sm pointer work-option p-3">
                 <i class="fas fa-ship fa-3x mb-4"></i>
                 <h5><strong>
                     Business & Trading
@@ -119,7 +119,7 @@
         </div>
 
         <div class="col-6 col-md-4 col-lg-2 text-center p-2">
-            <div style="height: 100%; border-radius: 5px" class="shadow-sm pointer work-option p-3">
+            <div class="shadow-sm pointer work-option p-3">
                 <i class="fas fa-cog fa-3x mb-4"></i>
                 <h5><strong>
                     Manufacturer
@@ -128,7 +128,7 @@
         </div>
 
         <div class="col-6 col-md-4 col-lg-2 text-center p-2">
-            <div style="height: 100%; border-radius: 5px" class="shadow-sm pointer work-option p-3">
+            <div class="shadow-sm pointer work-option p-3">
                 <i class="fab fa-itunes-note fa-3x mb-4"></i>
                 <h5><strong>
                     Cultural & Artistic
@@ -137,7 +137,7 @@
         </div>
 
         <div class="col-6 col-md-4 col-lg-2 text-center p-2">
-            <div style="height: 100%; border-radius: 5px" class="shadow-sm pointer work-option p-3">
+            <div class="shadow-sm pointer work-option p-3">
                 <i class="fas fa-book fa-3x mb-4"></i>
                 <h5><strong>
                     Book Publishing
@@ -146,7 +146,7 @@
         </div>
 
         <div class="col-6 col-md-4 col-lg-2 text-center p-2">
-            <div style="height: 100%; border-radius: 5px" class="shadow-sm pointer work-option p-3">
+            <div class="shadow-sm pointer work-option p-3">
                 <i class="fas fa-cut fa-3x mb-4"></i>
                 <h5><strong>
                     Makeup & Trimming
@@ -155,7 +155,7 @@
         </div>
 
         <div class="col-6 col-md-4 col-lg-2 text-center p-2">
-            <div style="height: 100%; border-radius: 5px" class="shadow-sm pointer work-option p-3">
+            <div class="shadow-sm pointer work-option p-3">
                 <i class="fas fa-torii-gate fa-3x mb-4"></i>
                 <h5><strong>
                     Tourism
@@ -164,7 +164,7 @@
         </div>
 
         <div class="col-6 col-md-4 col-lg-2 text-center p-2">
-            <div style="height: 100%; border-radius: 5px" class="shadow-sm pointer work-option p-3">
+            <div class="shadow-sm pointer work-option p-3">
                 <i class="fas fa-running fa-3x mb-4"></i>
                 <h5><strong>
                     Sport Club
@@ -173,7 +173,7 @@
         </div>
 
         <div class="col-6 col-md-4 col-lg-2 text-center p-2">
-            <div style="height: 100%; border-radius: 5px" class="shadow-sm pointer work-option p-3">
+            <div class="shadow-sm pointer work-option p-3">
                 <i class="far fa-comments fa-3x mb-4"></i>
                 <h5><strong>
                     Social Networks
@@ -182,7 +182,7 @@
         </div>
 
         <div class="col-6 col-md-4 col-lg-2 text-center p-2">
-            <div style="height: 100%; border-radius: 5px" class="shadow-sm pointer work-option p-3">
+            <div class="shadow-sm pointer work-option p-3">
                 <i class="far fa-play-circle fa-3x mb-4"></i>
                 <h5><strong>
                     Multimedia
@@ -191,7 +191,7 @@
         </div>
 
         <div class="col-6 col-md-4 col-lg-2 text-center p-2">
-            <div style="height: 100%; border-radius: 5px" class="shadow-sm pointer work-option p-3">
+            <div class="shadow-sm pointer work-option p-3">
                 <i class="fas fa-camera-retro fa-3x mb-4"></i>
                 <h5><strong>
                     Photo Studio
@@ -200,7 +200,7 @@
         </div>
 
         <div class="col-6 col-md-4 col-lg-2 text-center p-2">
-            <div style="height: 100%; border-radius: 5px" class="shadow-sm pointer work-option p-3">
+            <div class="shadow-sm pointer work-option p-3">
                 <i class="fas fa-download fa-3x mb-4"></i>
                 <h5><strong>
                     Download
@@ -209,7 +209,7 @@
         </div>
 
         <div class="col-6 col-md-4 col-lg-2 text-center p-2">
-            <div style="height: 100%; border-radius: 5px" class="shadow-sm pointer work-option p-3">
+            <div class="shadow-sm pointer work-option p-3">
                 <i class="fas fa-briefcase fa-3x mb-4"></i>
                 <h5><strong>
                     Recruitment

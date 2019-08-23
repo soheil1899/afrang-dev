@@ -93,47 +93,6 @@
 </script>
 
 <style scoped>
-    .sampleweb:hover .sampleweb-image {
-        background-color: rgba(0, 0, 0, 0);
-    }
 
-    .sampleweb:hover .sampleweb-image img {
-        opacity: 1;
-    }
-
-    @media (min-width: 992px) {
-        .sampleweb:hover .webtext {
-            margin: 0 -30px;
-        }
-
-        .webtext {
-            width: 160%;
-            background-color: #fff;
-            z-index: 2;
-            box-shadow: 0 0 10px 4px #ccc;
-            margin: 0 70px;
-            transition: margin 3.5s;
-        }
-    }
-
-    .webtext-title {
-        font-family: Rambla;
-        font-weight: bold;
-        text-shadow: 0 0 1px;
-        color: #ef586a;
-        font-size: 25px;
-    }
-
-    .sampleweb-image {
-        background-color: rgba(0, 0, 0, 0.3);
-        width: 100%;
-        transition: background-color 1.5s;
-    }
-
-    .sampleweb-image img {
-        box-shadow: 0 0 10px 4px #ccc;
-        opacity: 0.8;
-        transition: opacity 1.5s;
-    }
 
 </style>

@@ -1,10 +1,10 @@
 
 {{--  Section footer  --}}
-<div style="padding-bottom: 100px; padding-top: 100px; background-color: #3d5456" class="shadow-sm" dir="ltr">
+<div class="shadow-sm footertop" dir="ltr">
     <div class="container">
         <div class="row m-0">
             <div class="col-12 col-lg-5 px-4">
-                <h4 class="mb-4" style="color: #f5f5f5; font-family: Rambla">
+                <h4 class="mb-4 footertitle">
                     About Afrang
                 </h4>
                 <articleshow :id="14" :flag="'footer'"></articleshow>
@@ -12,82 +12,79 @@
 
             </div>
             <div class="col-12 col-md-5 col-lg-3 px-4">
-                <h4 class="mb-4 mt-5 mt-lg-0" style="color: #f5f5f5; font-family: Rambla">
+                <h4 class="mb-4 mt-5 mt-lg-0 footertitle">
                     Keep Connected
                 </h4>
 
                 <div class="row m-0">
                     <div class="col-3 p-0">
-                        <div class="py-2 text-center mb-2 mx-auto pointer" style="border-radius: 50%; background-color: #56ADF0; width: 35px; height: 35px">
-                            <i class="fab fa-twitter fa-lg" style="color: #fff"></i>
+                        <div class="py-2 text-center mb-2 mx-auto pointer footersocial">
+                            <i class="fab fa-twitter fa-lg"></i>
                         </div>
                     </div>
                     <div class="col-9 px-0 pt-2">
-                        <label style="color: #ddd">Follow us on Twitter</label>
+                        <label class="footersocialtext">Follow us on Twitter</label>
                     </div>
 
                 </div>
                 <div class="row m-0">
                     <div class="col-3 p-0">
-                        <div class="py-2 text-center mb-2 mx-auto pointer" style="border-radius: 50%; background-color: #EB375F; width: 35px; height: 35px">
-                            <i class="fab fa-instagram fa-lg" style="color: #fff"></i>
+                        <div class="py-2 text-center mb-2 mx-auto pointer footersocial">
+                            <i class="fab fa-instagram fa-lg"></i>
                         </div>
                     </div>
                     <div class="col-9 px-0 pt-2">
-                        <label style="color: #ddd">Follow us on Instagram</label>
+                        <label class="footersocialtext">Follow us on Instagram</label>
                     </div>
 
                 </div>
                 <div class="row m-0">
                     <div class="col-3 p-0">
-                        <div class="py-2 text-center mb-2 mx-auto pointer" style="border-radius: 50%; background-color: #3C5995; width: 35px; height: 35px">
-                            <i class="fab fa-facebook-f fa-lg" style="color: #fff"></i>
+                        <div class="py-2 text-center mb-2 mx-auto pointer footersocial">
+                            <i class="fab fa-facebook-f fa-lg"></i>
                         </div>
                     </div>
                     <div class="col-9 px-0 pt-2">
-                        <label style="color: #ddd">Like us on Facebook</label>
+                        <label class="footersocialtext">Like us on Facebook</label>
                     </div>
 
                 </div>
                 <div class="row m-0">
                     <div class="col-3 p-0">
-                        <div class="py-2 text-center mb-2 mx-auto pointer" style="border-radius: 50%; background-color: #D94B3E; width: 35px; height: 35px">
-                            <i class="fab fa-google-plus-g fa-lg" style="color: #fff"></i>
+                        <div class="py-2 text-center mb-2 mx-auto pointer footersocial">
+                            <i class="fab fa-google-plus-g fa-lg"></i>
                         </div>
                     </div>
                     <div class="col-9 px-0 pt-2">
-                        <label style="color: #ddd">Add us on Google Plus</label>
+                        <label class="footersocialtext">Add us on Google Plus</label>
                     </div>
 
                 </div>
 
                 <div class="row m-0">
                     <div class="col-3 p-0">
-                        <div class="py-2 text-center mb-2 mx-auto pointer" style="border-radius: 50%; background-color: #00B6EC; width: 35px; height: 35px">
-                            <i class="fab fa-telegram-plane fa-lg" style="color: #fff"></i>
+                        <div class="py-2 text-center mb-2 mx-auto pointer footersocial">
+                            <i class="fab fa-telegram-plane fa-lg"></i>
                         </div>
                     </div>
                     <div class="col-9 px-0 pt-2">
-                        <label style="color: #ddd">Join us on Telegram</label>
+                        <label class="footersocialtext">Join us on Telegram</label>
                     </div>
 
                 </div>
 
-                {{--                    <div class="py-2 text-center mb-2 mx-auto pointer" style="border-radius: 50%; background-color: #0A63BD; width: 35px; height: 35px">--}}
-                {{--                        <i class="fab fa-linkedin-in fa-lg" style="color: #fff"></i>--}}
-                {{--                    </div>--}}
             </div>
             <div class="col-12 col-md-7 col-lg-4 px-4">
-                <h4 class="mb-4 mt-5 mt-lg-0" style="color: #f5f5f5; font-family: Rambla">
+                <h4 class="mb-4 mt-5 mt-lg-0 footertitle">
                     Contact Information
                 </h4>
 
                 <div class="row mx-0 mb-3">
                     <div class="col-2 p-0 text-center">
-                        <i class="fas fa-map-marked-alt fa-2x" style="color: #fff"></i>
+                        <i class="fas fa-map-marked-alt fa-2x colorwhite"></i>
                     </div>
                     <div class="col-10 px-0 pt-1">
-                        <label style="color: #ddd; font-family: Arial">
+                        <label class="footersocialtext">
                             {{ \App\setting::first()->address }}
                         </label>
                     </div>
@@ -95,10 +92,10 @@
 
                 <div class="row mx-0 mb-3">
                     <div class="col-2 p-0 text-center">
-                        <i class="fas fa-phone-alt fa-2x" style="color: #fff"></i>
+                        <i class="fas fa-phone-alt fa-2x colorwhite"></i>
                     </div>
                     <div class="col-10 px-0 pt-1">
-                        <label style="color: #ddd; font-family: Arial">
+                        <label class="footersocialtext">
                             {{ \App\setting::first()->phone }}
                         </label>
                     </div>
@@ -106,10 +103,10 @@
 
                 <div class="row mx-0 mb-3">
                     <div class="col-2 p-0 text-center">
-                        <i class="fas fa-mobile-alt fa-2x" style="color: #fff"></i>
+                        <i class="fas fa-mobile-alt fa-2x colorwhite"></i>
                     </div>
                     <div class="col-10 px-0 pt-1">
-                        <label style="color: #ddd; font-family: Arial">
+                        <label class="footersocialtext">
                             {{ \App\setting::first()->otherphone }}
                         </label>
                     </div>
@@ -117,10 +114,10 @@
 
                 <div class="row mx-0 mb-3">
                     <div class="col-2 p-0 text-center">
-                        <i class="far fa-envelope fa-2x" style="color: #fff"></i>
+                        <i class="far fa-envelope fa-2x colorwhite"></i>
                     </div>
                     <div class="col-10 px-0 pt-1">
-                        <label style="color: #ddd; font-family: Arial">
+                        <label class="footersocialtext">
                             {{ \App\setting::first()->email }}
                         </label>
                     </div>
@@ -131,12 +128,12 @@
 
     </div>
 </div>
-<div style="background-color: #243233" class="py-3" dir="ltr">
+<div class="py-3 footerbottom" dir="ltr">
     <div class="row mx-5">
         <div class="col-12 col-lg-6">
-            <p class="m-0" style="color: #ddd; font-family: Arial">&copy; 2019 {{ \App\setting::first()->websitename }}. All rights reserved.</p>
+            <p class="m-0 footersocialtext">&copy; 2019 {{ \App\setting::first()->websitename }}. All rights reserved.</p>
         </div>
-        <div class="col-12 col-lg-6 text-right" style="color: #ddd">
+        <div class="col-12 col-lg-6 text-right footersocialtext">
             <a class="mr-2"> Afrang Information </a>
             |
             <a class="mx-2"> Privacy Policy </a>

@@ -1,7 +1,7 @@
 <template>
 
     <div>
-        <div dir="ltr" class="shadow-sm container-fluid py-5" style="background-color: #fff;">
+        <div dir="ltr" class="shadow-sm container-fluid py-5 backwhite">
             <articleshow :id="23" :flag="'aboutafrangtop'"></articleshow>
 
         </div>

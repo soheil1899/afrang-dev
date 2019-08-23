@@ -18,24 +18,11 @@
                     <div class="dropdown-menu" aria-labelledby="navbarDropdownMenuLink">
                         <a class="dropdown-item" href="<?php echo e(route('programmer.team')); ?>">Programmer Team</a>
                         <a class="dropdown-item" href="<?php echo e(route('about.afrang')); ?>">About Afrang</a>
-                        <a class="dropdown-item" href="#">About TISS</a>
-                        <a class="dropdown-item" href="#">Other Software</a>
                     </div>
                 </li>
                 <li class="nav-item px-2">
                     <a class="nav-link pl-3 pl-lg-0" href="<?php echo e(route('webportfolio')); ?>">Our Portfolio</a>
                 </li>
-
-
-
-
-
-
-
-
-
-
-
                 <li class="nav-item px-2">
                     <a class="nav-link pl-3 pl-lg-0" href="#">Open Source</a>
                 </li>

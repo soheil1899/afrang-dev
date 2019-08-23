@@ -1,23 +1,18 @@
 <template>
     <div>
 
-        <div dir="ltr" class="shadow-sm container-fluid"
-             style="padding-top: 60px; padding-bottom: 100px;background-color: #fff;">
+        <div dir="ltr" class="shadow-sm container-fluid firsttop">
             <div class="row mx-0">
-                <div class="col-12 order-1 order-lg-0 col-lg-5" style=" padding-top: 60px; padding-left: 60px; ">
-                    <h3 class="mb-5 text-center text-lg-left"
-                        style="font-family: Rambla; font-weight: bold; text-shadow: 0 0 1px; color: #222222; font-size: 40px">
+                <div class="col-12 order-1 padding60 order-lg-0 col-lg-5">
+                    <h3 class="mb-5 text-center text-lg-left toptitle">
                         {{toppage.data1}}
-<!--                        CREATE YOUR OWN BUSINESS-->
                     </h3>
-                    <h3 class="mb-3 text-center text-lg-left"
-                        style="font-family: Rambla; font-weight: bold; text-shadow: 0 0 1px; color: #1b75bb; font-size: 25px">
+                    <h3 class="mb-3 text-center text-lg-left topoffer">
                         {{toppage.data2}}
-<!--                        Special Offer For Summer-->
                     </h3>
                     <a :href="'/orderonline'" class="text-center text-lg-left d-block">
-                        <button style="font-family: ACME;" type="button"
-                                class="btn btn-lg btn-outline-primary">
+                        <button type="button"
+                                class="btn btn-lg btn-outline-primary fontAcme">
                             <i class="far fa-hand-point-right"></i>
                             Order Now
                         </button>
@@ -51,7 +46,7 @@
 
 
         <!--          Section team  -->
-        <div style="padding-bottom: 150px; padding-top: 150px;" class="shadow-sm" dir="ltr">
+        <div class="shadow-sm padding150" dir="ltr">
             <div class="container">
                 <div class="row mt-0 mb-5 justify-content-around">
                     <div class="team-info col-6 col-lg-3 p-3 text-center">
@@ -90,14 +85,13 @@
         </div>
 
 <!--         Section offer -->
-        <div style="padding-bottom: 80px; padding-top: 80px; background-color: #f1f3f5" class="shadow-sm" dir="ltr">
+        <div class="shadow-sm bottomofer" dir="ltr">
             <div class="container text-center">
-                <h1 style="text-shadow: 0 0 2px;font-family: ACME;font-weight: bold; font-size: 35pt;">
+                <h1>
                     {{toppage.data3}}
-<!--                    SPECIAL OFFER FOR IRANIAN CUSTOMER-->
                 </h1>
-                <a :href="'/orderonline'" class="mt-5 d-block mx-auto" style="width: fit-content">
-                    <button type="button" class="btn btn-lg btn-outline-success px-5" style="font-family: Rambla;">
+                <a :href="'/orderonline'" class="mt-5 d-block mx-auto widthfit">
+                    <button type="button" class="btn btn-lg btn-outline-success px-5 fontRambla">
                         <i class="fas fa-check"></i>
                         ORDER NOW
                     </button>

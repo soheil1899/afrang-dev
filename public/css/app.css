@@ -1,4 +1,4 @@
-@import url(https://fonts.googleapis.com/css?family=Raleway&display=swap);@import url(https://maxcdn.bootstrapcdn.com/font-awesome/4.7.0/css/font-awesome.min.css);@charset "UTF-8";
+@import url(https://fonts.googleapis.com/css?family=Muli|Noto+Sans+JP&display=swap);@import url(https://maxcdn.bootstrapcdn.com/font-awesome/4.7.0/css/font-awesome.min.css);@charset "UTF-8";
 
 /*!
  * Font Awesome Free 5.10.1 by @fontawesome - https://fontawesome.com
@@ -24896,6 +24896,302 @@ a.text-dark:focus {
   }
 }
 
+.firsttop {
+  padding-top: 60px;
+  padding-bottom: 100px;
+  background-color: #fff;
+}
+
+.padding150 {
+  padding-bottom: 150px;
+  padding-top: 150px;
+}
+
+.padding60 {
+  padding-top: 60px;
+  padding-left: 60px;
+}
+
+.firsttop .toptitle,
+.aboutafrang {
+  font-family: Rambla;
+  font-weight: bold;
+  text-shadow: 0 0 1px;
+  color: #222222;
+  font-size: 40px;
+}
+
+.firsttop .topoffer {
+  font-family: Rambla;
+  font-weight: bold;
+  text-shadow: 0 0 1px;
+  color: #1b75bb;
+  font-size: 25px;
+}
+
+.bottomofer {
+  padding-bottom: 80px;
+  padding-top: 80px;
+  background-color: #f1f3f5;
+}
+
+.bottomofer h1 {
+  text-shadow: 0 0 2px;
+  font-family: ACME;
+  font-weight: bold;
+  font-size: 35pt;
+}
+
+.widthfit {
+  width: -webkit-fit-content;
+  width: -moz-fit-content;
+  width: fit-content;
+}
+
+.backwhite {
+  background-color: #fff;
+}
+
+.sendmessage {
+  background-color: #fff;
+  color: #333;
+}
+
+.fontRambla {
+  font-family: Rambla;
+}
+
+.fontAcme {
+  font-family: ACME;
+}
+
+.contactinfo {
+  background-image: linear-gradient(#383d80, #030847);
+  color: #fff;
+}
+
+.contactinfo .icons {
+  color: #C3C3D3;
+}
+
+.contacttop {
+  background-color: #deeaf3;
+  height: 400px;
+}
+
+.contacttop .contact-title {
+  font-family: Rambla;
+  text-shadow: 0 0 1px;
+  font-weight: bold;
+  color: #333;
+  padding-top: 50px;
+  font-size: 50px;
+}
+
+.contacttop label {
+  color: #333;
+  text-shadow: 0 0 1px;
+  font-size: 18px;
+  font-family: Rambla;
+}
+
+.contactus-item > div,
+.orderus-item > div {
+  top: -200px;
+  width: 100%;
+}
+
+.contactus-item > div > div {
+  overflow: hidden;
+  height: -webkit-fit-content;
+  height: -moz-fit-content;
+  height: fit-content;
+  box-shadow: 0 2px 10px 2px #ddd;
+  border-radius: 7px;
+}
+
+.orderus-item > div > div {
+  overflow: hidden;
+  height: -webkit-fit-content;
+  height: -moz-fit-content;
+  height: fit-content;
+  box-shadow: 0 2px 10px 5px #bbb;
+  border-radius: 7px;
+}
+
+.orderonlineimage .position-absolute {
+  width: 100%;
+  height: 100%;
+  top: 0;
+  left: 0;
+  background-color: rgba(0, 0, 0, 0.1);
+}
+
+.noresize {
+  resize: none;
+}
+
+.light-row {
+  height: 250px;
+}
+
+.circle-light {
+  height: -webkit-fit-content;
+  height: -moz-fit-content;
+  height: fit-content;
+}
+
+.circle-light.active .light-title h5 {
+  color: #d8bf16 !important;
+  font-family: Rambla;
+  font-weight: bold;
+  color: #444;
+}
+
+.circle-light.active .light-bubble {
+  background-image: radial-gradient(circle, #f4fff3, #fdfdbe) !important;
+  box-shadow: 0 0 10px 5px #fdf29d !important;
+}
+
+.circle-light > div:hover .light-cable {
+  height: 95px;
+}
+
+.light-title h5 {
+  font-family: Rambla;
+  font-weight: bold;
+  color: #444;
+}
+
+.light-cable {
+  width: 2px;
+  height: 80px;
+  background-color: #cfd6c0;
+  transition: height 500ms;
+}
+
+.light-bubble {
+  border-radius: 50%;
+  background-image: radial-gradient(circle, #f8ffff, #d8d3d5);
+  width: -webkit-fit-content;
+  width: -moz-fit-content;
+  width: fit-content;
+  box-shadow: 0 0 10px 5px #d1d5d5;
+}
+
+.portfoliotype > h3 {
+  font-family: Rambla;
+  font-weight: bold;
+  text-shadow: 0 0 1px;
+  color: #222222;
+  font-size: 30px;
+}
+
+.ourworks {
+  background-color: #f1f3f5;
+}
+
+.firstpage-works img {
+  opacity: 0.9;
+}
+
+.footerabout {
+  color: #eee;
+}
+
+.sampleweb:hover .sampleweb-image {
+  background-color: rgba(0, 0, 0, 0);
+}
+
+.sampleweb:hover .sampleweb-image img {
+  opacity: 1;
+}
+
+@media (min-width: 992px) {
+  .sampleweb:hover .webtext {
+    margin: 0 -30px;
+  }
+
+  .webtext {
+    width: 160%;
+    background-color: #fff;
+    z-index: 2;
+    box-shadow: 0 0 10px 4px #ccc;
+    margin: 0 70px;
+    transition: margin 3.5s;
+  }
+}
+
+.webtext-title {
+  font-family: Rambla;
+  font-weight: bold;
+  text-shadow: 0 0 1px;
+  color: #ef586a;
+  font-size: 25px;
+}
+
+.sampleweb-image {
+  background-color: rgba(0, 0, 0, 0.3);
+  width: 100%;
+  transition: background-color 1.5s;
+}
+
+.sampleweb-image img {
+  box-shadow: 0 0 10px 4px #ccc;
+  opacity: 0.8;
+  transition: opacity 1.5s;
+}
+
+.footertop {
+  padding-bottom: 100px;
+  padding-top: 100px;
+  background-color: #3d5456;
+}
+
+.footertitle {
+  color: #f5f5f5;
+  font-family: Rambla;
+}
+
+.fa-twitter {
+  color: #56ADF0;
+}
+
+.fa-instagram {
+  color: #EB375F;
+}
+
+.fa-facebook-f {
+  color: #3C5995;
+}
+
+.fa-google-plus-g {
+  color: #D94B3E;
+}
+
+.fa-telegram-plane {
+  color: #00B6EC;
+}
+
+.footersocial {
+  border-radius: 50%;
+  width: 35px;
+  height: 35px;
+  background-color: #eee;
+}
+
+.colorwhite {
+  color: #fff;
+}
+
+.footersocialtext {
+  color: #ddd;
+}
+
+.footerbottom {
+  background-color: #243233;
+}
+
 .team-details {
   padding-bottom: 80px;
   padding-top: 80px;
@@ -24980,6 +25276,8 @@ a.text-dark:focus {
 
 .work-option {
   background-color: #dfe1ff;
+  height: 100%;
+  border-radius: 5px;
 }
 
 .work-option:hover {
@@ -25061,7 +25359,7 @@ a.text-dark:focus {
 }
 
 html * {
-  font-family: Raleway;
+  font-family: Muli;
 }
 
 .width100 {

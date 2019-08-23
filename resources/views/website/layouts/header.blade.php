@@ -18,24 +18,11 @@
                     <div class="dropdown-menu" aria-labelledby="navbarDropdownMenuLink">
                         <a class="dropdown-item" href="{{route('programmer.team')}}">Programmer Team</a>
                         <a class="dropdown-item" href="{{route('about.afrang')}}">About Afrang</a>
-                        <a class="dropdown-item" href="#">About TISS</a>
-                        <a class="dropdown-item" href="#">Other Software</a>
                     </div>
                 </li>
                 <li class="nav-item px-2">
                     <a class="nav-link pl-3 pl-lg-0" href="{{route('webportfolio')}}">Our Portfolio</a>
                 </li>
-{{--                <li class="nav-item dropdown px-2">--}}
-{{--                    <a class="nav-link pl-3 pl-lg-0 dropdown-toggle" href="#" id="navbarDropdownMenuLink"--}}
-{{--                       role="button" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">--}}
-{{--                        Sample--}}
-{{--                    </a>--}}
-{{--                    <div class="dropdown-menu" aria-labelledby="navbarDropdownMenuLink">--}}
-{{--                        <a class="dropdown-item" href="{{route}}">Website</a>--}}
-{{--                        <a class="dropdown-item" href="#">Portal</a>--}}
-{{--                        <a class="dropdown-item" href="#">Application</a>--}}
-{{--                    </div>--}}
-{{--                </li>--}}
                 <li class="nav-item px-2">
                     <a class="nav-link pl-3 pl-lg-0" href="#">Open Source</a>
                 </li>

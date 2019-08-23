@@ -17,7 +17,7 @@
         <div style="padding-top: 150px; padding-bottom: 150px;background-color: #f1f3f5" class="shadow-sm" dir="ltr"
              v-if="flag=='firstpageaboutus'">
             <div class="container text-center">
-                <div style="width: fit-content" class="mx-auto px-3">
+                <div class="mx-auto px-3 widthfit">
                     <img :src="imageurl" class="mb-5" width="100%">
                 </div>
                 <div class="px-5" v-html="paragraph">
@@ -27,7 +27,7 @@
         </div>
 
         <div v-if="flag=='firstpageteampic'">
-            <div class="mx-auto" style="width: fit-content">
+            <div class="mx-auto widthfit">
                 <img class="pointer team-img mb-4" :src="imageurl" width="100%">
             </div>
             <h5><strong>{{article.name}}</strong></h5>
@@ -67,9 +67,8 @@
         </div>
 
         <div class="row mx-0" v-if="flag=='aboutafrangtop'">
-            <div class="col-12 order-1 order-lg-0 col-lg-5" style=" padding-top: 60px; padding-left: 60px; ">
-                <h3 class="mb-3"
-                    style="font-family: Rambla; font-weight: bold; text-shadow: 0 0 1px; color: #222222; font-size: 40px">
+            <div class="col-12 order-1 order-lg-0 col-lg-5 padding60">
+                <h3 class="mb-3 aboutafrang">
                     About Afrang
                 </h3>
                 <div>
@@ -82,7 +81,7 @@
             </div>
         </div>
 
-        <div style="padding-top: 150px; padding-bottom: 150px; background-color: #f1f3f5" class="shadow-sm" dir="ltr" v-if="flag=='aboutafrangbottom'">
+        <div class="ourworks shadow-sm padding150" dir="ltr" v-if="flag=='aboutafrangbottom'">
             <div class="container text-center">
                 <h3 class="mb-5"
                     style="font-family: Rambla; font-weight: bold; text-shadow: 0 0 1px; color: #222222; font-size: 35px">
@@ -131,9 +130,8 @@
 
 
         <div class="row mx-0" v-if="flag=='portfoliotop'">
-            <div class="col-12 order-1 order-lg-0 col-lg-5" style=" padding-top: 60px; padding-left: 60px; ">
-                <h3 class="mb-3"
-                    style="font-family: Rambla; font-weight: bold; text-shadow: 0 0 1px; color: #222222; font-size: 40px">
+            <div class="col-12 order-1 order-lg-0 col-lg-5 padding60">
+                <h3 class="mb-3 aboutafrang">
                     Our Portfolio
                 </h3>
                 <div>
@@ -225,10 +223,5 @@
 <style scoped>
 
 
-    .firstpage-works img {
-        opacity: 0.9;
-    }
-    .footerabout{
-        color: #eee;
-    }
+
 </style>

@@ -1,5 +1,5 @@
 <template>
-    <div style="padding-top: 150px; padding-bottom: 150px; background-color: #f1f3f5" class="shadow-sm" dir="ltr">
+    <div class="ourworks shadow-sm padding150" dir="ltr">
         <div class="container">
             <div class="row firstpage-works">
 
