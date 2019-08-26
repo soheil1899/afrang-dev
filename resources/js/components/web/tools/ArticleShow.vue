@@ -62,7 +62,10 @@
                 </p>
             </div>
             <div class="py-3 position-absolute team-footer">
-                <i class="far fa-envelope fa-2x pointer mx-1"></i>
+                <i class="far fa-envelope fa-lg mx-1 my-0"></i>
+                <label class="m-0">
+                    {{article.writter}}
+                </label>
             </div>
         </div>
 
@@ -125,10 +128,6 @@
         </div>
 
 
-
-
-
-
         <div class="row mx-0" v-if="flag=='portfoliotop'">
             <div class="col-12 order-1 order-lg-0 col-lg-5 padding60">
                 <h3 class="mb-3 aboutafrang">
@@ -143,16 +142,6 @@
                 <img :src="imageurl" width="100%">
             </div>
         </div>
-
-
-
-
-
-
-
-
-
-
 
 
     </div>
@@ -196,7 +185,7 @@
                             }
                         }
 
-                        if (that.id == 24){
+                        if (that.id == 24) {
                             let counter_p = 0;
                             let counter_t = 0;
                             for (var i = 0; i < response.data.to_content.length; i++) {
@@ -221,7 +210,6 @@
 </script>
 
 <style scoped>
-
 
 
 </style>

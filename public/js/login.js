@@ -1943,17 +1943,6 @@ __webpack_require__.r(__webpack_exports__);
 //
 //
 //
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
 /* harmony default export */ __webpack_exports__["default"] = ({
   props: ['id', 'flag'],
   data: function data() {
@@ -39960,7 +39949,17 @@ var render = function() {
             _c("p", { domProps: { innerHTML: _vm._s(_vm.paragraph) } })
           ]),
           _vm._v(" "),
-          _vm._m(0)
+          _c("div", { staticClass: "py-3 position-absolute team-footer" }, [
+            _c("i", { staticClass: "far fa-envelope fa-lg mx-1 my-0" }),
+            _vm._v(" "),
+            _c("label", { staticClass: "m-0" }, [
+              _vm._v(
+                "\n                " +
+                  _vm._s(_vm.article.writter) +
+                  "\n            "
+              )
+            ])
+          ])
         ])
       : _vm._e(),
     _vm._v(" "),
@@ -40151,16 +40150,7 @@ var render = function() {
       : _vm._e()
   ])
 }
-var staticRenderFns = [
-  function() {
-    var _vm = this
-    var _h = _vm.$createElement
-    var _c = _vm._self._c || _h
-    return _c("div", { staticClass: "py-3 position-absolute team-footer" }, [
-      _c("i", { staticClass: "far fa-envelope fa-2x pointer mx-1" })
-    ])
-  }
-]
+var staticRenderFns = []
 render._withStripped = true
 
 

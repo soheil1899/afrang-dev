@@ -13,6 +13,7 @@ use App\articlegroup;
 use App\articles;
 use App\file_list;
 use App\Http\Controllers\Controller;
+use App\Http\Resources\portfolioResource;
 use function foo\func;
 use Illuminate\Http\Request;
 use Illuminate\Support\Facades\Storage;
@@ -186,7 +187,8 @@ class ArticleController extends Controller
 
 
     function LoadPortfolio(Request $request){
-        return articlegroup::where('id', $request->groupid)->with('toArticle.toContent')->first();
+        $page=articlegroup::where('id', $request->groupid)->with('toArticle')->first()->toArticle()->with('toContent')->paginate(4);
+        return portfolioResource::collection($page);
     }
 
 

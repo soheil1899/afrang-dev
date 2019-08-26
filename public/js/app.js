@@ -3111,17 +3111,6 @@ __webpack_require__.r(__webpack_exports__);
 //
 //
 //
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
 /* harmony default export */ __webpack_exports__["default"] = ({
   props: ['id', 'flag'],
   data: function data() {
@@ -3426,24 +3415,61 @@ __webpack_require__.r(__webpack_exports__);
 //
 //
 //
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
 /* harmony default export */ __webpack_exports__["default"] = ({
   name: "portfolioshow",
   props: ['groupid'],
   data: function data() {
     return {
-      articles: []
+      meta: [],
+      articles: [],
+      currentpage: null
     };
   },
   methods: {
     loadfunction: function loadfunction() {
+      var page = arguments.length > 0 && arguments[0] !== undefined ? arguments[0] : 1;
+      this.currentpage = page;
       var that = this;
       var data = {
-        groupid: this.groupid
+        groupid: this.groupid,
+        page: page
       };
       axios.post('LoadPortfolio', data).then(function (response) {
-        that.articles = response.data.to_article;
-        console.log(that.articles);
+        console.log(response.data);
+        that.articles = response.data.data;
+        that.meta = response.data.meta;
       });
+    },
+    gobackpage: function gobackpage() {
+      if (this.currentpage != 1) {
+        this.loadfunction(this.currentpage - 1);
+      }
+    },
+    gonextpage: function gonextpage() {
+      if (this.currentpage != this.meta.last_page) {
+        this.loadfunction(this.currentpage + 1);
+      }
+    },
+    activebtn: function activebtn(i) {
+      if (i == this.currentpage) {
+        return "background-color: #e3e4e4;";
+      }
     },
     portfolioimg: function portfolioimg(contents) {
       for (var i = 0; i < contents.length; i++) {
@@ -3461,7 +3487,6 @@ __webpack_require__.r(__webpack_exports__);
     }
   },
   mounted: function mounted() {
-    console.log(this.groupid);
     this.loadfunction();
   }
 });
@@ -7992,6 +8017,25 @@ exports = module.exports = __webpack_require__(/*! ../../../../../node_modules/c
 
 // module
 exports.push([module.i, "\n.tiss-cursor[data-v-6a3b43de]{ cursor: pointer;}\r\n", ""]);
+
+// exports
+
+
+/***/ }),
+
+/***/ "./node_modules/css-loader/index.js?!./node_modules/vue-loader/lib/loaders/stylePostLoader.js!./node_modules/postcss-loader/src/index.js?!./node_modules/vue-loader/lib/index.js?!./resources/js/components/web/tools/portfolioshow.vue?vue&type=style&index=0&id=22b95f4a&scoped=true&lang=css&":
+/*!*******************************************************************************************************************************************************************************************************************************************************************************************************************!*\
+  !*** ./node_modules/css-loader??ref--11-1!./node_modules/vue-loader/lib/loaders/stylePostLoader.js!./node_modules/postcss-loader/src??ref--11-2!./node_modules/vue-loader/lib??vue-loader-options!./resources/js/components/web/tools/portfolioshow.vue?vue&type=style&index=0&id=22b95f4a&scoped=true&lang=css& ***!
+  \*******************************************************************************************************************************************************************************************************************************************************************************************************************/
+/*! no static exports found */
+/***/ (function(module, exports, __webpack_require__) {
+
+exports = module.exports = __webpack_require__(/*! ../../../../../node_modules/css-loader/lib/css-base.js */ "./node_modules/css-loader/lib/css-base.js")(false);
+// imports
+
+
+// module
+exports.push([module.i, "\n.pagination-portfolio[data-v-22b95f4a] {\n    color: #000 !important;\n}\n\n", ""]);
 
 // exports
 
@@ -38632,6 +38676,36 @@ if(false) {}
 
 /***/ }),
 
+/***/ "./node_modules/style-loader/index.js!./node_modules/css-loader/index.js?!./node_modules/vue-loader/lib/loaders/stylePostLoader.js!./node_modules/postcss-loader/src/index.js?!./node_modules/vue-loader/lib/index.js?!./resources/js/components/web/tools/portfolioshow.vue?vue&type=style&index=0&id=22b95f4a&scoped=true&lang=css&":
+/*!***********************************************************************************************************************************************************************************************************************************************************************************************************************************************!*\
+  !*** ./node_modules/style-loader!./node_modules/css-loader??ref--11-1!./node_modules/vue-loader/lib/loaders/stylePostLoader.js!./node_modules/postcss-loader/src??ref--11-2!./node_modules/vue-loader/lib??vue-loader-options!./resources/js/components/web/tools/portfolioshow.vue?vue&type=style&index=0&id=22b95f4a&scoped=true&lang=css& ***!
+  \***********************************************************************************************************************************************************************************************************************************************************************************************************************************************/
+/*! no static exports found */
+/***/ (function(module, exports, __webpack_require__) {
+
+
+var content = __webpack_require__(/*! !../../../../../node_modules/css-loader??ref--11-1!../../../../../node_modules/vue-loader/lib/loaders/stylePostLoader.js!../../../../../node_modules/postcss-loader/src??ref--11-2!../../../../../node_modules/vue-loader/lib??vue-loader-options!./portfolioshow.vue?vue&type=style&index=0&id=22b95f4a&scoped=true&lang=css& */ "./node_modules/css-loader/index.js?!./node_modules/vue-loader/lib/loaders/stylePostLoader.js!./node_modules/postcss-loader/src/index.js?!./node_modules/vue-loader/lib/index.js?!./resources/js/components/web/tools/portfolioshow.vue?vue&type=style&index=0&id=22b95f4a&scoped=true&lang=css&");
+
+if(typeof content === 'string') content = [[module.i, content, '']];
+
+var transform;
+var insertInto;
+
+
+
+var options = {"hmr":true}
+
+options.transform = transform
+options.insertInto = undefined;
+
+var update = __webpack_require__(/*! ../../../../../node_modules/style-loader/lib/addStyles.js */ "./node_modules/style-loader/lib/addStyles.js")(content, options);
+
+if(content.locals) module.exports = content.locals;
+
+if(false) {}
+
+/***/ }),
+
 /***/ "./node_modules/style-loader/index.js!./node_modules/css-loader/index.js?!./node_modules/vue-loader/lib/loaders/stylePostLoader.js!./node_modules/postcss-loader/src/index.js?!./node_modules/vue-loader/lib/index.js?!./resources/js/components/web/tools/searchbox.vue?vue&type=style&index=0&id=4ba2898e&scoped=true&lang=css&":
 /*!*******************************************************************************************************************************************************************************************************************************************************************************************************************************************!*\
   !*** ./node_modules/style-loader!./node_modules/css-loader??ref--11-1!./node_modules/vue-loader/lib/loaders/stylePostLoader.js!./node_modules/postcss-loader/src??ref--11-2!./node_modules/vue-loader/lib??vue-loader-options!./resources/js/components/web/tools/searchbox.vue?vue&type=style&index=0&id=4ba2898e&scoped=true&lang=css& ***!
@@ -44118,7 +44192,17 @@ var render = function() {
             _c("p", { domProps: { innerHTML: _vm._s(_vm.paragraph) } })
           ]),
           _vm._v(" "),
-          _vm._m(0)
+          _c("div", { staticClass: "py-3 position-absolute team-footer" }, [
+            _c("i", { staticClass: "far fa-envelope fa-lg mx-1 my-0" }),
+            _vm._v(" "),
+            _c("label", { staticClass: "m-0" }, [
+              _vm._v(
+                "\n                " +
+                  _vm._s(_vm.article.writter) +
+                  "\n            "
+              )
+            ])
+          ])
         ])
       : _vm._e(),
     _vm._v(" "),
@@ -44309,16 +44393,7 @@ var render = function() {
       : _vm._e()
   ])
 }
-var staticRenderFns = [
-  function() {
-    var _vm = this
-    var _h = _vm.$createElement
-    var _c = _vm._self._c || _h
-    return _c("div", { staticClass: "py-3 position-absolute team-footer" }, [
-      _c("i", { staticClass: "far fa-envelope fa-2x pointer mx-1" })
-    ])
-  }
-]
+var staticRenderFns = []
 render._withStripped = true
 
 
@@ -44584,99 +44659,168 @@ var render = function() {
   var _c = _vm._self._c || _h
   return _c(
     "div",
-    _vm._l(_vm.articles, function(item, index) {
-      return _c("div", { key: item.id }, [
-        index % 2 == 0
-          ? _c("div", { staticClass: "row sampleweb my-0 my-lg-5 py-5" }, [
-              _c(
-                "div",
-                {
-                  staticClass: "col-12 col-lg-9 p-lg-0 px-4 order-0 order-lg-1"
-                },
-                [
-                  _c("div", { staticClass: "sampleweb-image" }, [
-                    _c("img", {
-                      attrs: {
-                        src: _vm.portfolioimg(item.to_content),
-                        width: "100%"
+    [
+      _vm._l(_vm.articles, function(item, index) {
+        return _c("div", { key: item.id }, [
+          index % 2 == 0
+            ? _c("div", { staticClass: "row sampleweb my-0 my-lg-5 py-5" }, [
+                _c(
+                  "div",
+                  {
+                    staticClass:
+                      "col-12 col-lg-9 p-lg-0 px-4 order-0 order-lg-1"
+                  },
+                  [
+                    _c("div", { staticClass: "sampleweb-image" }, [
+                      _c("img", {
+                        attrs: {
+                          src: _vm.portfolioimg(item.to_content),
+                          width: "100%"
+                        }
+                      })
+                    ])
+                  ]
+                ),
+                _vm._v(" "),
+                _c(
+                  "div",
+                  {
+                    staticClass:
+                      "col-12 col-lg-3 order-1 order-lg-0 position-relative pt-5 pb-0 py-lg-5",
+                    attrs: { dir: "ltr" }
+                  },
+                  [
+                    _c("div", { staticClass: "p-lg-5 px-4 webtext" }, [
+                      _c("h3", { staticClass: "mb-3 webtext-title" }, [
+                        _vm._v(
+                          "\n                        " +
+                            _vm._s(item.name) +
+                            "\n                    "
+                        )
+                      ]),
+                      _vm._v(" "),
+                      _c("div", {
+                        domProps: {
+                          innerHTML: _vm._s(_vm.portfoliotext(item.to_content))
+                        }
+                      })
+                    ])
+                  ]
+                )
+              ])
+            : _c("div", { staticClass: "row sampleweb my-0 my-lg-5 py-5" }, [
+                _c(
+                  "div",
+                  { staticClass: "col-12 col-lg-9 p-lg-0 px-4 order-0" },
+                  [
+                    _c("div", { staticClass: "sampleweb-image" }, [
+                      _c("img", {
+                        attrs: {
+                          src: _vm.portfolioimg(item.to_content),
+                          width: "100%"
+                        }
+                      })
+                    ])
+                  ]
+                ),
+                _vm._v(" "),
+                _c(
+                  "div",
+                  {
+                    staticClass:
+                      "col-12 col-lg-3 order-1 position-relative pt-5 pb-0 py-lg-5",
+                    attrs: { dir: "rtl" }
+                  },
+                  [
+                    _c("div", { staticClass: "p-lg-5 px-4 webtext" }, [
+                      _c("h3", { staticClass: "mb-3 webtext-title" }, [
+                        _vm._v(
+                          "\n                        " +
+                            _vm._s(item.name) +
+                            "\n                    "
+                        )
+                      ]),
+                      _vm._v(" "),
+                      _c("div", {
+                        attrs: { dir: "ltr" },
+                        domProps: {
+                          innerHTML: _vm._s(_vm.portfoliotext(item.to_content))
+                        }
+                      })
+                    ])
+                  ]
+                )
+              ])
+        ])
+      }),
+      _vm._v(" "),
+      _vm.meta.last_page > 1
+        ? _c("nav", { attrs: { "aria-label": "Page navigation example" } }, [
+            _c(
+              "ul",
+              { staticClass: "pagination justify-content-center" },
+              [
+                _c(
+                  "li",
+                  {
+                    staticClass: "page-item pointer",
+                    on: { click: _vm.gobackpage }
+                  },
+                  [
+                    _c(
+                      "a",
+                      {
+                        staticClass: "page-link pagination-portfolio",
+                        attrs: { tabindex: "-1" }
+                      },
+                      [_vm._v("Previous")]
+                    )
+                  ]
+                ),
+                _vm._v(" "),
+                _vm._l(_vm.meta.last_page, function(i) {
+                  return _c(
+                    "li",
+                    {
+                      staticClass: "page-item pointer",
+                      on: {
+                        click: function($event) {
+                          return _vm.loadfunction(i)
+                        }
                       }
-                    })
-                  ])
-                ]
-              ),
-              _vm._v(" "),
-              _c(
-                "div",
-                {
-                  staticClass:
-                    "col-12 col-lg-3 order-1 order-lg-0 position-relative pt-5 pb-0 py-lg-5",
-                  attrs: { dir: "ltr" }
-                },
-                [
-                  _c("div", { staticClass: "p-lg-5 px-4 webtext" }, [
-                    _c("h3", { staticClass: "mb-3 webtext-title" }, [
-                      _vm._v(
-                        "\n                    " +
-                          _vm._s(item.name) +
-                          "\n                "
+                    },
+                    [
+                      _c(
+                        "a",
+                        {
+                          staticClass: "page-link pagination-portfolio",
+                          style: _vm.activebtn(i)
+                        },
+                        [_vm._v(_vm._s(i))]
                       )
-                    ]),
-                    _vm._v(" "),
-                    _c("div", {
-                      domProps: {
-                        innerHTML: _vm._s(_vm.portfoliotext(item.to_content))
-                      }
-                    })
-                  ])
-                ]
-              )
-            ])
-          : _c("div", { staticClass: "row sampleweb my-0 my-lg-5 py-5" }, [
-              _c(
-                "div",
-                { staticClass: "col-12 col-lg-9 p-lg-0 px-4 order-0" },
-                [
-                  _c("div", { staticClass: "sampleweb-image" }, [
-                    _c("img", {
-                      attrs: {
-                        src: _vm.portfolioimg(item.to_content),
-                        width: "100%"
-                      }
-                    })
-                  ])
-                ]
-              ),
-              _vm._v(" "),
-              _c(
-                "div",
-                {
-                  staticClass:
-                    "col-12 col-lg-3 order-1 position-relative pt-5 pb-0 py-lg-5",
-                  attrs: { dir: "rtl" }
-                },
-                [
-                  _c("div", { staticClass: "p-lg-5 px-4 webtext" }, [
-                    _c("h3", { staticClass: "mb-3 webtext-title" }, [
-                      _vm._v(
-                        "\n                    " +
-                          _vm._s(item.name) +
-                          "\n                "
-                      )
-                    ]),
-                    _vm._v(" "),
-                    _c("div", {
-                      attrs: { dir: "ltr" },
-                      domProps: {
-                        innerHTML: _vm._s(_vm.portfoliotext(item.to_content))
-                      }
-                    })
-                  ])
-                ]
-              )
-            ])
-      ])
-    }),
-    0
+                    ]
+                  )
+                }),
+                _vm._v(" "),
+                _c(
+                  "li",
+                  {
+                    staticClass: "page-item pointer",
+                    on: { click: _vm.gonextpage }
+                  },
+                  [
+                    _c("a", { staticClass: "page-link pagination-portfolio" }, [
+                      _vm._v("Next")
+                    ])
+                  ]
+                )
+              ],
+              2
+            )
+          ])
+        : _vm._e()
+    ],
+    2
   )
 }
 var staticRenderFns = []
@@ -58313,7 +58457,9 @@ __webpack_require__.r(__webpack_exports__);
 __webpack_require__.r(__webpack_exports__);
 /* harmony import */ var _portfolioshow_vue_vue_type_template_id_22b95f4a_scoped_true___WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(/*! ./portfolioshow.vue?vue&type=template&id=22b95f4a&scoped=true& */ "./resources/js/components/web/tools/portfolioshow.vue?vue&type=template&id=22b95f4a&scoped=true&");
 /* harmony import */ var _portfolioshow_vue_vue_type_script_lang_js___WEBPACK_IMPORTED_MODULE_1__ = __webpack_require__(/*! ./portfolioshow.vue?vue&type=script&lang=js& */ "./resources/js/components/web/tools/portfolioshow.vue?vue&type=script&lang=js&");
-/* empty/unused harmony star reexport *//* harmony import */ var _node_modules_vue_loader_lib_runtime_componentNormalizer_js__WEBPACK_IMPORTED_MODULE_2__ = __webpack_require__(/*! ../../../../../node_modules/vue-loader/lib/runtime/componentNormalizer.js */ "./node_modules/vue-loader/lib/runtime/componentNormalizer.js");
+/* empty/unused harmony star reexport *//* harmony import */ var _portfolioshow_vue_vue_type_style_index_0_id_22b95f4a_scoped_true_lang_css___WEBPACK_IMPORTED_MODULE_2__ = __webpack_require__(/*! ./portfolioshow.vue?vue&type=style&index=0&id=22b95f4a&scoped=true&lang=css& */ "./resources/js/components/web/tools/portfolioshow.vue?vue&type=style&index=0&id=22b95f4a&scoped=true&lang=css&");
+/* harmony import */ var _node_modules_vue_loader_lib_runtime_componentNormalizer_js__WEBPACK_IMPORTED_MODULE_3__ = __webpack_require__(/*! ../../../../../node_modules/vue-loader/lib/runtime/componentNormalizer.js */ "./node_modules/vue-loader/lib/runtime/componentNormalizer.js");
+
 
 
 
@@ -58321,7 +58467,7 @@ __webpack_require__.r(__webpack_exports__);
 
 /* normalize component */
 
-var component = Object(_node_modules_vue_loader_lib_runtime_componentNormalizer_js__WEBPACK_IMPORTED_MODULE_2__["default"])(
+var component = Object(_node_modules_vue_loader_lib_runtime_componentNormalizer_js__WEBPACK_IMPORTED_MODULE_3__["default"])(
   _portfolioshow_vue_vue_type_script_lang_js___WEBPACK_IMPORTED_MODULE_1__["default"],
   _portfolioshow_vue_vue_type_template_id_22b95f4a_scoped_true___WEBPACK_IMPORTED_MODULE_0__["render"],
   _portfolioshow_vue_vue_type_template_id_22b95f4a_scoped_true___WEBPACK_IMPORTED_MODULE_0__["staticRenderFns"],
@@ -58350,6 +58496,22 @@ component.options.__file = "resources/js/components/web/tools/portfolioshow.vue"
 __webpack_require__.r(__webpack_exports__);
 /* harmony import */ var _node_modules_babel_loader_lib_index_js_ref_4_0_node_modules_vue_loader_lib_index_js_vue_loader_options_portfolioshow_vue_vue_type_script_lang_js___WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(/*! -!../../../../../node_modules/babel-loader/lib??ref--4-0!../../../../../node_modules/vue-loader/lib??vue-loader-options!./portfolioshow.vue?vue&type=script&lang=js& */ "./node_modules/babel-loader/lib/index.js?!./node_modules/vue-loader/lib/index.js?!./resources/js/components/web/tools/portfolioshow.vue?vue&type=script&lang=js&");
 /* empty/unused harmony star reexport */ /* harmony default export */ __webpack_exports__["default"] = (_node_modules_babel_loader_lib_index_js_ref_4_0_node_modules_vue_loader_lib_index_js_vue_loader_options_portfolioshow_vue_vue_type_script_lang_js___WEBPACK_IMPORTED_MODULE_0__["default"]); 
+
+/***/ }),
+
+/***/ "./resources/js/components/web/tools/portfolioshow.vue?vue&type=style&index=0&id=22b95f4a&scoped=true&lang=css&":
+/*!**********************************************************************************************************************!*\
+  !*** ./resources/js/components/web/tools/portfolioshow.vue?vue&type=style&index=0&id=22b95f4a&scoped=true&lang=css& ***!
+  \**********************************************************************************************************************/
+/*! no static exports found */
+/***/ (function(module, __webpack_exports__, __webpack_require__) {
+
+"use strict";
+__webpack_require__.r(__webpack_exports__);
+/* harmony import */ var _node_modules_style_loader_index_js_node_modules_css_loader_index_js_ref_11_1_node_modules_vue_loader_lib_loaders_stylePostLoader_js_node_modules_postcss_loader_src_index_js_ref_11_2_node_modules_vue_loader_lib_index_js_vue_loader_options_portfolioshow_vue_vue_type_style_index_0_id_22b95f4a_scoped_true_lang_css___WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(/*! -!../../../../../node_modules/style-loader!../../../../../node_modules/css-loader??ref--11-1!../../../../../node_modules/vue-loader/lib/loaders/stylePostLoader.js!../../../../../node_modules/postcss-loader/src??ref--11-2!../../../../../node_modules/vue-loader/lib??vue-loader-options!./portfolioshow.vue?vue&type=style&index=0&id=22b95f4a&scoped=true&lang=css& */ "./node_modules/style-loader/index.js!./node_modules/css-loader/index.js?!./node_modules/vue-loader/lib/loaders/stylePostLoader.js!./node_modules/postcss-loader/src/index.js?!./node_modules/vue-loader/lib/index.js?!./resources/js/components/web/tools/portfolioshow.vue?vue&type=style&index=0&id=22b95f4a&scoped=true&lang=css&");
+/* harmony import */ var _node_modules_style_loader_index_js_node_modules_css_loader_index_js_ref_11_1_node_modules_vue_loader_lib_loaders_stylePostLoader_js_node_modules_postcss_loader_src_index_js_ref_11_2_node_modules_vue_loader_lib_index_js_vue_loader_options_portfolioshow_vue_vue_type_style_index_0_id_22b95f4a_scoped_true_lang_css___WEBPACK_IMPORTED_MODULE_0___default = /*#__PURE__*/__webpack_require__.n(_node_modules_style_loader_index_js_node_modules_css_loader_index_js_ref_11_1_node_modules_vue_loader_lib_loaders_stylePostLoader_js_node_modules_postcss_loader_src_index_js_ref_11_2_node_modules_vue_loader_lib_index_js_vue_loader_options_portfolioshow_vue_vue_type_style_index_0_id_22b95f4a_scoped_true_lang_css___WEBPACK_IMPORTED_MODULE_0__);
+/* harmony reexport (unknown) */ for(var __WEBPACK_IMPORT_KEY__ in _node_modules_style_loader_index_js_node_modules_css_loader_index_js_ref_11_1_node_modules_vue_loader_lib_loaders_stylePostLoader_js_node_modules_postcss_loader_src_index_js_ref_11_2_node_modules_vue_loader_lib_index_js_vue_loader_options_portfolioshow_vue_vue_type_style_index_0_id_22b95f4a_scoped_true_lang_css___WEBPACK_IMPORTED_MODULE_0__) if(__WEBPACK_IMPORT_KEY__ !== 'default') (function(key) { __webpack_require__.d(__webpack_exports__, key, function() { return _node_modules_style_loader_index_js_node_modules_css_loader_index_js_ref_11_1_node_modules_vue_loader_lib_loaders_stylePostLoader_js_node_modules_postcss_loader_src_index_js_ref_11_2_node_modules_vue_loader_lib_index_js_vue_loader_options_portfolioshow_vue_vue_type_style_index_0_id_22b95f4a_scoped_true_lang_css___WEBPACK_IMPORTED_MODULE_0__[key]; }) }(__WEBPACK_IMPORT_KEY__));
+ /* harmony default export */ __webpack_exports__["default"] = (_node_modules_style_loader_index_js_node_modules_css_loader_index_js_ref_11_1_node_modules_vue_loader_lib_loaders_stylePostLoader_js_node_modules_postcss_loader_src_index_js_ref_11_2_node_modules_vue_loader_lib_index_js_vue_loader_options_portfolioshow_vue_vue_type_style_index_0_id_22b95f4a_scoped_true_lang_css___WEBPACK_IMPORTED_MODULE_0___default.a); 
 
 /***/ }),
 
