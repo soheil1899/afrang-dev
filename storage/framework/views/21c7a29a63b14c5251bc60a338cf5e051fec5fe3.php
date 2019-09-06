@@ -1,5 +1,4 @@
 
-
 <div class="shadow-sm footertop" dir="ltr">
     <div class="container">
         <div class="row m-0">
@@ -27,17 +26,20 @@
                     </div>
 
                 </div>
-                <div class="row m-0">
-                    <div class="col-3 p-0">
-                        <div class="py-2 text-center mb-2 mx-auto pointer footersocial">
-                            <i class="fab fa-instagram fa-lg"></i>
+                <a href="<?php echo e(\App\setting::first()->instagram); ?>">
+                    <div class="row m-0">
+                        <div class="col-3 p-0">
+                            <div class="py-2 text-center mb-2 mx-auto pointer footersocial">
+                                <i class="fab fa-instagram fa-lg"></i>
+                            </div>
                         </div>
-                    </div>
-                    <div class="col-9 px-0 pt-2">
-                        <label class="footersocialtext">Follow us on Instagram</label>
-                    </div>
+                        <div class="col-9 px-0 pt-2">
+                            <label class="footersocialtext">Follow us on Instagram</label>
+                        </div>
 
-                </div>
+                    </div>
+                </a>
+                <a href="<?php echo e(\App\setting::first()->instagram); ?>">
                 <div class="row m-0">
                     <div class="col-3 p-0">
                         <div class="py-2 text-center mb-2 mx-auto pointer footersocial">
@@ -49,6 +51,7 @@
                     </div>
 
                 </div>
+                </a>
                 <div class="row m-0">
                     <div class="col-3 p-0">
                         <div class="py-2 text-center mb-2 mx-auto pointer footersocial">
@@ -78,18 +81,6 @@
                 <h4 class="mb-4 mt-5 mt-lg-0 footertitle">
                     Contact Information
                 </h4>
-
-                <div class="row mx-0 mb-3">
-                    <div class="col-2 p-0 text-center">
-                        <i class="fas fa-map-marked-alt fa-2x colorwhite"></i>
-                    </div>
-                    <div class="col-10 px-0 pt-1">
-                        <label class="footersocialtext">
-                            <?php echo e(\App\setting::first()->address); ?>
-
-                        </label>
-                    </div>
-                </div>
 
                 <div class="row mx-0 mb-3">
                     <div class="col-2 p-0 text-center">
@@ -133,16 +124,17 @@
     </div>
 </div>
 <div class="py-3 footerbottom" dir="ltr">
-    <div class="row mx-5">
+    <div class="row mx-2 mx-md-5">
         <div class="col-12 col-lg-6">
-            <p class="m-0 footersocialtext">&copy; 2019 <?php echo e(\App\setting::first()->websitename); ?>. All rights reserved.</p>
+            <p class="m-0 footersocialtext text-center text-md-left px-0 px-md-2">&copy; 2019 <?php echo e(\App\setting::first()->websitename); ?>. All rights
+                reserved.</p>
         </div>
-        <div class="col-12 col-lg-6 text-right footersocialtext">
-            <a class="mr-2"> Afrang Information </a>
+        <div class="col-12 col-lg-6 text-center text-md-right footersocialtext px-0 px-md-2">
+            <a class="mr-1 mr-md-2"> Afrang Information </a>
             |
-            <a class="mx-2"> Privacy Policy </a>
+            <a class="mr-1 mr-md-2"> Privacy Policy </a>
             |
-            <a class="mx-2"> Term and Condition </a>
+            <a class="mr-1 mr-md-2"> Term and Condition </a>
         </div>
     </div>
 </div>

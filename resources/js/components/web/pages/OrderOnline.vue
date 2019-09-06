@@ -11,7 +11,7 @@
             <div class="row position-absolute">
                 <div dir="ltr" class="row col-10 mx-auto p-0">
 
-                    <div class="col-12 order-lg-0 order-1 col-lg-7 px-2 px-lg-5 py-4 sendmessage">
+                    <div class="col-12 order-lg-0 order-1 col-lg-7 px-4 px-lg-5 py-4 sendmessage">
                         <h5 class="mb-5 mt-3 fontRambla">
                             Send us Your Request
                         </h5>
@@ -21,7 +21,7 @@
                                 Full Name
                             </div>
                             <div class="col-8">
-                                <input type="text" class="form-control form-control-sm">
+                                <input type="text" v-model="name" class="form-control form-control-sm">
                             </div>
                         </div>
                         <div class="row my-2">
@@ -29,7 +29,7 @@
                                 Phone
                             </div>
                             <div class="col-8">
-                                <input type="text" class="form-control form-control-sm">
+                                <input type="text" v-model="phone" class="form-control form-control-sm">
                             </div>
                         </div>
                         <div class="row my-2">
@@ -37,7 +37,7 @@
                                 Email
                             </div>
                             <div class="col-8">
-                                <input type="email" class="form-control form-control-sm">
+                                <input type="email" v-model="email" class="form-control form-control-sm">
                             </div>
                         </div>
                         <div class="row my-2">
@@ -45,7 +45,7 @@
                                 Location
                             </div>
                             <div class="col-8">
-                                <select class="form-control form-control-sm">
+                                <select class="form-control form-control-sm" v-model="location">
                                     <option v-for="country in countrylist">{{country.name}}</option>
                                 </select>
                             </div>
@@ -57,24 +57,24 @@
                             </div>
                             <div class="col-8">
                                 <div class="form-check form-check-inline">
-                                    <input class="form-check-input" type="checkbox" id="inlineCheckbox1"
+                                    <input class="form-check-input" type="checkbox" v-model="request[0]" id="inlineCheckbox1"
                                            value="option1">
                                     <label class="form-check-label" for="inlineCheckbox1">Website</label>
                                 </div>
                                 <div class="form-check form-check-inline">
-                                    <input class="form-check-input" type="checkbox" id="inlineCheckbox2"
+                                    <input class="form-check-input" type="checkbox" v-model="request[1]" id="inlineCheckbox2"
                                            value="option2">
                                     <label class="form-check-label" for="inlineCheckbox2">Mobile App</label>
                                 </div>
                                 <div class="form-check form-check-inline">
-                                    <input class="form-check-input" type="checkbox" id="inlineCheckbox3"
+                                    <input class="form-check-input" type="checkbox" v-model="request[2]" id="inlineCheckbox3"
                                            value="option3">
                                     <label class="form-check-label" for="inlineCheckbox3">Portal</label>
                                 </div>
                                 <div class="form-check form-check-inline">
-                                    <input class="form-check-input" type="checkbox" id="inlineCheckbox4"
-                                           value="option3">
-                                    <label class="form-check-label" for="inlineCheckbox3">Other</label>
+                                    <input class="form-check-input" type="checkbox" v-model="request[3]" id="inlineCheckbox4"
+                                           value="option4">
+                                    <label class="form-check-label" for="inlineCheckbox4">Other</label>
                                 </div>
                             </div>
                         </div>
@@ -84,11 +84,11 @@
                                 Description
                             </div>
                             <div class="col-8">
-                                <textarea class="form-control form-control-sm noresize" rows="4"></textarea>
+                                <textarea class="form-control form-control-sm noresize" rows="4" v-model="description"></textarea>
                             </div>
                         </div>
 
-                        <button class="btn btn-success px-4 mt-3 float-right">
+                        <button class="btn btn-success px-4 mt-3 float-right" @click="sendemail">
                             <i class="fas fa-paper-plane"></i>
                             Send
                         </button>
@@ -112,11 +112,20 @@
 </template>
 
 <script>
+    import Swal from 'sweetalert2';
+
     export default {
         name: "OrderOnline",
         data() {
             return {
                 countrylist: [],
+
+                name: null,
+                phone: null,
+                email: null,
+                location: null,
+                request: [],
+                description: null,
             }
         },
         methods: {
@@ -126,6 +135,36 @@
                     .then(function (response) {
                         that.countrylist = response.data;
                     });
+            },
+            sendemail(e) {
+                let data = {
+                    title: 'order',
+                    name: this.name,
+                    email: this.email,
+                    phone: this.phone,
+                    location: this.location,
+                    request: this.request,
+                    description: this.description,
+                };
+
+                axios.post('/sendrequest', data)
+                    .then(function (response) {
+                        if (response.data[1] == true) {
+                            Swal.fire({
+                                type: 'success',
+                                title: "Thank's. Your Order Send for us",
+                                showConfirmButton: false,
+                                timer: 3000
+                            })
+                        }
+                    }).catch((error) => {
+                    Swal.fire({
+                        type: 'error',
+                        title: 'Please Complete All Filed',
+                        showConfirmButton: false,
+                        timer: 3000
+                    });
+                });
             },
         },
         mounted() {

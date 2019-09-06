@@ -71,16 +71,19 @@
 
         <div class="row mx-0" v-if="flag=='aboutafrangtop'">
             <div class="col-12 order-1 order-lg-0 col-lg-5 padding60">
-                <h3 class="mb-3 aboutafrang">
+
+                <img :src="imagearray[1]" class="about-logo">
+                <h3 class="mt-2 aboutafrang">
                     About Afrang
                 </h3>
+
                 <div>
                     <p class="team-desc" v-html="paragraph">
                     </p>
                 </div>
             </div>
             <div class="col-12 order-0 order-lg-1 col-lg-7">
-                <img :src="imageurl" width="100%">
+                <img :src="imagearray[0]" width="100%">
             </div>
         </div>
 
@@ -159,6 +162,7 @@
                 paragraph: null,
                 paragrapharray: [],
                 titlearray: [],
+                imagearray: [],
                 title: null,
                 email: null,
 
@@ -185,9 +189,10 @@
                             }
                         }
 
-                        if (that.id == 24) {
+                        if (that.id == 24 || that.id == 23) {
                             let counter_p = 0;
                             let counter_t = 0;
+                            let counter_i = 0;
                             for (var i = 0; i < response.data.to_content.length; i++) {
                                 if (response.data.to_content[i]['methods'] == 'Paragraph') {
                                     that.paragrapharray[counter_p] = response.data.to_content[i]['Text'];
@@ -195,6 +200,10 @@
                                 } else if (response.data.to_content[i]['methods'] == 'Title') {
                                     that.titlearray[counter_t] = response.data.to_content[i]['title'];
                                     counter_t++;
+                                }else if (response.data.to_content[i]['methods'] == 'Images') {
+                                    that.imagearray[counter_i] = response.data.to_content[i]['title'];
+                                    counter_i++;
+                                    console.log(that.imagearray);
                                 }
                             }
                         }

@@ -6,6 +6,9 @@
 // Variables
 @import 'variables';
 @import "fonts";
+
+@import '~sweetalert2/src/sweetalert2.scss';
+
 // Bootstrap
 @import '~bootstrap/scss/bootstrap';
 @import url('https://maxcdn.bootstrapcdn.com/font-awesome/4.7.0/css/font-awesome.min.css');
@@ -313,7 +316,12 @@
 .team-person {
   margin-top: 130px;
 }
-
+.about-logo{
+  width: 100px;
+}
+.image-header{
+  border-radius: 50%;
+}
 .team-box {
   background-color: #fff;
   border-radius: 60px 60px 30px 30px;

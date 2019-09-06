@@ -1943,6 +1943,9 @@ __webpack_require__.r(__webpack_exports__);
 //
 //
 //
+//
+//
+//
 /* harmony default export */ __webpack_exports__["default"] = ({
   props: ['id', 'flag'],
   data: function data() {
@@ -1952,6 +1955,7 @@ __webpack_require__.r(__webpack_exports__);
       paragraph: null,
       paragrapharray: [],
       titlearray: [],
+      imagearray: [],
       title: null,
       email: null
     };
@@ -1976,9 +1980,10 @@ __webpack_require__.r(__webpack_exports__);
           }
         }
 
-        if (that.id == 24) {
+        if (that.id == 24 || that.id == 23) {
           var counter_p = 0;
           var counter_t = 0;
+          var counter_i = 0;
 
           for (var i = 0; i < response.data.to_content.length; i++) {
             if (response.data.to_content[i]['methods'] == 'Paragraph') {
@@ -1987,6 +1992,10 @@ __webpack_require__.r(__webpack_exports__);
             } else if (response.data.to_content[i]['methods'] == 'Title') {
               that.titlearray[counter_t] = response.data.to_content[i]['title'];
               counter_t++;
+            } else if (response.data.to_content[i]['methods'] == 'Images') {
+              that.imagearray[counter_i] = response.data.to_content[i]['title'];
+              counter_i++;
+              console.log(that.imagearray);
             }
           }
         }
@@ -39969,7 +39978,12 @@ var render = function() {
             "div",
             { staticClass: "col-12 order-1 order-lg-0 col-lg-5 padding60" },
             [
-              _c("h3", { staticClass: "mb-3 aboutafrang" }, [
+              _c("img", {
+                staticClass: "about-logo",
+                attrs: { src: _vm.imagearray[1] }
+              }),
+              _vm._v(" "),
+              _c("h3", { staticClass: "mt-2 aboutafrang" }, [
                 _vm._v("\n                About Afrang\n            ")
               ]),
               _vm._v(" "),
@@ -39983,7 +39997,7 @@ var render = function() {
           ),
           _vm._v(" "),
           _c("div", { staticClass: "col-12 order-0 order-lg-1 col-lg-7" }, [
-            _c("img", { attrs: { src: _vm.imageurl, width: "100%" } })
+            _c("img", { attrs: { src: _vm.imagearray[0], width: "100%" } })
           ])
         ])
       : _vm._e(),

@@ -1,6 +1,9 @@
 <header>
-    <nav dir="ltr" class="px-5 py-3 shadow-sm navbar navbar-expand-lg navbar-light bg-light">
-        <a class="navbar-brand" href="/"><strong><?php echo e(\App\setting::first()->websitename); ?></strong></a>
+    <nav dir="ltr" class="px-3 px-md-5 py-3 shadow-sm navbar navbar-expand-lg navbar-light bg-light">
+        <div>
+        <img class="mr-1 mr-md-2 image-header" width="40px" src="/media/Layout/<?php echo e(\App\setting::first()->logo); ?>">
+        <a class="navbar-brand m-0" href="/"><strong><?php echo e(\App\setting::first()->websitename); ?></strong></a>
+        </div>
         <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarNavDropdown"
                 aria-controls="navbarNavDropdown" aria-expanded="false" aria-label="Toggle navigation">
             <span class="navbar-toggler-icon"></span>

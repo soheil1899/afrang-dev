@@ -10,7 +10,7 @@ use Illuminate\Contracts\Queue\ShouldQueue;
 class OrderShipped extends Mailable
 {
     use Queueable, SerializesModels;
-    public $messege;
+    public $messege = [];
 
     /**
      * Create a new message instance.
@@ -29,6 +29,7 @@ class OrderShipped extends Mailable
      */
     public function build()
     {
+//        dd($this->messege);
         return $this->view('mail.request',array('messege'=>$this->messege));
     }
 }

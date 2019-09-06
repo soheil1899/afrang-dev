@@ -1927,6 +1927,8 @@ __webpack_require__.r(__webpack_exports__);
 
 "use strict";
 __webpack_require__.r(__webpack_exports__);
+/* harmony import */ var sweetalert2__WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(/*! sweetalert2 */ "./node_modules/sweetalert2/dist/sweetalert2.all.js");
+/* harmony import */ var sweetalert2__WEBPACK_IMPORTED_MODULE_0___default = /*#__PURE__*/__webpack_require__.n(sweetalert2__WEBPACK_IMPORTED_MODULE_0__);
 //
 //
 //
@@ -2028,12 +2030,60 @@ __webpack_require__.r(__webpack_exports__);
 //
 //
 //
-//
-//
-//
-//
+
 /* harmony default export */ __webpack_exports__["default"] = ({
-  name: "ContactUs"
+  name: "ContactUs",
+  data: function data() {
+    return {
+      mobile: null,
+      phone: null,
+      email: null,
+      fullname: null,
+      subject: null,
+      emailaddress: null,
+      phonenumber: null,
+      message: null
+    };
+  },
+  methods: {
+    sendemail: function sendemail(e) {
+      var data = {
+        title: 'message',
+        name: this.fullname,
+        email: this.emailaddress,
+        phone: this.phonenumber,
+        subject: this.subject,
+        mymessage: this.message
+      };
+      axios.post('/sendrequest', data).then(function (response) {
+        if (response.data[1] == true) {
+          sweetalert2__WEBPACK_IMPORTED_MODULE_0___default.a.fire({
+            type: 'success',
+            title: "Thank's. Your Message Send for us",
+            showConfirmButton: false,
+            timer: 3000
+          });
+        }
+      }).catch(function (error) {
+        sweetalert2__WEBPACK_IMPORTED_MODULE_0___default.a.fire({
+          type: 'error',
+          title: 'Please Complete All Filed',
+          showConfirmButton: false,
+          timer: 3000
+        });
+      });
+    },
+    loading: function loading() {
+      axios.post('/getmysetting').then(function (response) {
+        this.mobile = response.data.phone;
+        this.phone = response.data.otherphone;
+        this.email = response.data.email;
+      }.bind(this));
+    }
+  },
+  mounted: function mounted() {
+    this.loading();
+  }
 });
 
 /***/ }),
@@ -2382,6 +2432,8 @@ __webpack_require__.r(__webpack_exports__);
 
 "use strict";
 __webpack_require__.r(__webpack_exports__);
+/* harmony import */ var sweetalert2__WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(/*! sweetalert2 */ "./node_modules/sweetalert2/dist/sweetalert2.all.js");
+/* harmony import */ var sweetalert2__WEBPACK_IMPORTED_MODULE_0___default = /*#__PURE__*/__webpack_require__.n(sweetalert2__WEBPACK_IMPORTED_MODULE_0__);
 //
 //
 //
@@ -2495,11 +2547,18 @@ __webpack_require__.r(__webpack_exports__);
 //
 //
 //
+
 /* harmony default export */ __webpack_exports__["default"] = ({
   name: "OrderOnline",
   data: function data() {
     return {
-      countrylist: []
+      countrylist: [],
+      name: null,
+      phone: null,
+      email: null,
+      location: null,
+      request: [],
+      description: null
     };
   },
   methods: {
@@ -2507,6 +2566,34 @@ __webpack_require__.r(__webpack_exports__);
       var that = this;
       axios.post('/getcountry').then(function (response) {
         that.countrylist = response.data;
+      });
+    },
+    sendemail: function sendemail(e) {
+      var data = {
+        title: 'order',
+        name: this.name,
+        email: this.email,
+        phone: this.phone,
+        location: this.location,
+        request: this.request,
+        description: this.description
+      };
+      axios.post('/sendrequest', data).then(function (response) {
+        if (response.data[1] == true) {
+          sweetalert2__WEBPACK_IMPORTED_MODULE_0___default.a.fire({
+            type: 'success',
+            title: "Thank's. Your Order Send for us",
+            showConfirmButton: false,
+            timer: 3000
+          });
+        }
+      }).catch(function (error) {
+        sweetalert2__WEBPACK_IMPORTED_MODULE_0___default.a.fire({
+          type: 'error',
+          title: 'Please Complete All Filed',
+          showConfirmButton: false,
+          timer: 3000
+        });
       });
     }
   },
@@ -3111,6 +3198,9 @@ __webpack_require__.r(__webpack_exports__);
 //
 //
 //
+//
+//
+//
 /* harmony default export */ __webpack_exports__["default"] = ({
   props: ['id', 'flag'],
   data: function data() {
@@ -3120,6 +3210,7 @@ __webpack_require__.r(__webpack_exports__);
       paragraph: null,
       paragrapharray: [],
       titlearray: [],
+      imagearray: [],
       title: null,
       email: null
     };
@@ -3144,9 +3235,10 @@ __webpack_require__.r(__webpack_exports__);
           }
         }
 
-        if (that.id == 24) {
+        if (that.id == 24 || that.id == 23) {
           var counter_p = 0;
           var counter_t = 0;
+          var counter_i = 0;
 
           for (var i = 0; i < response.data.to_content.length; i++) {
             if (response.data.to_content[i]['methods'] == 'Paragraph') {
@@ -3155,6 +3247,10 @@ __webpack_require__.r(__webpack_exports__);
             } else if (response.data.to_content[i]['methods'] == 'Title') {
               that.titlearray[counter_t] = response.data.to_content[i]['title'];
               counter_t++;
+            } else if (response.data.to_content[i]['methods'] == 'Images') {
+              that.imagearray[counter_i] = response.data.to_content[i]['title'];
+              counter_i++;
+              console.log(that.imagearray);
             }
           }
         }
@@ -42392,173 +42488,255 @@ var render = function() {
   var _vm = this
   var _h = _vm.$createElement
   var _c = _vm._self._c || _h
-  return _vm._m(0)
+  return _c("div", [
+    _vm._m(0),
+    _vm._v(" "),
+    _c("div", { staticClass: "position-relative container contactus-item" }, [
+      _c("div", { staticClass: "row position-absolute" }, [
+        _c(
+          "div",
+          { staticClass: "row col-10 mx-auto p-0", attrs: { dir: "ltr" } },
+          [
+            _c(
+              "div",
+              {
+                staticClass:
+                  "sendmessage col-12 order-lg-0 order-1 col-lg-7 p-5"
+              },
+              [
+                _c("h5", { staticClass: "mb-5 mt-3 fontRambla" }, [
+                  _vm._v(
+                    "\n                        Send us a Message\n                    "
+                  )
+                ]),
+                _vm._v(" "),
+                _c("div", { staticClass: "row" }, [
+                  _c("div", { staticClass: "col-12 col-md-6 px-2 " }, [
+                    _c("input", {
+                      directives: [
+                        {
+                          name: "model",
+                          rawName: "v-model",
+                          value: _vm.fullname,
+                          expression: "fullname"
+                        }
+                      ],
+                      staticClass: "form-control form-control-sm mb-3",
+                      attrs: { type: "text", placeholder: "Full Name" },
+                      domProps: { value: _vm.fullname },
+                      on: {
+                        input: function($event) {
+                          if ($event.target.composing) {
+                            return
+                          }
+                          _vm.fullname = $event.target.value
+                        }
+                      }
+                    })
+                  ]),
+                  _vm._v(" "),
+                  _c("div", { staticClass: "col-12 col-md-6 px-2 " }, [
+                    _c("input", {
+                      directives: [
+                        {
+                          name: "model",
+                          rawName: "v-model",
+                          value: _vm.emailaddress,
+                          expression: "emailaddress"
+                        }
+                      ],
+                      staticClass: "form-control form-control-sm mb-3",
+                      attrs: { type: "email", placeholder: "Email Address" },
+                      domProps: { value: _vm.emailaddress },
+                      on: {
+                        input: function($event) {
+                          if ($event.target.composing) {
+                            return
+                          }
+                          _vm.emailaddress = $event.target.value
+                        }
+                      }
+                    })
+                  ])
+                ]),
+                _vm._v(" "),
+                _c("div", { staticClass: "row" }, [
+                  _c("div", { staticClass: "col-12 col-md-6 px-2 " }, [
+                    _c("input", {
+                      directives: [
+                        {
+                          name: "model",
+                          rawName: "v-model",
+                          value: _vm.phonenumber,
+                          expression: "phonenumber"
+                        }
+                      ],
+                      staticClass: "form-control form-control-sm mb-3",
+                      attrs: { type: "text", placeholder: "Phone" },
+                      domProps: { value: _vm.phonenumber },
+                      on: {
+                        input: function($event) {
+                          if ($event.target.composing) {
+                            return
+                          }
+                          _vm.phonenumber = $event.target.value
+                        }
+                      }
+                    })
+                  ]),
+                  _vm._v(" "),
+                  _c("div", { staticClass: "col-12 col-md-6 px-2 " }, [
+                    _c("input", {
+                      directives: [
+                        {
+                          name: "model",
+                          rawName: "v-model",
+                          value: _vm.subject,
+                          expression: "subject"
+                        }
+                      ],
+                      staticClass: "form-control form-control-sm mb-3",
+                      attrs: { type: "text", placeholder: "Subject" },
+                      domProps: { value: _vm.subject },
+                      on: {
+                        input: function($event) {
+                          if ($event.target.composing) {
+                            return
+                          }
+                          _vm.subject = $event.target.value
+                        }
+                      }
+                    })
+                  ])
+                ]),
+                _vm._v(" "),
+                _c("div", { staticClass: "row mb-5" }, [
+                  _c("div", { staticClass: "px-2 col-12" }, [
+                    _c("textarea", {
+                      directives: [
+                        {
+                          name: "model",
+                          rawName: "v-model",
+                          value: _vm.message,
+                          expression: "message"
+                        }
+                      ],
+                      staticClass: "form-control form-control-sm",
+                      attrs: { placeholder: "Your Message ...", rows: "5" },
+                      domProps: { value: _vm.message },
+                      on: {
+                        input: function($event) {
+                          if ($event.target.composing) {
+                            return
+                          }
+                          _vm.message = $event.target.value
+                        }
+                      }
+                    })
+                  ])
+                ]),
+                _vm._v(" "),
+                _c(
+                  "button",
+                  {
+                    staticClass: "btn btn-success px-4 float-right",
+                    on: { click: _vm.sendemail }
+                  },
+                  [
+                    _c("i", { staticClass: "fas fa-paper-plane" }),
+                    _vm._v(
+                      "\n                        Send\n                    "
+                    )
+                  ]
+                )
+              ]
+            ),
+            _vm._v(" "),
+            _c(
+              "div",
+              {
+                staticClass:
+                  "contactinfo col-12 col-lg-5 order-lg-1 order-0 p-5"
+              },
+              [
+                _c("h5", { staticClass: "mb-5 mt-3 fontRambla" }, [
+                  _vm._v(
+                    "\n                        Contact Information\n                    "
+                  )
+                ]),
+                _vm._v(" "),
+                _c("div", { staticClass: "row mx-0 mb-3" }, [
+                  _c("i", {
+                    staticClass: "fas fa-phone-alt fa-lg mr-2 mt-1 icons"
+                  }),
+                  _vm._v(" "),
+                  _c("label", { staticClass: "icons" }, [
+                    _vm._v(
+                      "\n                            " +
+                        _vm._s(_vm.mobile) +
+                        "\n                        "
+                    )
+                  ])
+                ]),
+                _vm._v(" "),
+                _c("div", { staticClass: "row mx-0 mb-3" }, [
+                  _c("i", {
+                    staticClass: "fas fa-mobile-alt fa-lg mr-2 mt-1 icons"
+                  }),
+                  _vm._v(" "),
+                  _c("label", { staticClass: "icons" }, [
+                    _vm._v(
+                      "\n                            " +
+                        _vm._s(_vm.phone) +
+                        "\n                        "
+                    )
+                  ])
+                ]),
+                _vm._v(" "),
+                _c("div", { staticClass: "row mx-0 mb-3" }, [
+                  _c("i", {
+                    staticClass: "far fa-envelope fa-lg mr-2 mt-1 icons"
+                  }),
+                  _vm._v(" "),
+                  _c("label", { staticClass: "icons" }, [
+                    _vm._v(
+                      "\n                            " +
+                        _vm._s(_vm.email) +
+                        "\n                        "
+                    )
+                  ])
+                ])
+              ]
+            )
+          ]
+        )
+      ])
+    ])
+  ])
 }
 var staticRenderFns = [
   function() {
     var _vm = this
     var _h = _vm.$createElement
     var _c = _vm._self._c || _h
-    return _c("div", [
-      _c(
-        "div",
-        {
-          staticClass: "top-contact text-center shadow-sm contacttop",
-          attrs: { dir: "ltr" }
-        },
-        [
-          _c("h3", { staticClass: "contact-title" }, [
-            _vm._v("\n            Contact Us\n        ")
-          ]),
-          _vm._v(" "),
-          _c("label", [
-            _vm._v(
-              "\n            Drop us a message and we'll back to you.\n        "
-            )
-          ])
-        ]
-      ),
-      _vm._v(" "),
-      _c("div", { staticClass: "position-relative container contactus-item" }, [
-        _c("div", { staticClass: "row position-absolute" }, [
-          _c(
-            "div",
-            { staticClass: "row col-10 mx-auto p-0", attrs: { dir: "ltr" } },
-            [
-              _c(
-                "div",
-                {
-                  staticClass:
-                    "sendmessage col-12 order-lg-0 order-1 col-lg-7 p-5"
-                },
-                [
-                  _c("h5", { staticClass: "mb-5 mt-3 fontRambla" }, [
-                    _vm._v(
-                      "\n                        Send us a Message\n                    "
-                    )
-                  ]),
-                  _vm._v(" "),
-                  _c("div", { staticClass: "row" }, [
-                    _c("div", { staticClass: "col-12 col-md-6 px-2 " }, [
-                      _c("input", {
-                        staticClass: "form-control form-control-sm mb-3",
-                        attrs: { type: "text", placeholder: "Full Name" }
-                      })
-                    ]),
-                    _vm._v(" "),
-                    _c("div", { staticClass: "col-12 col-md-6 px-2 " }, [
-                      _c("input", {
-                        staticClass: "form-control form-control-sm mb-3",
-                        attrs: { type: "email", placeholder: "Email Address" }
-                      })
-                    ])
-                  ]),
-                  _vm._v(" "),
-                  _c("div", { staticClass: "row" }, [
-                    _c("div", { staticClass: "col-12 col-md-6 px-2 " }, [
-                      _c("input", {
-                        staticClass: "form-control form-control-sm mb-3",
-                        attrs: { type: "text", placeholder: "Phone" }
-                      })
-                    ]),
-                    _vm._v(" "),
-                    _c("div", { staticClass: "col-12 col-md-6 px-2 " }, [
-                      _c("input", {
-                        staticClass: "form-control form-control-sm mb-3",
-                        attrs: { type: "text", placeholder: "Subject" }
-                      })
-                    ])
-                  ]),
-                  _vm._v(" "),
-                  _c("div", { staticClass: "row mb-5" }, [
-                    _c("div", { staticClass: "px-2 col-12" }, [
-                      _c("textarea", {
-                        staticClass: "form-control form-control-sm",
-                        attrs: { placeholder: "Your Message ...", rows: "5" }
-                      })
-                    ])
-                  ]),
-                  _vm._v(" "),
-                  _c(
-                    "button",
-                    { staticClass: "btn btn-success px-4 float-right" },
-                    [
-                      _c("i", { staticClass: "fas fa-paper-plane" }),
-                      _vm._v(
-                        "\n                        Send\n                    "
-                      )
-                    ]
-                  )
-                ]
-              ),
-              _vm._v(" "),
-              _c(
-                "div",
-                {
-                  staticClass:
-                    "contactinfo col-12 col-lg-5 order-lg-1 order-0 p-5"
-                },
-                [
-                  _c("h5", { staticClass: "mb-5 mt-3 fontRambla" }, [
-                    _vm._v(
-                      "\n                        Contact Information\n                    "
-                    )
-                  ]),
-                  _vm._v(" "),
-                  _c("div", { staticClass: "row mx-0 mb-3" }, [
-                    _c("i", {
-                      staticClass: "fas fa-map-marked-alt fa-lg mr-2 icons"
-                    }),
-                    _vm._v(" "),
-                    _c("label", { staticClass: "icons" }, [
-                      _vm._v(
-                        "\n                            Iran Tehran Valiasr Alley No.14\n                        "
-                      )
-                    ])
-                  ]),
-                  _vm._v(" "),
-                  _c("div", { staticClass: "row mx-0 mb-3" }, [
-                    _c("i", {
-                      staticClass: "fas fa-phone-alt fa-lg mr-2 icons"
-                    }),
-                    _vm._v(" "),
-                    _c("label", { staticClass: "icons" }, [
-                      _vm._v(
-                        "\n                            021-32552698-9\n                        "
-                      )
-                    ])
-                  ]),
-                  _vm._v(" "),
-                  _c("div", { staticClass: "row mx-0 mb-3" }, [
-                    _c("i", {
-                      staticClass: "fas fa-mobile-alt fa-lg mr-2 icons"
-                    }),
-                    _vm._v(" "),
-                    _c("label", { staticClass: "icons" }, [
-                      _vm._v(
-                        "\n                            09123456789 - 09358005862\n                        "
-                      )
-                    ])
-                  ]),
-                  _vm._v(" "),
-                  _c("div", { staticClass: "row mx-0 mb-3" }, [
-                    _c("i", {
-                      staticClass: "far fa-envelope fa-lg mr-2 icons"
-                    }),
-                    _vm._v(" "),
-                    _c("label", { staticClass: "icons" }, [
-                      _vm._v(
-                        "\n                            Info@afrang.com\n                        "
-                      )
-                    ])
-                  ])
-                ]
-              )
-            ]
+    return _c(
+      "div",
+      {
+        staticClass: "top-contact text-center shadow-sm contacttop",
+        attrs: { dir: "ltr" }
+      },
+      [
+        _c("h3", { staticClass: "contact-title" }, [
+          _vm._v("\n            Contact Us\n        ")
+        ]),
+        _vm._v(" "),
+        _c("label", [
+          _vm._v(
+            "\n            Drop us a message and we'll back to you.\n        "
           )
         ])
-      ])
-    ])
+      ]
+    )
   }
 ]
 render._withStripped = true
@@ -43070,7 +43248,7 @@ var render = function() {
               "div",
               {
                 staticClass:
-                  "col-12 order-lg-0 order-1 col-lg-7 px-2 px-lg-5 py-4 sendmessage"
+                  "col-12 order-lg-0 order-1 col-lg-7 px-4 px-lg-5 py-4 sendmessage"
               },
               [
                 _c("h5", { staticClass: "mb-5 mt-3 fontRambla" }, [
@@ -43079,11 +43257,101 @@ var render = function() {
                   )
                 ]),
                 _vm._v(" "),
-                _vm._m(1),
+                _c("div", { staticClass: "row my-2" }, [
+                  _c("div", { staticClass: "col-4 pt-1" }, [
+                    _vm._v(
+                      "\n                            Full Name\n                        "
+                    )
+                  ]),
+                  _vm._v(" "),
+                  _c("div", { staticClass: "col-8" }, [
+                    _c("input", {
+                      directives: [
+                        {
+                          name: "model",
+                          rawName: "v-model",
+                          value: _vm.name,
+                          expression: "name"
+                        }
+                      ],
+                      staticClass: "form-control form-control-sm",
+                      attrs: { type: "text" },
+                      domProps: { value: _vm.name },
+                      on: {
+                        input: function($event) {
+                          if ($event.target.composing) {
+                            return
+                          }
+                          _vm.name = $event.target.value
+                        }
+                      }
+                    })
+                  ])
+                ]),
                 _vm._v(" "),
-                _vm._m(2),
+                _c("div", { staticClass: "row my-2" }, [
+                  _c("div", { staticClass: "col-4 pt-1" }, [
+                    _vm._v(
+                      "\n                            Phone\n                        "
+                    )
+                  ]),
+                  _vm._v(" "),
+                  _c("div", { staticClass: "col-8" }, [
+                    _c("input", {
+                      directives: [
+                        {
+                          name: "model",
+                          rawName: "v-model",
+                          value: _vm.phone,
+                          expression: "phone"
+                        }
+                      ],
+                      staticClass: "form-control form-control-sm",
+                      attrs: { type: "text" },
+                      domProps: { value: _vm.phone },
+                      on: {
+                        input: function($event) {
+                          if ($event.target.composing) {
+                            return
+                          }
+                          _vm.phone = $event.target.value
+                        }
+                      }
+                    })
+                  ])
+                ]),
                 _vm._v(" "),
-                _vm._m(3),
+                _c("div", { staticClass: "row my-2" }, [
+                  _c("div", { staticClass: "col-4 pt-1" }, [
+                    _vm._v(
+                      "\n                            Email\n                        "
+                    )
+                  ]),
+                  _vm._v(" "),
+                  _c("div", { staticClass: "col-8" }, [
+                    _c("input", {
+                      directives: [
+                        {
+                          name: "model",
+                          rawName: "v-model",
+                          value: _vm.email,
+                          expression: "email"
+                        }
+                      ],
+                      staticClass: "form-control form-control-sm",
+                      attrs: { type: "email" },
+                      domProps: { value: _vm.email },
+                      on: {
+                        input: function($event) {
+                          if ($event.target.composing) {
+                            return
+                          }
+                          _vm.email = $event.target.value
+                        }
+                      }
+                    })
+                  ])
+                ]),
                 _vm._v(" "),
                 _c("div", { staticClass: "row my-2" }, [
                   _c("div", { staticClass: "col-4 pt-1" }, [
@@ -43095,7 +43363,32 @@ var render = function() {
                   _c("div", { staticClass: "col-8" }, [
                     _c(
                       "select",
-                      { staticClass: "form-control form-control-sm" },
+                      {
+                        directives: [
+                          {
+                            name: "model",
+                            rawName: "v-model",
+                            value: _vm.location,
+                            expression: "location"
+                          }
+                        ],
+                        staticClass: "form-control form-control-sm",
+                        on: {
+                          change: function($event) {
+                            var $$selectedVal = Array.prototype.filter
+                              .call($event.target.options, function(o) {
+                                return o.selected
+                              })
+                              .map(function(o) {
+                                var val = "_value" in o ? o._value : o.value
+                                return val
+                              })
+                            _vm.location = $event.target.multiple
+                              ? $$selectedVal
+                              : $$selectedVal[0]
+                          }
+                        }
+                      },
                       _vm._l(_vm.countrylist, function(country) {
                         return _c("option", [_vm._v(_vm._s(country.name))])
                       }),
@@ -43106,15 +43399,293 @@ var render = function() {
                 _vm._v(" "),
                 _c("div", { staticClass: "row my-4 border-bottom" }),
                 _vm._v(" "),
-                _vm._m(4),
+                _c("div", { staticClass: "row my-2" }, [
+                  _c("div", { staticClass: "col-4 pt-1" }, [
+                    _vm._v(
+                      "\n                            Your Request\n                        "
+                    )
+                  ]),
+                  _vm._v(" "),
+                  _c("div", { staticClass: "col-8" }, [
+                    _c("div", { staticClass: "form-check form-check-inline" }, [
+                      _c("input", {
+                        directives: [
+                          {
+                            name: "model",
+                            rawName: "v-model",
+                            value: _vm.request[0],
+                            expression: "request[0]"
+                          }
+                        ],
+                        staticClass: "form-check-input",
+                        attrs: {
+                          type: "checkbox",
+                          id: "inlineCheckbox1",
+                          value: "option1"
+                        },
+                        domProps: {
+                          checked: Array.isArray(_vm.request[0])
+                            ? _vm._i(_vm.request[0], "option1") > -1
+                            : _vm.request[0]
+                        },
+                        on: {
+                          change: function($event) {
+                            var $$a = _vm.request[0],
+                              $$el = $event.target,
+                              $$c = $$el.checked ? true : false
+                            if (Array.isArray($$a)) {
+                              var $$v = "option1",
+                                $$i = _vm._i($$a, $$v)
+                              if ($$el.checked) {
+                                $$i < 0 &&
+                                  _vm.$set(_vm.request, 0, $$a.concat([$$v]))
+                              } else {
+                                $$i > -1 &&
+                                  _vm.$set(
+                                    _vm.request,
+                                    0,
+                                    $$a.slice(0, $$i).concat($$a.slice($$i + 1))
+                                  )
+                              }
+                            } else {
+                              _vm.$set(_vm.request, 0, $$c)
+                            }
+                          }
+                        }
+                      }),
+                      _vm._v(" "),
+                      _c(
+                        "label",
+                        {
+                          staticClass: "form-check-label",
+                          attrs: { for: "inlineCheckbox1" }
+                        },
+                        [_vm._v("Website")]
+                      )
+                    ]),
+                    _vm._v(" "),
+                    _c("div", { staticClass: "form-check form-check-inline" }, [
+                      _c("input", {
+                        directives: [
+                          {
+                            name: "model",
+                            rawName: "v-model",
+                            value: _vm.request[1],
+                            expression: "request[1]"
+                          }
+                        ],
+                        staticClass: "form-check-input",
+                        attrs: {
+                          type: "checkbox",
+                          id: "inlineCheckbox2",
+                          value: "option2"
+                        },
+                        domProps: {
+                          checked: Array.isArray(_vm.request[1])
+                            ? _vm._i(_vm.request[1], "option2") > -1
+                            : _vm.request[1]
+                        },
+                        on: {
+                          change: function($event) {
+                            var $$a = _vm.request[1],
+                              $$el = $event.target,
+                              $$c = $$el.checked ? true : false
+                            if (Array.isArray($$a)) {
+                              var $$v = "option2",
+                                $$i = _vm._i($$a, $$v)
+                              if ($$el.checked) {
+                                $$i < 0 &&
+                                  _vm.$set(_vm.request, 1, $$a.concat([$$v]))
+                              } else {
+                                $$i > -1 &&
+                                  _vm.$set(
+                                    _vm.request,
+                                    1,
+                                    $$a.slice(0, $$i).concat($$a.slice($$i + 1))
+                                  )
+                              }
+                            } else {
+                              _vm.$set(_vm.request, 1, $$c)
+                            }
+                          }
+                        }
+                      }),
+                      _vm._v(" "),
+                      _c(
+                        "label",
+                        {
+                          staticClass: "form-check-label",
+                          attrs: { for: "inlineCheckbox2" }
+                        },
+                        [_vm._v("Mobile App")]
+                      )
+                    ]),
+                    _vm._v(" "),
+                    _c("div", { staticClass: "form-check form-check-inline" }, [
+                      _c("input", {
+                        directives: [
+                          {
+                            name: "model",
+                            rawName: "v-model",
+                            value: _vm.request[2],
+                            expression: "request[2]"
+                          }
+                        ],
+                        staticClass: "form-check-input",
+                        attrs: {
+                          type: "checkbox",
+                          id: "inlineCheckbox3",
+                          value: "option3"
+                        },
+                        domProps: {
+                          checked: Array.isArray(_vm.request[2])
+                            ? _vm._i(_vm.request[2], "option3") > -1
+                            : _vm.request[2]
+                        },
+                        on: {
+                          change: function($event) {
+                            var $$a = _vm.request[2],
+                              $$el = $event.target,
+                              $$c = $$el.checked ? true : false
+                            if (Array.isArray($$a)) {
+                              var $$v = "option3",
+                                $$i = _vm._i($$a, $$v)
+                              if ($$el.checked) {
+                                $$i < 0 &&
+                                  _vm.$set(_vm.request, 2, $$a.concat([$$v]))
+                              } else {
+                                $$i > -1 &&
+                                  _vm.$set(
+                                    _vm.request,
+                                    2,
+                                    $$a.slice(0, $$i).concat($$a.slice($$i + 1))
+                                  )
+                              }
+                            } else {
+                              _vm.$set(_vm.request, 2, $$c)
+                            }
+                          }
+                        }
+                      }),
+                      _vm._v(" "),
+                      _c(
+                        "label",
+                        {
+                          staticClass: "form-check-label",
+                          attrs: { for: "inlineCheckbox3" }
+                        },
+                        [_vm._v("Portal")]
+                      )
+                    ]),
+                    _vm._v(" "),
+                    _c("div", { staticClass: "form-check form-check-inline" }, [
+                      _c("input", {
+                        directives: [
+                          {
+                            name: "model",
+                            rawName: "v-model",
+                            value: _vm.request[3],
+                            expression: "request[3]"
+                          }
+                        ],
+                        staticClass: "form-check-input",
+                        attrs: {
+                          type: "checkbox",
+                          id: "inlineCheckbox4",
+                          value: "option4"
+                        },
+                        domProps: {
+                          checked: Array.isArray(_vm.request[3])
+                            ? _vm._i(_vm.request[3], "option4") > -1
+                            : _vm.request[3]
+                        },
+                        on: {
+                          change: function($event) {
+                            var $$a = _vm.request[3],
+                              $$el = $event.target,
+                              $$c = $$el.checked ? true : false
+                            if (Array.isArray($$a)) {
+                              var $$v = "option4",
+                                $$i = _vm._i($$a, $$v)
+                              if ($$el.checked) {
+                                $$i < 0 &&
+                                  _vm.$set(_vm.request, 3, $$a.concat([$$v]))
+                              } else {
+                                $$i > -1 &&
+                                  _vm.$set(
+                                    _vm.request,
+                                    3,
+                                    $$a.slice(0, $$i).concat($$a.slice($$i + 1))
+                                  )
+                              }
+                            } else {
+                              _vm.$set(_vm.request, 3, $$c)
+                            }
+                          }
+                        }
+                      }),
+                      _vm._v(" "),
+                      _c(
+                        "label",
+                        {
+                          staticClass: "form-check-label",
+                          attrs: { for: "inlineCheckbox4" }
+                        },
+                        [_vm._v("Other")]
+                      )
+                    ])
+                  ])
+                ]),
                 _vm._v(" "),
-                _vm._m(5),
+                _c("div", { staticClass: "row my-2" }, [
+                  _c("div", { staticClass: "col-4 pt-1" }, [
+                    _vm._v(
+                      "\n                            Description\n                        "
+                    )
+                  ]),
+                  _vm._v(" "),
+                  _c("div", { staticClass: "col-8" }, [
+                    _c("textarea", {
+                      directives: [
+                        {
+                          name: "model",
+                          rawName: "v-model",
+                          value: _vm.description,
+                          expression: "description"
+                        }
+                      ],
+                      staticClass: "form-control form-control-sm noresize",
+                      attrs: { rows: "4" },
+                      domProps: { value: _vm.description },
+                      on: {
+                        input: function($event) {
+                          if ($event.target.composing) {
+                            return
+                          }
+                          _vm.description = $event.target.value
+                        }
+                      }
+                    })
+                  ])
+                ]),
                 _vm._v(" "),
-                _vm._m(6)
+                _c(
+                  "button",
+                  {
+                    staticClass: "btn btn-success px-4 mt-3 float-right",
+                    on: { click: _vm.sendemail }
+                  },
+                  [
+                    _c("i", { staticClass: "fas fa-paper-plane" }),
+                    _vm._v(
+                      "\n                        Send\n                    "
+                    )
+                  ]
+                )
               ]
             ),
             _vm._v(" "),
-            _vm._m(7)
+            _vm._m(1)
           ]
         )
       ])
@@ -43136,169 +43707,6 @@ var staticRenderFns = [
         _c("h3", { staticClass: "contact-title" }, [
           _vm._v("\n            Order Us\n        ")
         ])
-      ]
-    )
-  },
-  function() {
-    var _vm = this
-    var _h = _vm.$createElement
-    var _c = _vm._self._c || _h
-    return _c("div", { staticClass: "row my-2" }, [
-      _c("div", { staticClass: "col-4 pt-1" }, [
-        _vm._v(
-          "\n                            Full Name\n                        "
-        )
-      ]),
-      _vm._v(" "),
-      _c("div", { staticClass: "col-8" }, [
-        _c("input", {
-          staticClass: "form-control form-control-sm",
-          attrs: { type: "text" }
-        })
-      ])
-    ])
-  },
-  function() {
-    var _vm = this
-    var _h = _vm.$createElement
-    var _c = _vm._self._c || _h
-    return _c("div", { staticClass: "row my-2" }, [
-      _c("div", { staticClass: "col-4 pt-1" }, [
-        _vm._v("\n                            Phone\n                        ")
-      ]),
-      _vm._v(" "),
-      _c("div", { staticClass: "col-8" }, [
-        _c("input", {
-          staticClass: "form-control form-control-sm",
-          attrs: { type: "text" }
-        })
-      ])
-    ])
-  },
-  function() {
-    var _vm = this
-    var _h = _vm.$createElement
-    var _c = _vm._self._c || _h
-    return _c("div", { staticClass: "row my-2" }, [
-      _c("div", { staticClass: "col-4 pt-1" }, [
-        _vm._v("\n                            Email\n                        ")
-      ]),
-      _vm._v(" "),
-      _c("div", { staticClass: "col-8" }, [
-        _c("input", {
-          staticClass: "form-control form-control-sm",
-          attrs: { type: "email" }
-        })
-      ])
-    ])
-  },
-  function() {
-    var _vm = this
-    var _h = _vm.$createElement
-    var _c = _vm._self._c || _h
-    return _c("div", { staticClass: "row my-2" }, [
-      _c("div", { staticClass: "col-4 pt-1" }, [
-        _vm._v(
-          "\n                            Your Request\n                        "
-        )
-      ]),
-      _vm._v(" "),
-      _c("div", { staticClass: "col-8" }, [
-        _c("div", { staticClass: "form-check form-check-inline" }, [
-          _c("input", {
-            staticClass: "form-check-input",
-            attrs: { type: "checkbox", id: "inlineCheckbox1", value: "option1" }
-          }),
-          _vm._v(" "),
-          _c(
-            "label",
-            {
-              staticClass: "form-check-label",
-              attrs: { for: "inlineCheckbox1" }
-            },
-            [_vm._v("Website")]
-          )
-        ]),
-        _vm._v(" "),
-        _c("div", { staticClass: "form-check form-check-inline" }, [
-          _c("input", {
-            staticClass: "form-check-input",
-            attrs: { type: "checkbox", id: "inlineCheckbox2", value: "option2" }
-          }),
-          _vm._v(" "),
-          _c(
-            "label",
-            {
-              staticClass: "form-check-label",
-              attrs: { for: "inlineCheckbox2" }
-            },
-            [_vm._v("Mobile App")]
-          )
-        ]),
-        _vm._v(" "),
-        _c("div", { staticClass: "form-check form-check-inline" }, [
-          _c("input", {
-            staticClass: "form-check-input",
-            attrs: { type: "checkbox", id: "inlineCheckbox3", value: "option3" }
-          }),
-          _vm._v(" "),
-          _c(
-            "label",
-            {
-              staticClass: "form-check-label",
-              attrs: { for: "inlineCheckbox3" }
-            },
-            [_vm._v("Portal")]
-          )
-        ]),
-        _vm._v(" "),
-        _c("div", { staticClass: "form-check form-check-inline" }, [
-          _c("input", {
-            staticClass: "form-check-input",
-            attrs: { type: "checkbox", id: "inlineCheckbox4", value: "option3" }
-          }),
-          _vm._v(" "),
-          _c(
-            "label",
-            {
-              staticClass: "form-check-label",
-              attrs: { for: "inlineCheckbox3" }
-            },
-            [_vm._v("Other")]
-          )
-        ])
-      ])
-    ])
-  },
-  function() {
-    var _vm = this
-    var _h = _vm.$createElement
-    var _c = _vm._self._c || _h
-    return _c("div", { staticClass: "row my-2" }, [
-      _c("div", { staticClass: "col-4 pt-1" }, [
-        _vm._v(
-          "\n                            Description\n                        "
-        )
-      ]),
-      _vm._v(" "),
-      _c("div", { staticClass: "col-8" }, [
-        _c("textarea", {
-          staticClass: "form-control form-control-sm noresize",
-          attrs: { rows: "4" }
-        })
-      ])
-    ])
-  },
-  function() {
-    var _vm = this
-    var _h = _vm.$createElement
-    var _c = _vm._self._c || _h
-    return _c(
-      "button",
-      { staticClass: "btn btn-success px-4 mt-3 float-right" },
-      [
-        _c("i", { staticClass: "fas fa-paper-plane" }),
-        _vm._v("\n                        Send\n                    ")
       ]
     )
   },
@@ -44212,7 +44620,12 @@ var render = function() {
             "div",
             { staticClass: "col-12 order-1 order-lg-0 col-lg-5 padding60" },
             [
-              _c("h3", { staticClass: "mb-3 aboutafrang" }, [
+              _c("img", {
+                staticClass: "about-logo",
+                attrs: { src: _vm.imagearray[1] }
+              }),
+              _vm._v(" "),
+              _c("h3", { staticClass: "mt-2 aboutafrang" }, [
                 _vm._v("\n                About Afrang\n            ")
               ]),
               _vm._v(" "),
@@ -44226,7 +44639,7 @@ var render = function() {
           ),
           _vm._v(" "),
           _c("div", { staticClass: "col-12 order-0 order-lg-1 col-lg-7" }, [
-            _c("img", { attrs: { src: _vm.imageurl, width: "100%" } })
+            _c("img", { attrs: { src: _vm.imagearray[0], width: "100%" } })
           ])
         ])
       : _vm._e(),

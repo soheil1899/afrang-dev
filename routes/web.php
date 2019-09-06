@@ -20,6 +20,7 @@ Route::post('Loadfirstpage', 'Controller@Loadfirstpage')->name('Loadfirstpage');
 Route::post('LoadArticle','Admin\ArticleController@LoadArticleData')->name('LoadArticle');
 Route::post('LoadPortfolio','Admin\ArticleController@LoadPortfolio')->name('LoadPortfolio');
 Route::post('getcountry','Website\PagesController@getcountry')->name('getcountry');
+Route::post('getmysetting','Website\PagesController@getmysetting')->name('getmysetting');
 
 
 Route::prefix('/')->namespace('Website')->group(function () {
@@ -34,6 +35,7 @@ Route::prefix('/')->namespace('Website')->group(function () {
     Route::get('/mobileportfolio','PagesController@mobileportfolio')->name('mobileportfolio');
     Route::get('/portalportfolio','PagesController@portalportfolio')->name('portalportfolio');
     Route::get('/orderonline','PagesController@orderonline')->name('orderonline');
+    Route::post('/sendrequest','PagesController@sendrequest')->name('sendrequest');
 
 
 });

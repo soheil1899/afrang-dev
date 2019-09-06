@@ -22,32 +22,35 @@
 
                         <div class="row">
                             <div class="col-12 col-md-6 px-2 ">
-                                <input type="text" placeholder="Full Name"
+                                <input type="text" v-model="fullname" placeholder="Full Name"
                                        class="form-control form-control-sm mb-3">
                             </div>
                             <div class="col-12 col-md-6 px-2 ">
-                                <input type="email" placeholder="Email Address"
+                                <input type="email" v-model="emailaddress" placeholder="Email Address"
                                        class="form-control form-control-sm mb-3">
                             </div>
                         </div>
                         <div class="row">
                             <div class="col-12 col-md-6 px-2 ">
-                                <input type="text" placeholder="Phone" class="form-control form-control-sm mb-3">
+                                <input type="text" v-model="phonenumber" placeholder="Phone"
+                                       class="form-control form-control-sm mb-3">
                             </div>
                             <div class="col-12 col-md-6 px-2 ">
-                                <input type="text" placeholder="Subject" class="form-control form-control-sm mb-3">
+                                <input type="text" v-model="subject" placeholder="Subject"
+                                       class="form-control form-control-sm mb-3">
                             </div>
                         </div>
 
 
                         <div class="row mb-5">
                             <div class="px-2 col-12">
-                                    <textarea class="form-control form-control-sm" placeholder="Your Message ..."
+                                    <textarea v-model="message" class="form-control form-control-sm"
+                                              placeholder="Your Message ..."
                                               rows="5"></textarea>
                             </div>
                         </div>
 
-                        <button class="btn btn-success px-4 float-right">
+                        <button class="btn btn-success px-4 float-right" @click="sendemail">
                             <i class="fas fa-paper-plane"></i>
                             Send
                         </button>
@@ -63,33 +66,26 @@
 
 
                         <div class="row mx-0 mb-3">
-                            <i class="fas fa-map-marked-alt fa-lg mr-2 icons"></i>
+                            <i class="fas fa-phone-alt fa-lg mr-2 mt-1 icons"></i>
+
                             <label class="icons">
-                                Iran Tehran Valiasr Alley No.14
+                                {{mobile}}
                             </label>
                         </div>
 
                         <div class="row mx-0 mb-3">
-                            <i class="fas fa-phone-alt fa-lg mr-2 icons"></i>
+                            <i class="fas fa-mobile-alt fa-lg mr-2 mt-1 icons"></i>
 
                             <label class="icons">
-                                021-32552698-9
+                                {{phone}}
                             </label>
                         </div>
 
                         <div class="row mx-0 mb-3">
-                            <i class="fas fa-mobile-alt fa-lg mr-2 icons"></i>
+                            <i class="far fa-envelope fa-lg mr-2 mt-1 icons"></i>
 
                             <label class="icons">
-                                09123456789 - 09358005862
-                            </label>
-                        </div>
-
-                        <div class="row mx-0 mb-3">
-                            <i class="far fa-envelope fa-lg mr-2 icons"></i>
-
-                            <label class="icons">
-                                Info@afrang.com
+                                {{email}}
                             </label>
                         </div>
                     </div>
@@ -104,8 +100,66 @@
 </template>
 
 <script>
+    import Swal from 'sweetalert2';
+
     export default {
-        name: "ContactUs"
+        name: "ContactUs",
+        data() {
+            return {
+                mobile: null,
+                phone: null,
+                email: null,
+
+                fullname: null,
+                subject: null,
+                emailaddress: null,
+                phonenumber: null,
+                message: null,
+            }
+        },
+        methods: {
+            sendemail(e) {
+                let data = {
+                    title: 'message',
+                    name: this.fullname,
+                    email: this.emailaddress,
+                    phone: this.phonenumber,
+                    subject: this.subject,
+                    mymessage: this.message,
+                };
+
+                axios.post('/sendrequest', data)
+                    .then(function (response) {
+                        if (response.data[1] == true) {
+                            Swal.fire({
+                                type: 'success',
+                                title: "Thank's. Your Message Send for us",
+                                showConfirmButton: false,
+                                timer: 3000
+                            })
+                        }
+                    }).catch((error) => {
+                    Swal.fire({
+                        type: 'error',
+                        title: 'Please Complete All Filed',
+                        showConfirmButton: false,
+                        timer: 3000
+                    })
+                });
+            },
+
+            loading() {
+                axios.post('/getmysetting')
+                    .then(function (response) {
+                        this.mobile = response.data.phone;
+                        this.phone = response.data.otherphone;
+                        this.email = response.data.email;
+                    }.bind(this));
+            }
+        },
+        mounted() {
+            this.loading();
+        }
     }
 </script>
 
