@@ -11,7 +11,7 @@
     },
     "devDependencies": {
         "@ckeditor/ckeditor5-alignment": "^11.0.0",
-        "axios": "^0.18",
+        "axios": "^0.21",
         "cross-env": "^5.2.0",
         "jquery": "^3.2",
         "laravel-mix": "^4.0.7",
